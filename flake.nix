@@ -12,6 +12,11 @@
         path = ./go1.18;
         description = "Go 1.18 development environment";
       };
+
+      rails = {
+        path = ./ruby-on-rails;
+        description = "Ruby on Rails development environment";
+      };
     };
   };
 }
