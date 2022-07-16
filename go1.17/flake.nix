@@ -32,6 +32,11 @@
               # https://github.com/uudashr/gopkgs
               gopkgs
             ];
+
+            shellHook = ''
+              echo "Entering Go env"
+              echo "Running `${pkgs.go}/bin/go version`"
+            '';
           };
         };
       }

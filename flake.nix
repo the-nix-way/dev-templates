@@ -13,9 +13,9 @@
         description = "Go 1.18 development environment";
       };
 
-      rails = {
-        path = ./ruby-on-rails;
-        description = "Ruby on Rails development environment";
+      rust = {
+        path = ./rust;
+        description = "Rust development environment";
       };
     };
   };
