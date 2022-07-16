@@ -10,12 +10,18 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
+        goPkg = pkgs.go_1_17;
       in {
+        apps.default = {
+          type = "app";
+          program = "${goPkg}/bin/go";
+        };
+
         devShells = {
           default = pkgs.mkShellNoCC {
             buildInputs = with pkgs; [
               # go 1.17.1
-              go
+              goPkg
 
               # goimports, godoc, etc.
               gotools
@@ -35,7 +41,7 @@
 
             shellHook = ''
               echo "Entering Go env"
-              echo "Running `${pkgs.go}/bin/go version`"
+              echo "Running `${goPkg}/bin/go version`"
             '';
           };
         };
