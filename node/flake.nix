@@ -19,7 +19,7 @@
       in {
         devShells = {
           default = pkgs.mkShell {
-            nativeBuildInputs = [
+            buildInputs = [
               nodejs
               pnpm
               (yarn.override { inherit nodejs; })

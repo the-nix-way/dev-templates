@@ -16,7 +16,7 @@
       in {
         devShells = {
           default = pkgs.mkShell {
-            nativeBuildInputs = [
+            buildInputs = [
               gleamPkg
             ];
 

@@ -33,7 +33,12 @@
         description = "Rust development environment";
       };
 
-      zip = {
+      scala = {
+        path = ./scala;
+        description = "Scala development environment";
+      };
+
+      zig = {
         path = ./zig;
         description = "Zig development environment";
       };

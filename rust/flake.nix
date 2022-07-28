@@ -20,7 +20,7 @@
 
         rust = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
 
-        helpers = with pkgs; [ pkg-config ];
+        helpers = with pkgs; [ openssl pkg-config ];
 
         inherit (pkgs) mkShell;
         inherit (pkgs.lib) optionals;
@@ -30,14 +30,9 @@
 
         devShells = {
           default = mkShell {
-            nativeBuildInputs = [
+            buildInputs = [
               rust
             ] ++ helpers;
-
-            buildInputs = with pkgs; [
-              openssl
-              pkgconfig
-            ];
 
             shellHook = ''
               ${rust}/bin/cargo --version

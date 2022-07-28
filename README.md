@@ -19,6 +19,9 @@ nix flake init --template github:the-nix-way/dev-templates#node
 # Rust
 nix flake init --template github:the-nix-way/dev-templates#rust
 
+# Scala
+nix flake init --template github:the-nix-way/dev-templates#scala
+
 # Zig
-nix flake init --template github:the-nix-way/dev-templates#rust
+nix flake init --template github:the-nix-way/dev-templates#zig
 ```
