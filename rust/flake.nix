@@ -20,13 +20,14 @@
 
         rust = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
 
+        inherit (pkgs) mkShell;
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isDarwin;
       in {
         packages.default = rust;
 
         devShells = {
-          default = pkgs.mkShell {
+          default = mkShell {
             nativeBuildInputs = [
               rust
               pkgs.pkg-config

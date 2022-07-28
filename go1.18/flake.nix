@@ -1,5 +1,5 @@
 {
-  description = "Go 1.17 development environment";
+  description = "A Nix-flake-based Go 1.18 development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
@@ -11,6 +11,8 @@
       let
         pkgs = import nixpkgs { inherit system; };
         goPkg = pkgs.go_1_18;
+
+        inherit (pkgs) mkShellNoCC;
       in {
         apps.default = {
           type = "app";
@@ -18,7 +20,7 @@
         };
 
         devShells = {
-          default = pkgs.mkShellNoCC {
+          default = mkShellNoCC {
             buildInputs = with pkgs; [
               # go 1.18.3
               goPkg
@@ -40,8 +42,7 @@
             ];
 
             shellHook = ''
-              echo "Entering Go env"
-              echo "Running `${goPkg}/bin/go version`"
+              ${goPkg}/bin/go version
             '';
           };
         };
