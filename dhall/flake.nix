@@ -18,12 +18,14 @@
         otherFormats = with pkgs.haskellPackages; [
           dhall-bash
           dhall-docs
+          dhall-json
           dhall-lsp-server
           dhall-nix
-          dhall-json
+          dhall-nixpkgs
+          dhall-openapi
           dhall-toml
           dhall-yaml
-        ] ++ optionals isLinux (with pkgs.haskellPackages; [ dhall-csv dhall-haskell ]);
+        ] ++ optionals isLinux (with pkgs.haskellPackages; [ dhall-csv dhall-haskell dhall-text ]);
 
         inherit (pkgs) mkShell;
       in {
