@@ -28,7 +28,7 @@
         buildTools = with pkgs; [ sbt ];
       in {
         devShells = {
-          default = pkgs.mkShell {
+          default = mkShell {
             buildInputs = [ scala jdkPkg ] ++ buildTools;
 
             shellHook = ''

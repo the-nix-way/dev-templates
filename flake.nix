@@ -53,6 +53,11 @@
           description = "Java development environment";
         };
 
+        kotlin = {
+          path = ./kotlin;
+          description = "Kotlin development environment";
+        };
+
         nix = {
           path = ./nix;
           description = "Nix development environment";

@@ -11,14 +11,14 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        inherit (pkgs) mkShell;
-
         java = pkgs.jdk17;
 
         buildTools = with pkgs; [ ant gradle maven ];
+
+        inherit (pkgs) mkShell;
       in {
         devShells = {
-          default = pkgs.mkShell {
+          default = mkShell {
             buildInputs = [ java ] ++ buildTools;
 
             shellHook = ''

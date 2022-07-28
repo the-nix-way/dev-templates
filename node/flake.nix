@@ -18,7 +18,7 @@
         yarn = pkgs.yarn;
       in {
         devShells = {
-          default = pkgs.mkShell {
+          default = mkShell {
             buildInputs = [ nodejs pnpm (yarn.override { inherit nodejs; }) ];
 
             shellHook = ''

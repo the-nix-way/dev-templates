@@ -15,7 +15,7 @@
         inherit (pkgs) mkShell;
       in {
         devShells = {
-          default = pkgs.mkShell {
+          default = mkShell {
             buildInputs = [ gleamPkg ];
 
             shellHook = ''
