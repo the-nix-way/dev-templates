@@ -20,6 +20,8 @@
 
         rust = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
 
+        helpers = with pkgs; [ pkg-config ];
+
         inherit (pkgs) mkShell;
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isDarwin;
@@ -30,8 +32,7 @@
           default = mkShell {
             nativeBuildInputs = [
               rust
-              pkgs.pkg-config
-            ];
+            ] ++ helpers;
 
             buildInputs = with pkgs; [
               openssl
@@ -39,8 +40,7 @@
             ];
 
             shellHook = ''
-              echo "Entering Rust env"
-              echo "Running `${rust}/bin/cargo --version`"
+              ${rust}/bin/cargo --version
             '';
           };
         };

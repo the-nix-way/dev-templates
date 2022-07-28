@@ -21,7 +21,7 @@
             ];
 
             shellHook = ''
-              echo "`${zigPkg}/bin/zig version`"
+              ${zigPkg}/bin/zig version
             '';
           };
         };

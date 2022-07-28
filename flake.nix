@@ -18,6 +18,11 @@
         description = "Go 1.18 development environment";
       };
 
+      java = {
+        path = ./java;
+        description = "Java development environment";
+      };
+
       node = {
         path = ./node;
         description = "Node.js development environment";

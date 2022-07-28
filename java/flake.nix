@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Node.js development environment";
+  description = "A Nix-flake-based Java development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
@@ -13,20 +13,18 @@
 
         inherit (pkgs) mkShell;
 
-        nodejs = pkgs.nodejs;
-        pnpm = pkgs.nodePackages.pnpm;
-        yarn = pkgs.yarn;
+        java = pkgs.jdk17;
+
+        buildTools = with pkgs; [ ant gradle maven ];
       in {
         devShells = {
           default = pkgs.mkShell {
             nativeBuildInputs = [
-              nodejs
-              pnpm
-              (yarn.override { inherit nodejs; })
-            ];
+              java
+            ] ++ buildTools;
 
             shellHook = ''
-              echo "node `${nodejs}/bin/node --version`"
+              ${java}/bin/java -version
             '';
           };
         };
