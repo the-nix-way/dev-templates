@@ -1,6 +1,9 @@
 # Nix flake templates for easy dev environments
 
 ```shell
+# Elixir
+nix flake init --template github:the-nix-way/dev-templates#elixir
+
 # Gleam
 nix flake init --template github:the-nix-way/dev-templates#gleam
 
