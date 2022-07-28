@@ -39,7 +39,7 @@
         };
 
         elixir = {
-          path = ./dhall;
+          path = ./elixir;
           description = "Elixir development environment";
         };
 
