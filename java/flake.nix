@@ -9,12 +9,17 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        jdk = "jdk17";
 
-        java = pkgs.jdk17;
+        config = {
+          packageOverrides = p: {
+            gradle = (p.gradle.override { java = p.${jdk}; });
+          };
+        };
 
+        pkgs = import nixpkgs { inherit config jdk system; };
+        java = pkgs.${jdk};
         buildTools = with pkgs; [ ant gradle maven ];
-
         inherit (pkgs) mkShell;
       in {
         devShells = {
