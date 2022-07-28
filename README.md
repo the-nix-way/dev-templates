@@ -16,6 +16,9 @@ nix flake init --template github:the-nix-way/dev-templates#go_1_18
 # Java
 nix flake init --template github:the-nix-way/dev-templates#java
 
+# Nix
+nix flake init --template github:the-nix-way/dev-templates#nix
+
 # Node.js
 nix flake init --template github:the-nix-way/dev-templates#node
 
