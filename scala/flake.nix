@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Java development environment";
+  description = "A Nix-flake-based Scala development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";

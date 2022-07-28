@@ -24,6 +24,11 @@
         description = "Java development environment";
       };
 
+      nix = {
+        path = ./nix;
+        description = "Nix development environment";
+      };
+
       node = {
         path = ./node;
         description = "Node.js development environment";
