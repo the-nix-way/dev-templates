@@ -18,6 +18,11 @@
         description = "Go 1.18 development environment";
       };
 
+      node = {
+        path = ./node;
+        description = "Node.js development environment";
+      };
+
       rust = {
         path = ./rust;
         description = "Rust development environment";
