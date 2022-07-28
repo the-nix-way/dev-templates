@@ -12,8 +12,9 @@
         pkgs = import nixpkgs { inherit system; };
 
         nix = pkgs.nixUnstable;
+        dhallNix = pkgs.haskellPackages.dhall-nix;
 
-        helpers = with pkgs; [ cachix lorri nixfmt nixpkgs-fmt niv statix ];
+        helpers = with pkgs; [ cachix dhallNix lorri niv nixfmt nixpkgs-fmt statix ];
 
         inherit (pkgs) mkShell;
       in {

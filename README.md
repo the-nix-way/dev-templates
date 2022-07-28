@@ -1,6 +1,9 @@
 # Nix flake templates for easy dev environments
 
 ```shell
+# Dhall
+nix flake init --template github:the-nix-way/dev-templates#dhall
+
 # Elixir
 nix flake init --template github:the-nix-way/dev-templates#elixir
 
