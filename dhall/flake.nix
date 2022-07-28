@@ -15,17 +15,19 @@
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isLinux;
 
-        otherFormats = with pkgs.haskellPackages; [
-          dhall-bash
-          dhall-docs
-          dhall-json
-          dhall-lsp-server
-          dhall-nix
-          dhall-nixpkgs
-          dhall-openapi
-          dhall-toml
-          dhall-yaml
-        ] ++ optionals isLinux (with pkgs.haskellPackages; [ dhall-csv dhall-haskell dhall-text ]);
+        otherFormats = with pkgs.haskellPackages;
+          [
+            dhall-bash
+            dhall-docs
+            dhall-json
+            dhall-lsp-server
+            dhall-nix
+            dhall-nixpkgs
+            dhall-openapi
+            dhall-toml
+            dhall-yaml
+          ] ++ optionals isLinux
+          (with pkgs.haskellPackages; [ dhall-csv dhall-haskell dhall-text ]);
 
         inherit (pkgs) mkShell;
       in {

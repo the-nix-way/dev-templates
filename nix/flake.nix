@@ -14,18 +14,20 @@
         nix = pkgs.nixUnstable;
         dhallNix = pkgs.haskellPackages.dhall-nix;
 
-        helpers = with pkgs; [ cachix dhallNix lorri niv nixfmt nixpkgs-fmt statix ];
+        nixRelatedTools = with pkgs; [
+          cachix
+          dhallNix
+          lorri
+          niv
+          nixfmt
+          nixpkgs-fmt
+          statix
+        ];
 
         inherit (pkgs) mkShell;
       in {
         devShells = {
-          default = pkgs.mkShell {
-            buildInputs = [ nix ] ++ helpers;
-
-            shellHook = ''
-              ${nix}/bin/nix --version
-            '';
-          };
+          default = pkgs.mkShell { buildInputs = [ nix ] ++ nixRelatedTools; };
         };
       });
 }
