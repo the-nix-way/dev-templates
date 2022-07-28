@@ -14,12 +14,8 @@
 
         config = {
           packageOverrides = p: {
-            sbt = p.sbt.override {
-              jre = p.${jdk};
-            };
-            scala_3 = p.scala_3.override {
-              jre = p.${jdk};
-            };
+            sbt = p.sbt.override { jre = p.${jdk}; };
+            scala_3 = p.scala_3.override { jre = p.${jdk}; };
           };
         };
 
@@ -33,16 +29,12 @@
       in {
         devShells = {
           default = pkgs.mkShell {
-            buildInputs = [
-              scala
-              jdkPkg
-            ] ++ buildTools;
+            buildInputs = [ scala jdkPkg ] ++ buildTools;
 
             shellHook = ''
               ${scala}/bin/scala -version
             '';
           };
         };
-      }
-    );
+      });
 }

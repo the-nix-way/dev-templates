@@ -1,5 +1,6 @@
 {
-  description = "Ready-made templates for easily creating flake-driven environments";
+  description =
+    "Ready-made templates for easily creating flake-driven environments";
 
   outputs = { self }: {
     templates = {

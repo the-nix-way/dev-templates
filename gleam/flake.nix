@@ -16,15 +16,12 @@
       in {
         devShells = {
           default = pkgs.mkShell {
-            buildInputs = [
-              gleamPkg
-            ];
+            buildInputs = [ gleamPkg ];
 
             shellHook = ''
               ${gleamPkg}/bin/gleam --version
             '';
           };
         };
-      }
-    );
+      });
 }

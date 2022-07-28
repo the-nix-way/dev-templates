@@ -19,15 +19,12 @@
       in {
         devShells = {
           default = pkgs.mkShell {
-            buildInputs = [
-              java
-            ] ++ buildTools;
+            buildInputs = [ java ] ++ buildTools;
 
             shellHook = ''
               ${java}/bin/java -version
             '';
           };
         };
-      }
-    );
+      });
 }

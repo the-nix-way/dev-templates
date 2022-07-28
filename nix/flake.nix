@@ -13,7 +13,7 @@
 
         nix = pkgs.nixUnstable;
 
-        helpers = with pkgs; [ nixpkgs-fmt statix ];
+        helpers = with pkgs; [ nixfmt nixpkgs-fmt statix ];
 
         inherit (pkgs) mkShell;
       in {
@@ -26,6 +26,5 @@
             '';
           };
         };
-      }
-    );
+      });
 }

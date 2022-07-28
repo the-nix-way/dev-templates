@@ -19,17 +19,12 @@
       in {
         devShells = {
           default = pkgs.mkShell {
-            buildInputs = [
-              nodejs
-              pnpm
-              (yarn.override { inherit nodejs; })
-            ];
+            buildInputs = [ nodejs pnpm (yarn.override { inherit nodejs; }) ];
 
             shellHook = ''
               echo "node `${nodejs}/bin/node --version`"
             '';
           };
         };
-      }
-    );
+      });
 }
