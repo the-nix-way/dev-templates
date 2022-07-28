@@ -33,6 +33,16 @@
       }
     ) // {
       templates = {
+        dhall = {
+          path = ./dhall;
+          description = "Dhall development environment";
+        };
+
+        elixir = {
+          path = ./dhall;
+          description = "Elixir development environment";
+        };
+
         gleam = {
           path = ./gleam;
           description = "Gleam development environment";
