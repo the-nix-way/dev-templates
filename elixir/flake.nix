@@ -11,19 +11,23 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        inherit (pkgs) darwin inotify-tools mkShell nodejs-18_x terminal-notifier;
-        inherit (pkgs.beam.packages.erlangR25) elixir;
+        inherit (pkgs)
+          darwin inotify-tools mkShell nodejs-18_x terminal-notifier;
+        inherit (pkgs.beam.packages.erlangR25) elixir elixir_ls;
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isDarwin isLinux;
 
-        linuxDeps = optionals isLinux
-          [ inotify-tools ];
-        darwinDeps = optionals isDarwin
-          [ terminal-notifier ] ++ (with darwin.apple_sdk.frameworks; [ CoreFoundation CoreServices ]);
+        linuxDeps = optionals isLinux [ inotify-tools ];
+        darwinDeps = optionals isDarwin [ terminal-notifier ]
+          ++ (with darwin.apple_sdk.frameworks; [
+            CoreFoundation
+            CoreServices
+          ]);
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ elixir nodejs-18_x ] ++ linuxDeps ++ darwinDeps;
+            buildInputs = [ elixir elixir_ls nodejs-18_x ] ++ linuxDeps
+              ++ darwinDeps;
 
             shellHook = ''
               ${elixir}/bin/mix --version
