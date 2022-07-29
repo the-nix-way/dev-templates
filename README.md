@@ -14,20 +14,21 @@ nix flake init --template github:the-nix-way/dev-templates#rust
 
 Available templates:
 
-| Language/framework/tool | Template              |
-| :---------------------- | :-------------------- |
-| [Dhall]                 | [`dhall`](./dhall/)   |
-| [Elixir]                | [`elixir`](./elixir/) |
-| [Gleam]                 | [`gleam`](./gleam/)   |
-| [Go] 1.17               | [`go1_17`](./go1.17/) |
-| [Go] 1.18               | [`go1_18`](./go1.18/) |
-| [Java]                  | [`java`](./java/)     |
-| [Kotlin]                | [`kotlin`](./kotlin/) |
-| [Nix]                   | [`nix`](./nix/)       |
-| [Node.js][node]         | [`node`](./node/)     |
-| [Rust]                  | [`rust`](./rust/)     |
-| [Scala]                 | [`scala`](./scala/)   |
-| [Zig]                   | [`zig`](./zig/)       |
+| Language/framework/tool | Template                  |
+| :---------------------- | :------------------------ |
+| [Dhall]                 | [`dhall`](./dhall/)       |
+| [Elixir]                | [`elixir`](./elixir/)     |
+| [Gleam]                 | [`gleam`](./gleam/)       |
+| [Go] 1.17               | [`go1_17`](./go1.17/)     |
+| [Go] 1.18               | [`go1_18`](./go1.18/)     |
+| [Java]                  | [`java`](./java/)         |
+| [Kotlin]                | [`kotlin`](./kotlin/)     |
+| [Nix]                   | [`nix`](./nix/)           |
+| [Node.js][node]         | [`node`](./node/)         |
+| [Protobuf]              | [`protobuf`](./protobuf/) |
+| [Rust]                  | [`rust`](./rust/)         |
+| [Scala]                 | [`scala`](./scala/)       |
+| [Zig]                   | [`zig`](./zig/)           |
 
 [dhall]: https://dhall-lang.org
 [elixir]: https://elixir-lang.org
@@ -37,6 +38,7 @@ Available templates:
 [kotlin]: https://kotlinlang.org
 [nix]: https://nixos.org
 [node]: https://nodejs.org
+[protobuf]: https://developers.google.com/protocol-buffers
 [rust]: https://rust-lang.org
 [scala]: https://scala-lang.org
 [zig]: https://ziglang.org

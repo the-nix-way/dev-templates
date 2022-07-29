@@ -78,6 +78,11 @@
           description = "Node.js development environment";
         };
 
+        protobuf = {
+          path = ./protobuf;
+          description = "Protobuf development environment";
+        };
+
         rust = {
           path = ./rust;
           description = "Rust development environment";
