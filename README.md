@@ -1,19 +1,33 @@
 # Nix flake templates for easy dev environments
 
-| Language/framework/tool | Init command                                                         |
-| :---------------------- | :------------------------------------------------------------------- |
-| [Dhall]                 | `nix flake init --template github:the-nix-way/dev-templates#dhall`   |
-| [Elixir]                | `nix flake init --template github:the-nix-way/dev-templates#elixir`  |
-| [Gleam]                 | `nix flake init --template github:the-nix-way/dev-templates#gleam`   |
-| [Go] 1.17               | `nix flake init --template github:the-nix-way/dev-templates#go_1_17` |
-| [Go] 1.18               | `nix flake init --template github:the-nix-way/dev-templates#go_1_18` |
-| [Java]                  | `nix flake init --template github:the-nix-way/dev-templates#java`    |
-| [Kotlin]                | `nix flake init --template github:the-nix-way/dev-templates#kotlin`  |
-| [Nix]                   | `nix flake init --template github:the-nix-way/dev-templates#nix`     |
-| [Node.js][node]         | `nix flake init --template github:the-nix-way/dev-templates#node`    |
-| [Rust]                  | `nix flake init --template github:the-nix-way/dev-templates#rust`    |
-| [Scala]                 | `nix flake init --template github:the-nix-way/dev-templates#scala`   |
-| [Zig]                   | `nix flake init --template github:the-nix-way/dev-templates#zig`     |
+To initialize (where `${ENV}` is listed in the table below):
+
+```shell
+nix flake init --template github:the-nix-way/dev-templates#${ENV}
+```
+
+Here's an example (for the [`rust`](./rust) template):
+
+```shell
+nix flake init --template github:the-nix-way/dev-templates#rust
+```
+
+Available templates:
+
+| Language/framework/tool | Template              |
+| :---------------------- | :-------------------- |
+| [Dhall]                 | [`dhall`](./dhall/)   |
+| [Elixir]                | [`elixir`](./elixir/) |
+| [Gleam]                 | [`gleam`](./gleam/)   |
+| [Go] 1.17               | [`go1_17`](./go1.17/) |
+| [Go] 1.18               | [`go1_18`](./go1.18/) |
+| [Java]                  | [`java`](./java/)     |
+| [Kotlin]                | [`kotlin`](./kotlin/) |
+| [Nix]                   | [`nix`](./nix/)       |
+| [Node.js][node]         | [`node`](./node/)     |
+| [Rust]                  | [`rust`](./rust/)     |
+| [Scala]                 | [`scala`](./scala/)   |
+| [Zig]                   | [`zig`](./zig/)       |
 
 [dhall]: https://dhall-lang.org
 [elixir]: https://elixir-lang.org

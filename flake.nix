@@ -48,12 +48,12 @@
           description = "Gleam development environment";
         };
 
-        go_1_17 = {
+        go1_17 = {
           path = ./go1.17;
           description = "Go 1.17 development environment";
         };
 
-        go_1_18 = {
+        go1_18 = {
           path = ./go1.18;
           description = "Go 1.18 development environment";
         };
