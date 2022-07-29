@@ -19,7 +19,7 @@
             buildInputs = [ zigPkg ];
 
             shellHook = ''
-              ${zigPkg}/bin/zig version
+              echo "zig `${zigPkg}/bin/zig version`"
             '';
           };
         };
