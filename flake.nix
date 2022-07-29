@@ -16,6 +16,9 @@
           ${pkgs.nixfmt}/bin/nixfmt **/*.nix
         '';
         update = pkgs.writeScriptBin "update" ''
+          # Update root
+          ${pkgs.nix}/bin/nix flake update
+
           for dir in `ls -d */`; do # Iterate through all the templates
             (
               cd $dir
