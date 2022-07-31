@@ -1,7 +1,10 @@
 {
   description = "A Nix-flake-based Protobuf development environment";
 
-  inputs = { dev.url = "github:the-nix-way/dev-templates"; mach-nix.url = "github:/DavHau/mach-nix"; };
+  inputs = {
+    dev.url = "github:the-nix-way/dev-templates";
+    mach-nix.url = "github:/DavHau/mach-nix";
+  };
 
   outputs = { self, dev, mach-nix }:
     let inherit (dev.lib) flake-utils nixpkgs;
@@ -14,7 +17,8 @@
 
         machNix = mach-nix.defaultPackage.${system};
 
-        pythonTools = with pkgs; [ virtualenv ] ++ (with pkgs.python311Packages; [ pip ]);
+        pythonTools = with pkgs;
+          [ virtualenv ] ++ (with pkgs.python311Packages; [ pip ]);
         nixTools = [ machNix ];
       in {
         devShells = {
