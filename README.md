@@ -1,5 +1,7 @@
 # Nix flake templates for easy dev environments
 
+[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
+
 To initialize (where `${ENV}` is listed in the table below):
 
 ```shell
