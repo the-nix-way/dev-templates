@@ -43,11 +43,11 @@ Once your preferred template has been initialized, you can use the provided shel
 
 ## Template contents
 
-The sections below list what each template includes.
+The sections below list what each template includes. In all cases, you're free to add and remove packages as you see fit; the templates are just boilerplate.
 
-### `dhall`
+### [`dhall`](./dhall)
 
-- [Dhall]
+- [Dhall] 1.40.2
 - [`dhall-bash`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash)
 - [`dhall-csv`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-csv) (Linux only)
 - [`dhall-docs`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-docs)
@@ -61,15 +61,33 @@ The sections below list what each template includes.
 - [`dhall-toml`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml)
 - [`dhall-yaml`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml)
 
+### [`elixir`](./elixir/)
+
+- [Elixir] 1.13.4, including [mix] and [IEx]
+- [Node.js][node] 18.7.0 (largely for [Phoenix] projects)
+
+### [`gleam`](./gleam/)
+
+- [Gleam] 0.22.1
+
+## Code organization
+
+All of the templates have only the root [flake](./flake.nix) as a flake input. That root flake provides a common revision of [Nixpkgs] and [`flake-utils`][flake-utils] to all the templates.
+
 [dhall]: https://dhall-lang.org
 [elixir]: https://elixir-lang.org
+[flake-utils]: https://github.com/numtide/flake-utils
 [gleam]: https://gleam.run
 [go]: https://go.dev
+[iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [kotlin]: https://kotlinlang.org
+[mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
 [nix]: https://nixos.org
+[nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [node]: https://nodejs.org
+[phoenix]: https://phoenixframework.org
 [protobuf]: https://developers.google.com/protocol-buffers
 [rust]: https://rust-lang.org
 [scala]: https://scala-lang.org
