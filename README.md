@@ -51,7 +51,7 @@ The sections below list what each template includes. In all cases, you're free t
 - [`dhall-bash`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash)
 - [`dhall-csv`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-csv) (Linux only)
 - [`dhall-docs`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-docs)
-- [`dhall-haskell`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-haslekk) (Linux only)
+- [`dhall-haskell`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-haskell) (Linux only)
 - [`dhall-json`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json)
 - [`dhall-lsp-server`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server)
 - [`dhall-nix`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix)
