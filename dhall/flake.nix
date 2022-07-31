@@ -13,19 +13,29 @@
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isLinux;
 
-        otherFormats = with pkgs.haskellPackages;
-          [
-            dhall-bash
-            dhall-docs
-            dhall-json
-            dhall-lsp-server
-            dhall-nix
-            dhall-nixpkgs
-            dhall-openapi
-            dhall-toml
-            dhall-yaml
-          ] ++ optionals isLinux
-          (with pkgs.haskellPackages; [ dhall-csv dhall-haskell dhall-text ]);
+        # Helper function for building dhall-* tools
+        mkDhallTools = ls: builtins.map (tool: pkgs.haskellPackages."dhall-${tool}") ls;
+
+        dhallTools = mkDhallTools [
+          "bash"
+          "docs"
+          "json"
+          "lsp-server"
+          "nix"
+          "nixpkgs"
+          "openapi"
+          "toml"
+          "yaml"
+        ];
+
+        # dhall-* tools available only on Linux
+        dhallToolsLinux = mkDhallTools [
+          "csv"
+          "haskell"
+          "text"
+        ];
+
+        otherFormats = dhallTools ++ optionals isLinux dhallToolsLinux;
 
         inherit (pkgs) mkShell;
       in {
