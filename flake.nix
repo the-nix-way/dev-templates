@@ -109,6 +109,11 @@
           description = "Node.js development environment";
         };
 
+        opa = {
+          path = ./opa;
+          description = "Open Policy Agent development environment";
+        };
+
         protobuf = {
           path = ./protobuf;
           description = "Protobuf development environment";

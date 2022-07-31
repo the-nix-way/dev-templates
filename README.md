@@ -27,22 +27,23 @@ Once your preferred template has been initialized, you can use the provided shel
 
 ## Available templates
 
-| Language/framework/tool | Template                  |
-| :---------------------- | :------------------------ |
-| [Dhall]                 | [`dhall`](./dhall/)       |
-| [Elixir]                | [`elixir`](./elixir/)     |
-| [Gleam]                 | [`gleam`](./gleam/)       |
-| [Go] 1.17               | [`go1_17`](./go1.17/)     |
-| [Go] 1.18               | [`go1_18`](./go1.18/)     |
-| [Hashicorp] tools       | [`hashi`](./hashi/)       |
-| [Java]                  | [`java`](./java/)         |
-| [Kotlin]                | [`kotlin`](./kotlin/)     |
-| [Nix]                   | [`nix`](./nix/)           |
-| [Node.js][node]         | [`node`](./node/)         |
-| [Protobuf]              | [`protobuf`](./protobuf/) |
-| [Rust]                  | [`rust`](./rust/)         |
-| [Scala]                 | [`scala`](./scala/)       |
-| [Zig]                   | [`zig`](./zig/)           |
+| Language/framework/tool  | Template                  |
+| :----------------------- | :------------------------ |
+| [Dhall]                  | [`dhall`](./dhall/)       |
+| [Elixir]                 | [`elixir`](./elixir/)     |
+| [Gleam]                  | [`gleam`](./gleam/)       |
+| [Go] 1.17                | [`go1_17`](./go1.17/)     |
+| [Go] 1.18                | [`go1_18`](./go1.18/)     |
+| [Hashicorp] tools        | [`hashi`](./hashi/)       |
+| [Java]                   | [`java`](./java/)         |
+| [Kotlin]                 | [`kotlin`](./kotlin/)     |
+| [Nix]                    | [`nix`](./nix/)           |
+| [Node.js][node]          | [`node`](./node/)         |
+| [Open Policy Agent][opa] | [`opa`](./opa)            |
+| [Protobuf]               | [`protobuf`](./protobuf/) |
+| [Rust]                   | [`rust`](./rust/)         |
+| [Scala]                  | [`scala`](./scala/)       |
+| [Zig]                    | [`zig`](./zig/)           |
 
 ## Template contents
 
@@ -138,6 +139,11 @@ The sections below list what each template includes. In all cases, you're free t
 - [pnpm] 7.3.0
 - [Yarn] 1.22.19
 
+### [`opa`](./opa/)
+
+- [Open Policy Agent][opa] 0.43.0
+- [Conftest] 0.33.2
+
 ### [`protobuf`](./protobuf/)
 
 - The [Buf CLI][buf] 1.7.0
@@ -205,6 +211,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nomad]: https://nomadproject.io
 [nomad-autoscaler]: TOhttps://github.com/hashicorp/nomad-autoscaler
 [nomad-pack]: https://github.com/hashicorp/nomad-pack
+[opa]: https://openpolicyagent.org
 [packer]: https://packer.io
 [phoenix]: https://phoenixframework.org
 [pnpm]: https://pnpm.io
