@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Dhall development environment";
+  description = "A Nix-flake-based Cue development environment";
 
   inputs = { dev.url = "github:the-nix-way/dev-templates"; };
 

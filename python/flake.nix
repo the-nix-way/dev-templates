@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Protobuf development environment";
+  description = "A Nix-flake-based Python development environment";
 
   inputs = {
     dev.url = "github:the-nix-way/dev-templates";

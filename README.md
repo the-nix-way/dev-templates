@@ -32,6 +32,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Cue]                    | [`cue`](./cue/)           |
 | [Dhall]                  | [`dhall`](./dhall/)       |
 | [Elixir]                 | [`elixir`](./elixir/)     |
+| [Elm]                    | [`elm`](./elm/)           |
 | [Gleam]                  | [`gleam`](./gleam/)       |
 | [Go] 1.17                | [`go1_17`](./go1.17/)     |
 | [Go] 1.18                | [`go1_18`](./go1.18/)     |
@@ -108,6 +109,11 @@ The sections below list what each template includes. In all cases, you're free t
 - [levant] 0.3.1
 - [damon]
 - [Terragrunt] 0.37.0
+
+### [`haskell`](./haskell/)
+
+- [GHC][haskell] 9.0.2
+- [cabal] 3.6.2.0
 
 ### [`java`](./java)
 
@@ -191,6 +197,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 
 [ant]: https://ant.apache.org
 [buf]: https://github.com/bufbuild/buf
+[cabal]: https://www.haskell.org/cabal
 [cachix]: https://www.cachix.org
 [cargo]: https://doc.rust-lang.org/cargo
 [cargo-audit]: https://crates.io/crates/cargo-audit
@@ -211,7 +218,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [goimports]: https://pkg.go.dev/golang.org/x/tools/cmd/goimports
 [golangci-lint]: https://github.com/golangci/golangci-lint
 [gradle]: https://gradle.org
-[hashicorp]: https://hashicorp.com/
+[hashicorp]: https://hashicorp.com
+[haskell]: https://haskell.org
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [kotlin]: https://kotlinlang.org

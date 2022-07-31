@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Open Policy Agent development environment";
+  description = "A Nix-flake-based Haskell development environment";
 
   inputs = { dev.url = "github:the-nix-way/dev-templates"; };
 
@@ -8,16 +8,15 @@
     in flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) conftest mkShell open-policy-agent;
-
-        opaTools = [ conftest open-policy-agent ];
+        inherit (pkgs) cabal-install ghc mkShell;
       in {
         devShells = {
           default = mkShell {
-            buildInputs = opaTools;
+            buildInputs = [ cabal-install ghc ];
 
             shellHook = ''
-              ${open-policy-agent}/bin/opa version
+              ${ghc}/bin/ghc --version
+              ${cabal-install}/bin/cabal --version
             '';
           };
         };

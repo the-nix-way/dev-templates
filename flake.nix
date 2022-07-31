@@ -50,6 +50,11 @@
           description = "HashiCorp DevOps tools development environment";
         };
 
+        haskell = {
+          path = ./haskell;
+          description = "Haskell development environment";
+        };
+
         java = {
           path = ./java;
           description = "Java development environment";
