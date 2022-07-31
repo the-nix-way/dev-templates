@@ -112,6 +112,11 @@ The sections below list what each template includes. In all cases, you're free t
 - [Kotlin] 1.7.10-release-333
 - [Gradle] 7.5
 
+### [`nim`](./nim)
+
+- [Nim] 1.6.6
+- [nimble] 0.13.1
+
 ### [`nix`](./nix/)
 
 - [Cachix]
@@ -181,6 +186,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [lorri]: https://github.com/target/lorri
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+[nim]: https://nim-lang.org
+[nimble]: https://github.com/nim-lang/nimble
 [niv]: https://github.com/nmattia/niv
 [nix]: https://nixos.org
 [nix-cue]: https://github.com/jmgilman/nix-cue

@@ -8,15 +8,14 @@
     in flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) buf mkShell protobuf;
+        inherit (pkgs) mkShell nim;
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ buf protobuf ];
+            buildInputs = [ nim ];
 
             shellHook = ''
-              echo "buf `${buf}/bin/buf --version`"
-              ${protobuf}/bin/protoc --version
+              ${nim}/bin/nim --version
             '';
           };
         };

@@ -89,6 +89,11 @@
           description = "Kotlin development environment";
         };
 
+        nim = {
+          path = ./nim;
+          description = "Nim development environment";
+        };
+
         nix = {
           path = ./nix;
           description = "Nix development environment";
