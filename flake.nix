@@ -23,7 +23,7 @@
             (
               cd $dir
               ${pkgs.nix}/bin/nix flake update # Update flake.lock
-              ${pkgs.direnv}/bin/direnv reload    # Make sure things work after the update
+              ${pkgs.direnv}/bin/direnv reload # Make sure things work after the update
             )
           done
         '';
