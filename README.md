@@ -172,6 +172,8 @@ The sections below list what each template includes. In all cases, you're free t
   - Version 1.6.2 if neither is present
 
 - [rust-analyzer] 2022-07-11
+- [cargo-audit] 0.17.0
+- [cargo-deny] 0.12.1
 
 ### [`scala`](./scala/)
 
@@ -190,6 +192,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [buf]: https://github.com/bufbuild/buf
 [cachix]: https://www.cachix.org
 [cargo]: https://doc.rust-lang.org/cargo
+[cargo-audit]: https://crates.io/crates/cargo-audit
+[cargo-deny]: https://crates.io/crates/cargo-deny
 [clippy]: https://github.com/rust-lang/rust-clippy
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
