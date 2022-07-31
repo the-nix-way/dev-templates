@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1659265954,
-        "narHash": "sha256-sgQkSxmS1/C8kI1iERyIHgINdykItwA/K92mGDNX5Vc=",
+        "lastModified": 1659266141,
+        "narHash": "sha256-Hl7Y1glo8G5yTVpXQsu2v2yzARzH5B3TlDgXAHm3Txk=",
         "owner": "the-nix-way",
         "repo": "dev-templates",
-        "rev": "7775f8a95d6356ceb10e282e15266845255fd071",
+        "rev": "b2d022db758cdb8d63eefcdacdfb0df1e21a654c",
         "type": "github"
       },
       "original": {

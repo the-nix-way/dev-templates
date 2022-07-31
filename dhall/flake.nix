@@ -4,19 +4,23 @@
   inputs = { dev.url = "github:the-nix-way/dev-templates"; };
 
   outputs = { self, dev }:
-    let inherit (dev.lib) flake-utils nixpkgs;
+    let
+      inherit (dev.lib) flake-utils nixpkgs;
     in flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
         dhall = pkgs.dhall;
 
+        inherit (pkgs) mkShell;
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isLinux;
 
         # Helper function for building dhall-* tools
-        mkDhallTools = ls: builtins.map (tool: pkgs.haskellPackages."dhall-${tool}") ls;
+        mkDhallTools = ls:
+        builtins.map (tool: pkgs.haskellPackages."dhall-${tool}") ls;
 
-        dhallTools = mkDhallTools [
+        # dhall-* tools available only on all platforms
+        dhallToolsCommon = mkDhallTools [
           "bash"
           "docs"
           "json"
@@ -29,19 +33,13 @@
         ];
 
         # dhall-* tools available only on Linux
-        dhallToolsLinux = mkDhallTools [
-          "csv"
-          "haskell"
-          "text"
-        ];
+        dhallToolsLinux = optionals isLinux (mkDhallTools [ "csv" "haskell" "text" ]);
 
-        otherFormats = dhallTools ++ optionals isLinux dhallToolsLinux;
-
-        inherit (pkgs) mkShell;
+        dhallTools = dhallToolsCommon ++ dhallToolsLinux;
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ dhall ] ++ otherFormats;
+            buildInputs = [ dhall ] ++ dhallTools;
 
             shellHook = ''
               echo "dhall `${dhall}/bin/dhall --version`"
