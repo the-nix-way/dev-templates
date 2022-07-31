@@ -32,8 +32,7 @@
         ];
 
         # dhall-* tools available only on Linux
-        dhallToolsLinux =
-          optionals isLinux (mkDhallTools [ "csv" "haskell" "text" ]);
+        dhallToolsLinux = optionals isLinux (mkDhallTools [ "csv" "text" ]);
 
         dhallTools = dhallToolsCommon ++ dhallToolsLinux;
       in {
