@@ -28,15 +28,6 @@
 
               # https://github.com/golangci/golangci-lint
               golangci-lint
-
-              # The Go language server (for IDEs and such)
-              gopls
-
-              # https://pkg.go.dev/github.com/ramya-rao-a/go-outline
-              go-outline
-
-              # https://github.com/uudashr/gopkgs
-              gopkgs
             ];
 
             shellHook = ''

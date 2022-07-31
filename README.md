@@ -69,6 +69,18 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Gleam] 0.22.1
 
+### [`go1.17`](./go1.17/)
+
+- [Go] 1.17
+- Standard Go tools ([goimports], [godoc], and others)
+- [golangci-lint]
+
+### [`go1.18`](./go1.18/)
+
+- [Go] 1.18
+- Standard Go tools ([goimports], [godoc], and others)
+- [golangci-lint]
+
 ### [`java`](./java)
 
 - [Java] 17.0.3
@@ -136,6 +148,9 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [flake-utils]: https://github.com/numtide/flake-utils
 [gleam]: https://gleam.run
 [go]: https://go.dev
+[godoc]: https://pkg.go.dev/golang.org/x/tools/cmd/godoc
+[goimports]: https://pkg.go.dev/golang.org/x/tools/cmd/goimports
+[golangci-lint]: https://github.com/golangci/golangci-lint
 [gradle]: https://gradle.org
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
