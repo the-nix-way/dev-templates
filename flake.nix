@@ -41,9 +41,6 @@
         inherit (pkgs.stdenv) isDarwin isLinux;
       in {
         inherit flake-utils nixpkgs;
-
-        darwinOnly = ls: optionals isDarwin ls;
-        linuxOnly = ls: optionals isLinux ls;
       };
 
       templates = {
