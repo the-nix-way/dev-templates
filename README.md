@@ -29,6 +29,7 @@ Once your preferred template has been initialized, you can use the provided shel
 
 | Language/framework/tool  | Template                  |
 | :----------------------- | :------------------------ |
+| [Cue]                    | [`cue`](./cue/)           |
 | [Dhall]                  | [`dhall`](./dhall/)       |
 | [Elixir]                 | [`elixir`](./elixir/)     |
 | [Gleam]                  | [`gleam`](./gleam/)       |
@@ -37,10 +38,12 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Hashicorp] tools        | [`hashi`](./hashi/)       |
 | [Java]                   | [`java`](./java/)         |
 | [Kotlin]                 | [`kotlin`](./kotlin/)     |
+| [Nim]                    | [`nim`](./nim/)           |
 | [Nix]                    | [`nix`](./nix/)           |
 | [Node.js][node]          | [`node`](./node/)         |
 | [Open Policy Agent][opa] | [`opa`](./opa)            |
 | [Protobuf]               | [`protobuf`](./protobuf/) |
+| [Ruby]                   | [`ruby`](./ruby/)         |
 | [Rust]                   | [`rust`](./rust/)         |
 | [Scala]                  | [`scala`](./scala/)       |
 | [Zig]                    | [`zig`](./zig/)           |
@@ -149,6 +152,10 @@ The sections below list what each template includes. In all cases, you're free t
 - The [Buf CLI][buf] 1.7.0
 - [protoc][protobuf] 3.19.4
 
+### [`ruby`](./ruby/)
+
+- [Ruby] 3.1.2p20, plus the standard Ruby tools (`bundle`, `gem`, etc.)
+
 ### [`rust`](./rust/)
 
 - [Rust], including [cargo], [Clippy], and the other standard tools. The Rust version is determined as follows, in order:
@@ -216,6 +223,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [phoenix]: https://phoenixframework.org
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
+[ruby]: https://ruby-lang.org
 [rust]: https://rust-lang.org
 [scala]: https://scala-lang.org
 [statix]: https://github.com/nerdypepper/statix

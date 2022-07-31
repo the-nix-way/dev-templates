@@ -130,6 +130,11 @@
           description = "Protobuf development environment";
         };
 
+        ruby = {
+          path = ./ruby;
+          description = "Ruby development environment";
+        };
+
         rust = {
           path = ./rust;
           description = "Rust development environment";
