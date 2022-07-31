@@ -35,6 +35,10 @@
         };
       }
     ) // {
+      lib = {
+        inherit flake-utils nixpkgs;
+      };
+
       templates = {
         dhall = {
           path = ./dhall;
