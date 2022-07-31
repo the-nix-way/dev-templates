@@ -11,26 +11,37 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) mkShell;
-        format = pkgs.writeScriptBin "format" ''
-          ${pkgs.nixfmt}/bin/nixfmt **/*.nix
+        inherit (pkgs) mkShell writeScriptBin;
+        run = pkg: "${pkgs.${pkg}}/bin/${pkg}";
+
+        format = writeScriptBin "format" ''
+          ${run "nixfmt"} **/*.nix
         '';
-        update = pkgs.writeScriptBin "update" ''
+        update = writeScriptBin "update" ''
           # Update root
-          ${pkgs.nix}/bin/nix flake update
+          $${run "nix"} flake update
 
           for dir in `ls -d */`; do # Iterate through all the templates
             (
               cd $dir
-              ${pkgs.nix}/bin/nix flake update # Update flake.lock
-              ${pkgs.direnv}/bin/direnv reload # Make sure things work after the update
+              ${run "nix"} flake update # Update flake.lock
+              ${run "direnv"} reload    # Make sure things work after the update
+            )
+          done
+        '';
+
+        visit = writeScriptBin "visit" ''
+          for dir in `ls -d */`; do
+            (
+              cd $dir
+              ${run "direnv"} reload
             )
           done
         '';
       in {
         devShells = {
           default = mkShell {
-            buildInputs = with pkgs; [ format update ];
+            buildInputs = [ format update visit ];
           };
         };
       }
