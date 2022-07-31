@@ -74,6 +74,11 @@
           description = "Go 1.18 development environment";
         };
 
+        hashi = {
+          path = ./hashi;
+          description = "HashiCorp DevOps tools development environment";
+        };
+
         java = {
           path = ./java;
           description = "Java development environment";
