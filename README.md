@@ -32,6 +32,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Gleam]                 | [`gleam`](./gleam/)       |
 | [Go] 1.17               | [`go1_17`](./go1.17/)     |
 | [Go] 1.18               | [`go1_18`](./go1.18/)     |
+| [Hashicorp] tools       | [`hashi`](./hashi/)       |
 | [Java]                  | [`java`](./java/)         |
 | [Kotlin]                | [`kotlin`](./kotlin/)     |
 | [Nix]                   | [`nix`](./nix/)           |
@@ -80,6 +81,12 @@ The sections below list what each template includes. In all cases, you're free t
 - [Go] 1.18
 - Standard Go tools ([goimports], [godoc], and others)
 - [golangci-lint]
+
+### [`hashi`](./hashi/)
+
+- [Terraform] 1.2.6
+- [Packer] 1.8.2
+- [Terragrunt] 0.37.0
 
 ### [`java`](./java)
 
@@ -152,6 +159,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [goimports]: https://pkg.go.dev/golang.org/x/tools/cmd/goimports
 [golangci-lint]: https://github.com/golangci/golangci-lint
 [gradle]: https://gradle.org
+[hashicorp]: https://hashicorp.com/
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [kotlin]: https://kotlinlang.org
@@ -164,6 +172,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [node]: https://nodejs.org
+[packer]: https://packer.io
 [phoenix]: https://phoenixframework.org
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
@@ -171,6 +180,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [scala]: https://scala-lang.org
 [statix]: https://github.com/nerdypepper/statix
 [sbt]: https://www.scala-sbt.org
+[terraform]: https://terraform.io
+[terragrunt]: https://terragrunt.gruntwork.io
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org
