@@ -1,5 +1,24 @@
 {
   "nodes": {
+    "dev": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1659264500,
+        "narHash": "sha256-N87HcKMmIW0Gear0aGulCfaY1DSabSSv/FBH5qoVbDg=",
+        "owner": "the-nix-way",
+        "repo": "dev-templates",
+        "rev": "3e0478c9c4a1f32730adf545fd1a2d7099bf6842",
+        "type": "github"
+      },
+      "original": {
+        "owner": "the-nix-way",
+        "repo": "dev-templates",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1656928814,
@@ -32,8 +51,7 @@
     },
     "root": {
       "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "dev": "dev"
       }
     }
   },
