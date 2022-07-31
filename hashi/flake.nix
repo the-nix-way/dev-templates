@@ -1,6 +1,6 @@
 {
   description =
-    "A Nix-flake-based development environment for Terraform and Packer";
+    "A Nix-flake-based development environment for Terraform, Packer, and Nomad";
 
   inputs = { dev.url = "github:the-nix-way/dev-templates"; };
 
@@ -10,9 +10,12 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        inherit (pkgs) mkShell packer terraform;
+        inherit (pkgs)
+          damon levant mkShell nomad nomad-autoscaler nomad-pack packer
+          terraform;
 
-        hashiTools = [ packer terraform ];
+        hashiTools =
+          [ packer terraform nomad nomad-autoscaler nomad-pack levant damon ];
 
         relatedTools = with pkgs; [ terragrunt ];
       in {
@@ -23,6 +26,7 @@
             shellHook = ''
               echo "packer `${packer}/bin/packer --version`"
               ${terraform}/bin/terraform --version
+              ${nomad}/bin/nomad --version
             '';
           };
         };

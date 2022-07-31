@@ -86,6 +86,11 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Terraform] 1.2.6
 - [Packer] 1.8.2
+- [Nomad] 1.2.9
+- [nomad-autoscaler] 0.3.6-dev
+- [nomad-pack] 0.0.1-techpreview.3
+- [levant] 0.3.1
+- [damon]
 - [Terragrunt] 0.37.0
 
 ### [`java`](./java)
@@ -149,6 +154,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cachix]: https://www.cachix.org
 [cargo]: https://doc.rust-lang.org/cargo
 [clippy]: https://github.com/rust-lang/rust-clippy
+[damon]: https://github.com/hashicorp/damon
 [dhall]: https://dhall-lang.org
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [elixir]: https://elixir-lang.org
@@ -163,6 +169,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [kotlin]: https://kotlinlang.org
+[levant]: https://github.com/hashicorp/levant
 [lorri]: https://github.com/target/lorri
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
@@ -172,6 +179,9 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [node]: https://nodejs.org
+[nomad]: https://nomadproject.io
+[nomad-autoscaler]: TOhttps://github.com/hashicorp/nomad-autoscaler
+[nomad-pack]: https://github.com/hashicorp/nomad-pack
 [packer]: https://packer.io
 [phoenix]: https://phoenixframework.org
 [pnpm]: https://pnpm.io
