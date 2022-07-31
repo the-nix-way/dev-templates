@@ -59,6 +59,11 @@
           description = "Elixir development environment";
         };
 
+        elm = {
+          path = ./elm;
+          description = "Elm development environment";
+        };
+
         gleam = {
           path = ./gleam;
           description = "Gleam development environment";

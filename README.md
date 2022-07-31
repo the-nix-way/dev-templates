@@ -73,6 +73,11 @@ The sections below list what each template includes. In all cases, you're free t
 - [Elixir] 1.13.4, including [mix] and [IEx]
 - [Node.js][node] 18.7.0 (largely for [Phoenix] projects)
 
+### [`elm`](./elm/)
+
+- [Elm] 0.19.1
+- [elm2nix] 0.2.1
+
 ### [`gleam`](./gleam/)
 
 - [Gleam] 0.22.1
@@ -171,6 +176,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [dhall]: https://dhall-lang.org
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [elixir]: https://elixir-lang.org
+[elm]: https://elm-lang.org
+[elm2nix]: https://github.com/cachix/elm2nix
 [flake-utils]: https://github.com/numtide/flake-utils
 [gleam]: https://gleam.run
 [go]: https://go.dev
