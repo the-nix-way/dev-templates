@@ -152,6 +152,13 @@ The sections below list what each template includes. In all cases, you're free t
 - The [Buf CLI][buf] 1.7.0
 - [protoc][protobuf] 3.19.4
 
+### [`python`](./python/)
+
+- [Python] 3.11.0b4
+- [pip]
+- [Virtualenv]
+- [mach-nix]
+
 ### [`ruby`](./ruby/)
 
 - [Ruby] 3.1.2p20, plus the standard Ruby tools (`bundle`, `gem`, etc.)
@@ -204,6 +211,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [kotlin]: https://kotlinlang.org
 [levant]: https://github.com/hashicorp/levant
 [lorri]: https://github.com/target/lorri
+[mach-nix]: https://github.com/DavHau/mach-nix
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
 [nim]: https://nim-lang.org
@@ -220,9 +228,11 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nomad-pack]: https://github.com/hashicorp/nomad-pack
 [opa]: https://openpolicyagent.org
 [packer]: https://packer.io
+[pip]: https://pypi.org/project/pip
 [phoenix]: https://phoenixframework.org
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
+[python]: https://python.org
 [ruby]: https://ruby-lang.org
 [rust]: https://rust-lang.org
 [scala]: https://scala-lang.org
@@ -230,6 +240,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [sbt]: https://www.scala-sbt.org
 [terraform]: https://terraform.io
 [terragrunt]: https://terragrunt.gruntwork.io
+[virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org

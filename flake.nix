@@ -130,6 +130,11 @@
           description = "Protobuf development environment";
         };
 
+        python = {
+          path = ./python;
+          description = "Python development environment";
+        };
+
         ruby = {
           path = ./ruby;
           description = "Ruby development environment";
