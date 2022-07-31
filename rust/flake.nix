@@ -7,8 +7,7 @@
   };
 
   outputs = { self, dev, rust-overlay }:
-    let
-      inherit (dev.lib) flake-utils nixpkgs;
+    let inherit (dev.lib) flake-utils nixpkgs;
     in flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];

@@ -1,13 +1,10 @@
 {
   description = "A Nix-flake-based Go 1.18 development environment";
 
-  inputs = {
-    dev.url = "github:the-nix-way/dev-templates";
-  };
+  inputs = { dev.url = "github:the-nix-way/dev-templates"; };
 
   outputs = { self, dev }:
-    let
-      inherit (dev.lib) flake-utils nixpkgs;
+    let inherit (dev.lib) flake-utils nixpkgs;
     in flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
