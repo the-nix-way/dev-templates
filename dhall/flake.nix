@@ -4,8 +4,7 @@
   inputs = { dev.url = "github:the-nix-way/dev-templates"; };
 
   outputs = { self, dev }:
-    let
-      inherit (dev.lib) flake-utils nixpkgs;
+    let inherit (dev.lib) flake-utils nixpkgs;
     in flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
@@ -17,7 +16,7 @@
 
         # Helper function for building dhall-* tools
         mkDhallTools = ls:
-        builtins.map (tool: pkgs.haskellPackages."dhall-${tool}") ls;
+          builtins.map (tool: pkgs.haskellPackages."dhall-${tool}") ls;
 
         # dhall-* tools available only on all platforms
         dhallToolsCommon = mkDhallTools [
@@ -33,7 +32,8 @@
         ];
 
         # dhall-* tools available only on Linux
-        dhallToolsLinux = optionals isLinux (mkDhallTools [ "csv" "haskell" "text" ]);
+        dhallToolsLinux =
+          optionals isLinux (mkDhallTools [ "csv" "haskell" "text" ]);
 
         dhallTools = dhallToolsCommon ++ dhallToolsLinux;
       in {
