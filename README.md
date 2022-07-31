@@ -48,6 +48,11 @@ Once your preferred template has been initialized, you can use the provided shel
 
 The sections below list what each template includes. In all cases, you're free to add and remove packages as you see fit; the templates are just boilerplate.
 
+### [`cue`](./cue/)
+
+- [Cue] 0.4.3
+- [nix-cue]
+
 ### [`dhall`](./dhall)
 
 - [Dhall] 1.40.2
@@ -156,6 +161,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cachix]: https://www.cachix.org
 [cargo]: https://doc.rust-lang.org/cargo
 [clippy]: https://github.com/rust-lang/rust-clippy
+[cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
 [dhall]: https://dhall-lang.org
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
@@ -177,6 +183,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
 [niv]: https://github.com/nmattia/niv
 [nix]: https://nixos.org
+[nix-cue]: https://github.com/jmgilman/nix-cue
 [nixfmt]: https://github.com/serokell/nixfmt
 [nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv

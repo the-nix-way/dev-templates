@@ -44,6 +44,11 @@
       };
 
       templates = {
+        cue = {
+          path = ./cue;
+          description = "Cue development environment";
+        };
+
         dhall = {
           path = ./dhall;
           description = "Dhall development environment";
