@@ -174,6 +174,7 @@ The sections below list what each template includes. In all cases, you're free t
 - [rust-analyzer] 2022-07-11
 - [cargo-audit] 0.17.0
 - [cargo-deny] 0.12.1
+- [cross] 0.2.4
 
 ### [`scala`](./scala/)
 
@@ -195,6 +196,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
 [clippy]: https://github.com/rust-lang/rust-clippy
+[cross]: https://github.com/cross-rs/cross
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
 [dhall]: https://dhall-lang.org
