@@ -13,7 +13,10 @@
         overlays = [ (import rust-overlay) ];
 
         pkgs = import nixpkgs { inherit system overlays; };
-        inherit (pkgs) rust-bin;
+
+        inherit (pkgs) mkShell rust-bin;
+        inherit (pkgs.lib) optionals;
+        inherit (pkgs.stdenv) isLinux;
 
         rust = if builtins.pathExists ./rust-toolchain.toml then
           rust-bin.fromRustupToolchainFile ./rust-toolchain.toml
@@ -22,19 +25,15 @@
         else
           rust-bin.stable.latest.default;
 
-        helpers = with pkgs; [ openssl pkgconfig ];
-
-        inherit (pkgs) mkShell;
-        inherit (pkgs.lib) optionals;
-        inherit (pkgs.stdenv) isDarwin;
+        deps = with pkgs; [ openssl pkgconfig ];
+        rustTools = with pkgs;
+          [ cargo-profiler rust-analyzer ] ++ optionals isLinux (with pkgs; [ cargo-watch ]);
       in {
         packages.default = rust;
 
         devShells = {
           default = mkShell {
-            nativeBuildInputs = [ rust ];
-
-            buildInputs = helpers;
+            nativeBuildInputs = [ rust ] ++ deps ++ rustTools;
 
             shellHook = ''
               ${rust}/bin/cargo --version
