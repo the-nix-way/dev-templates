@@ -69,25 +69,93 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Gleam] 0.22.1
 
+### [`java`](./java)
+
+- [Java] 17.0.3
+- [Maven] 3.8.5
+- [Gradle] 7.5
+- [Ant] 1.10.11
+
+### [`kotlin`](./kotlin/)
+
+- [Kotlin] 1.7.10-release-333
+- [Gradle] 7.5
+
+### [`nix`](./nix/)
+
+- [Cachix]
+- [dhall-to-nix] 1.1.23
+- [lorri]
+- [niv]
+- [nixfmt]
+- [statix]
+- [vulnix]
+
+### [`node`](./node/)
+
+- [Node.js][node] 18.7.0
+- [pnpm] 7.3.0
+- [Yarn] 1.22.19
+
+### [`protobuf`](./protobuf/)
+
+- The [Buf CLI][buf] 1.7.0
+- [protoc][protobuf] 3.19.4
+
+### [`rust`](./rust/)
+
+- [Rust], including [cargo], [Clippy], and the other standard tools. The Rust version is determined as follows, in order:
+
+  - From the `rust-toolchain.toml` file if present
+  - From the `rust-toolchain` file if present
+  - Version 1.6.2 if neither is present
+
+- [rust-analyzer] 2022-07-11
+
+### [`scala`](./scala/)
+
+- [Scala] 3.1.0 ([Java] 17.0.3)
+- [sbt] 1.6.2
+
+### [`zig`](./zig/)
+
+- [Zig] 0.9.1
+
 ## Code organization
 
 All of the templates have only the root [flake](./flake.nix) as a flake input. That root flake provides a common revision of [Nixpkgs] and [`flake-utils`][flake-utils] to all the templates.
 
+[ant]: https://ant.apache.org
+[buf]: https://github.com/bufbuild/buf
+[cachix]: https://www.cachix.org
+[cargo]: https://doc.rust-lang.org/cargo
+[clippy]: https://github.com/rust-lang/rust-clippy
 [dhall]: https://dhall-lang.org
+[dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [elixir]: https://elixir-lang.org
 [flake-utils]: https://github.com/numtide/flake-utils
 [gleam]: https://gleam.run
 [go]: https://go.dev
+[gradle]: https://gradle.org
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [kotlin]: https://kotlinlang.org
+[lorri]: https://github.com/target/lorri
+[maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+[niv]: https://github.com/nmattia/niv
 [nix]: https://nixos.org
+[nixfmt]: https://github.com/serokell/nixfmt
 [nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [node]: https://nodejs.org
 [phoenix]: https://phoenixframework.org
+[pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
 [rust]: https://rust-lang.org
 [scala]: https://scala-lang.org
+[statix]: https://github.com/nerdypepper/statix
+[sbt]: https://www.scala-sbt.org
+[vulnix]: https://github.com/flyingcircusio/vulnix
+[yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org

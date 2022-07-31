@@ -11,13 +11,13 @@
 
         inherit (pkgs) mkShell;
 
-        nodejs = pkgs.nodejs;
+        nodejs = pkgs.nodejs-18_x;
         pnpm = pkgs.nodePackages.pnpm;
-        yarn = pkgs.yarn;
+        yarn = (pkgs.yarn.override { inherit nodejs; });
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ nodejs pnpm (yarn.override { inherit nodejs; }) ];
+            buildInputs = [ nodejs pnpm yarn ];
 
             shellHook = ''
               echo "node `${nodejs}/bin/node --version`"

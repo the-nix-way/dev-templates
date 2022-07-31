@@ -8,7 +8,6 @@
     in flake-utils.lib.eachDefaultSystem (system:
       let
         jdk = "jdk17";
-        jdkPkg = pkgs.${jdk};
 
         config = {
           packageOverrides = p: {
@@ -27,7 +26,7 @@
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ scala jdkPkg ] ++ buildTools;
+            buildInputs = [ scala ] ++ buildTools;
 
             shellHook = ''
               ${scala}/bin/scala -version

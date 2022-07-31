@@ -7,22 +7,22 @@
     let inherit (dev.lib) flake-utils nixpkgs;
     in flake-utils.lib.eachDefaultSystem (system:
       let
-        jdk = "jdk17";
+        jdk = pkgs.jdk17;
 
         config = {
           packageOverrides = p: {
-            gradle = (p.gradle.override { java = p.${jdk}; });
+            gradle = (p.gradle.override { java = jdk; });
 
-            kotlin = (p.kotlin.override { jre = p.${jdk}; });
+            kotlin = (p.kotlin.override { jre = jdk; });
           };
         };
 
         pkgs = import nixpkgs { inherit config system; };
+        inherit (pkgs) mkShell;
+
         kotlin = pkgs.kotlin;
         buildTools = with pkgs; [ gradle ];
         otherTools = with pkgs; [ gcc ncurses patchelf zlib ];
-
-        inherit (pkgs) mkShell;
       in {
         devShells = {
           default = mkShell {

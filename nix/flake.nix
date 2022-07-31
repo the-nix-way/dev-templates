@@ -9,7 +9,6 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        nix = pkgs.nixUnstable;
         dhallNix = pkgs.haskellPackages.dhall-nix;
 
         nixRelatedTools = with pkgs; [
@@ -18,14 +17,12 @@
           lorri
           niv
           nixfmt
-          nixpkgs-fmt
           statix
+          vulnix
         ];
 
         inherit (pkgs) mkShell;
       in {
-        devShells = {
-          default = mkShell { buildInputs = [ nix ] ++ nixRelatedTools; };
-        };
+        devShells = { default = mkShell { buildInputs = nixRelatedTools; }; };
       });
 }

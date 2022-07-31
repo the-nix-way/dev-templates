@@ -27,8 +27,7 @@
 
         deps = with pkgs; [ openssl pkgconfig ];
         rustTools = with pkgs;
-          [ cargo-profiler rust-analyzer ]
-          ++ optionals isLinux (with pkgs; [ cargo-watch ]);
+          [ rust-analyzer ] ++ optionals isLinux (with pkgs; [ cargo-watch ]);
       in {
         packages.default = rust;
 
