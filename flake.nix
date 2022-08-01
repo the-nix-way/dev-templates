@@ -65,6 +65,11 @@
           description = "Kotlin development environment";
         };
 
+        nickel = {
+          path = ./nickel;
+          description = "Nickel development environment";
+        };
+
         nim = {
           path = ./nim;
           description = "Nim development environment";

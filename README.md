@@ -39,6 +39,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Hashicorp] tools        | [`hashi`](./hashi/)       |
 | [Java]                   | [`java`](./java/)         |
 | [Kotlin]                 | [`kotlin`](./kotlin/)     |
+| [Nickel]                 | [`nickel`](./nickel/)     |
 | [Nim]                    | [`nim`](./nim/)           |
 | [Nix]                    | [`nix`](./nix/)           |
 | [Node.js][node]          | [`node`](./node/)         |
@@ -126,6 +127,10 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Kotlin] 1.7.10-release-333
 - [Gradle] 7.5
+
+### [`nickel`](./nickel/)
+
+- [Nickel] 0.1.0
 
 ### [`nim`](./nim)
 
@@ -228,6 +233,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [mach-nix]: https://github.com/DavHau/mach-nix
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+[nickel]: https://nickel-lang.org
 [nim]: https://nim-lang.org
 [nimble]: https://github.com/nim-lang/nimble
 [niv]: https://github.com/nmattia/niv
