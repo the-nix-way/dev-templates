@@ -137,6 +137,7 @@
         format = writeScriptBin "format" ''
           ${run "nixfmt"} **/*.nix
         '';
+
         update = writeScriptBin "update" ''
           # Update root
           $${run "nix"} flake update
