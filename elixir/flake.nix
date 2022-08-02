@@ -10,17 +10,15 @@
         pkgs = import nixpkgs { inherit system; };
 
         inherit (pkgs)
-          darwin inotify-tools mkShell nodejs-18_x terminal-notifier;
+          darwin gigalixir inotify-tools libnotify mkShell nodejs-18_x terminal-notifier;
         inherit (pkgs.beam.packages.erlangR25) elixir elixir_ls;
+        inherit (pkgs.darwin.apple_sdk.frameworks) CoreFoundation CoreServices;
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isDarwin isLinux;
 
-        linuxDeps = optionals isLinux [ inotify-tools ];
+        linuxDeps = optionals isLinux [ gigalixir inotify-tools libnotify ];
         darwinDeps = optionals isDarwin [ terminal-notifier ]
-          ++ (with darwin.apple_sdk.frameworks; [
-            CoreFoundation
-            CoreServices
-          ]);
+          ++ [ CoreFoundation CoreServices ];
       in {
         devShells = {
           default = mkShell {

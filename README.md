@@ -77,6 +77,7 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`elixir`](./elixir/)
 
 - [Elixir] 1.13.4, including [mix] and [IEx]
+- [gigalixir] (Linux only)
 - [Node.js][node] 18.7.0 (largely for [Phoenix] projects)
 
 ### [`elm`](./elm/)
@@ -219,6 +220,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [elm]: https://elm-lang.org
 [elm2nix]: https://github.com/cachix/elm2nix
 [flake-utils]: https://github.com/numtide/flake-utils
+[gigalixir]: https://www.gigalixir.com
 [gleam]: https://gleam.run
 [go]: https://go.dev
 [godoc]: https://pkg.go.dev/golang.org/x/tools/cmd/godoc
