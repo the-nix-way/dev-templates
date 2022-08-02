@@ -208,6 +208,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
 [clippy]: https://github.com/rust-lang/rust-clippy
+[conftest]: https://www.conftest.dev
 [cross]: https://github.com/cross-rs/cross
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
@@ -255,6 +256,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [python]: https://python.org
 [ruby]: https://ruby-lang.org
 [rust]: https://rust-lang.org
+[rust-analyzer]: https://rust-analyzer.github.io
 [scala]: https://scala-lang.org
 [statix]: https://github.com/nerdypepper/statix
 [sbt]: https://www.scala-sbt.org
@@ -264,3 +266,4 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org
+
