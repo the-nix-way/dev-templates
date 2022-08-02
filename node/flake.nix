@@ -9,7 +9,7 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        inherit (pkgs) mkShell;
+        inherit (pkgs) mkShell node2nix;
 
         nodejs = pkgs.nodejs-18_x;
         pnpm = pkgs.nodePackages.pnpm;
@@ -17,7 +17,7 @@
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ nodejs pnpm yarn ];
+            buildInputs = [ node2nix nodejs pnpm yarn ];
 
             shellHook = ''
               echo "node `${nodejs}/bin/node --version`"

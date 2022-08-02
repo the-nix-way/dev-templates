@@ -152,6 +152,7 @@ The sections below list what each template includes. In all cases, you're free t
 - [Node.js][node] 18.7.0
 - [pnpm] 7.3.0
 - [Yarn] 1.22.19
+- [node2nix] 1.11.1
 
 ### [`opa`](./opa/)
 
@@ -244,6 +245,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [node]: https://nodejs.org
+[node2nix]: https://github.com/svanderburg/node2nix
 [nomad]: https://nomadproject.io
 [nomad-autoscaler]: TOhttps://github.com/hashicorp/nomad-autoscaler
 [nomad-pack]: https://github.com/hashicorp/nomad-pack
@@ -266,4 +268,3 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org
-
