@@ -132,37 +132,25 @@
       let
         pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) mkShell writeScriptBin;
-        run = pkg: "${pkgs.${pkg}}/bin/${pkg}";
+        exec = pkg: "${pkgs.${pkg}}/bin/${pkg}";
 
         format = writeScriptBin "format" ''
-          ${run "nixfmt"} **/*.nix
+          ${exec "nixfmt"} **/*.nix
         '';
 
         update = writeScriptBin "update" ''
-          # Update root
-          ${run "nix"} flake update
-
           for dir in `ls -d */`; do # Iterate through all the templates
             (
               cd $dir
-              ${run "nix"} flake update # Update flake.lock
-              ${run "direnv"} reload    # Make sure things work after the update
-            )
-          done
-        '';
-
-        visit = writeScriptBin "visit" ''
-          for dir in `ls -d */`; do
-            (
-              cd $dir
-              ${run "direnv"} reload
+              ${exec "nix"} flake update # Update flake.lock
+              ${exec "direnv"} reload    # Make sure things work after the update
             )
           done
         '';
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ format update visit ];
+            buildInputs = [ format update ];
           };
         };
       }

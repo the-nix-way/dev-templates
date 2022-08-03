@@ -131,7 +131,7 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`nickel`](./nickel/)
 
-- [Nickel] 0.1.0
+- [Nickel] 0.2.0
 
 ### [`nim`](./nim)
 
@@ -151,6 +151,7 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`node`](./node/)
 
 - [Node.js][node] 18.7.0
+- [npm] 8.15.0
 - [pnpm] 7.3.0
 - [Yarn] 1.22.19
 - [node2nix] 1.11.1
@@ -158,7 +159,7 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`opa`](./opa/)
 
 - [Open Policy Agent][opa] 0.43.0
-- [Conftest] 0.33.2
+- [Conftest] 0.34.0
 
 ### [`protobuf`](./protobuf/)
 
@@ -168,8 +169,8 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`python`](./python/)
 
 - [Python] 3.11.0b4
-- [pip]
-- [Virtualenv]
+- [pip] 22.1.2
+- [Virtualenv] 20.15.1
 - [mach-nix]
 
 ### [`ruby`](./ruby/)
@@ -184,7 +185,7 @@ The sections below list what each template includes. In all cases, you're free t
   - From the `rust-toolchain` file if present
   - Version 1.6.2 if neither is present
 
-- [rust-analyzer] 2022-07-11
+- [rust-analyzer] 2022-08-01
 - [cargo-audit] 0.17.0
 - [cargo-deny] 0.12.1
 - [cross] 0.2.4
@@ -251,6 +252,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nomad]: https://nomadproject.io
 [nomad-autoscaler]: TOhttps://github.com/hashicorp/nomad-autoscaler
 [nomad-pack]: https://github.com/hashicorp/nomad-pack
+[npm]: https://npmjs.org
 [opa]: https://openpolicyagent.org
 [packer]: https://packer.io
 [pip]: https://pypi.org/project/pip
