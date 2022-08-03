@@ -140,7 +140,7 @@
 
         update = writeScriptBin "update" ''
           # Update root
-          $${run "nix"} flake update
+          ${run "nix"} flake update
 
           for dir in `ls -d */`; do # Iterate through all the templates
             (
