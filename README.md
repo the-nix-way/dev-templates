@@ -49,6 +49,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Ruby]                   | [`ruby`](./ruby/)         |
 | [Rust]                   | [`rust`](./rust/)         |
 | [Scala]                  | [`scala`](./scala/)       |
+| [WebAssembly][wasm]      | [`wasm`](./wasm)          |
 | [Zig]                    | [`zig`](./zig/)           |
 
 ## Template contents
@@ -58,6 +59,7 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`clojure`](./clojure/)
 
 - [Clojure] 1.11.1.1149
+- [Boot] 2.8.3
 - [Leiningen] 2.9.8
 
 ### [`cue`](./cue/)
@@ -210,6 +212,7 @@ The sections below list what each template includes. In all cases, you're free t
 All of the templates have only the root [flake](./flake.nix) as a flake input. That root flake provides a common revision of [Nixpkgs] and [`flake-utils`][flake-utils] to all the templates.
 
 [ant]: https://ant.apache.org
+[boot]: https://www.boot-clj.com
 [buf]: https://github.com/bufbuild/buf
 [cabal]: https://www.haskell.org/cabal
 [cachix]: https://www.cachix.org
@@ -278,5 +281,6 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [terragrunt]: https://terragrunt.gruntwork.io
 [virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
+[wasm]: https://webassembly.org/
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org

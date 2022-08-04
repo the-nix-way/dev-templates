@@ -11,19 +11,21 @@
 
         config = {
           packageOverrides = p: {
+            boot = p.boot.override { jdk = p.${jdk}; };
             clojure = p.clojure.override { jdk = p.${jdk}; };
             leiningen = p.leiningen.override { jdk = p.${jdk}; };
           };
         };
 
         pkgs = import nixpkgs { inherit config system; };
-        inherit (pkgs) clojure leiningen mkShell;
+        inherit (pkgs) boot clojure leiningen mkShell;
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ clojure leiningen ];
+            buildInputs = [ boot clojure leiningen ];
 
             shellHook = ''
+              ${clojure}/bin/clj --version
             '';
           };
         };
