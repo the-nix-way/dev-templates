@@ -29,6 +29,7 @@ Once your preferred template has been initialized, you can use the provided shel
 
 | Language/framework/tool  | Template                  |
 | :----------------------- | :------------------------ |
+| [Clojure]                | [`clojure`](./clojure/)   |
 | [Cue]                    | [`cue`](./cue/)           |
 | [Dhall]                  | [`dhall`](./dhall/)       |
 | [Elixir]                 | [`elixir`](./elixir/)     |
@@ -53,6 +54,11 @@ Once your preferred template has been initialized, you can use the provided shel
 ## Template contents
 
 The sections below list what each template includes. In all cases, you're free to add and remove packages as you see fit; the templates are just boilerplate.
+
+### [`clojure`](./clojure/)
+
+- [Clojure] 1.11.1.1149
+- [Leiningen] 2.9.8
 
 ### [`cue`](./cue/)
 
@@ -211,6 +217,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
 [clippy]: https://github.com/rust-lang/rust-clippy
+[clojure]: https://clojure.org
 [conftest]: https://www.conftest.dev
 [cross]: https://github.com/cross-rs/cross
 [cue]: https://cuelang.org
@@ -233,6 +240,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [kotlin]: https://kotlinlang.org
+[leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant
 [lorri]: https://github.com/target/lorri
 [mach-nix]: https://github.com/DavHau/mach-nix
