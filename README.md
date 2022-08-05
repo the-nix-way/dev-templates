@@ -49,7 +49,6 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Ruby]                   | [`ruby`](./ruby/)         |
 | [Rust]                   | [`rust`](./rust/)         |
 | [Scala]                  | [`scala`](./scala/)       |
-| [WebAssembly][wasm]      | [`wasm`](./wasm)          |
 | [Zig]                    | [`zig`](./zig/)           |
 
 ## Template contents
@@ -281,6 +280,5 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [terragrunt]: https://terragrunt.gruntwork.io
 [virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
-[wasm]: https://webassembly.org/
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org
