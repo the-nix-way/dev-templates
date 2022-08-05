@@ -10,7 +10,7 @@
         pkgs = import nixpkgs { inherit system; };
 
         inherit (pkgs)
-          darwin gigalixir inotify-tools libnotify mkShell nodejs-18_x
+          darwin gigalixir inotify-tools libnotify mkShell
           terminal-notifier;
         inherit (pkgs.beam.packages.erlangR25) elixir elixir_ls;
         inherit (pkgs.darwin.apple_sdk.frameworks) CoreFoundation CoreServices;
@@ -23,7 +23,7 @@
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [ elixir elixir_ls nodejs-18_x ] ++ linuxDeps
+            buildInputs = [ elixir elixir_ls ] ++ linuxDeps
               ++ darwinDeps;
 
             shellHook = ''

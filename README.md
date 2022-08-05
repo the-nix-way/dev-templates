@@ -69,28 +69,27 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`dhall`](./dhall)
 
 - [Dhall] 1.40.2
-- [`dhall-bash`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash)
-- [`dhall-csv`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-csv) (Linux only)
-- [`dhall-docs`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-docs)
-- [`dhall-json`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json)
-- [`dhall-lsp-server`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server)
-- [`dhall-nix`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix)
-- [`dhall-nixpkgs`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nixpkgs)
-- [`dhall-openapi`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-openapi)
-- [`dhall-text`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-text) (Linux only)
-- [`dhall-toml`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml)
-- [`dhall-yaml`](https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml)
+- [dhall-bash]
+- [dhall-csv] (Linux only)
+- [dhall-docs]
+- [dhall-json]
+- [dhall-lsp-server]
+- [dhall-nix]
+- [dhall-nixpkgs]
+- [dhall-openapi]
+- [dhall-text] (Linux only)
+- [dhall-toml]
+- [dhall-yaml]
 
 ### [`elixir`](./elixir/)
 
 - [Elixir] 1.13.4, including [mix] and [IEx]
 - [gigalixir] (Linux only)
-- [Node.js][node] 18.7.0 (largely for [Phoenix] projects)
 
 ### [`elm`](./elm/)
 
 - [Elm] 0.19.1
-- [elm2nix] 0.2.1
+- [elm2nix]
 
 ### [`gleam`](./gleam/)
 
@@ -115,7 +114,7 @@ The sections below list what each template includes. In all cases, you're free t
 - [Nomad] 1.2.9
 - [nomad-autoscaler] 0.3.6-dev
 - [nomad-pack] 0.0.1-techpreview.3
-- [levant] 0.3.1
+- [levant] 0.3.1-dev
 - [damon]
 - [Terragrunt] 0.37.0
 
@@ -147,7 +146,7 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`nix`](./nix/)
 
-- [Cachix]
+- [Cachix] 0.8.1
 - [dhall-to-nix] 1.1.23
 - [lorri]
 - [niv]
@@ -225,7 +224,18 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
 [dhall]: https://dhall-lang.org
+[dhall-bash]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash
+[dhall-csv]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-csv
+[dhall-docs]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-docs
+[dhall-json]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json
+[dhall-lsp-server]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server
+[dhall-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
+[dhall-nixpkgs]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nixpkgs
+[dhall-openapi]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-openapi
+[dhall-text]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-text
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
+[dhall-toml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml
+[dhall-yaml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml
 [elixir]: https://elixir-lang.org
 [elm]: https://elm-lang.org
 [elm2nix]: https://github.com/cachix/elm2nix
