@@ -110,8 +110,8 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`hashi`](./hashi/)
 
-- [Terraform] 1.2.7
 - [Packer] 1.8.2
+- [Terraform] 1.2.7
 - [Nomad] 1.2.9
 - [Vault] 1.11.2
 - [nomad-autoscaler] 0.3.6-dev
