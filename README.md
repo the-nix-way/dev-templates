@@ -280,7 +280,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [node]: https://nodejs.org
 [node2nix]: https://github.com/svanderburg/node2nix
 [nomad]: https://nomadproject.io
-[nomad-autoscaler]: TOhttps://github.com/hashicorp/nomad-autoscaler
+[nomad-autoscaler]: https://github.com/hashicorp/nomad-autoscaler
 [nomad-pack]: https://github.com/hashicorp/nomad-pack
 [npm]: https://npmjs.org
 [ocaml]: https://ocaml.org
