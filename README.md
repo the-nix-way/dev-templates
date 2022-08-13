@@ -90,7 +90,7 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`elm`](./elm/)
 
 - [Elm] 0.19.1
-- [elm2nix]
+- [elm2nix] 0.2.1
 
 ### [`gleam`](./gleam/)
 
@@ -110,9 +110,10 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`hashi`](./hashi/)
 
-- [Terraform] 1.2.6
+- [Terraform] 1.2.7
 - [Packer] 1.8.2
 - [Nomad] 1.2.9
+- [Vault] 1.11.2
 - [nomad-autoscaler] 0.3.6-dev
 - [nomad-pack] 0.0.1-techpreview.3
 - [levant] 0.3.1-dev
@@ -159,7 +160,7 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Node.js][node] 18.7.0
 - [npm] 8.15.0
-- [pnpm] 7.3.0
+- [pnpm] 7.9.1
 - [Yarn] 1.22.19
 - [node2nix] 1.11.1
 
@@ -182,7 +183,7 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`python`](./python/)
 
-- [Python] 3.11.0b4
+- [Python] 3.11.0rc1
 - [pip] 22.1.2
 - [Virtualenv] 20.15.1
 - [mach-nix]
@@ -197,7 +198,7 @@ The sections below list what each template includes. In all cases, you're free t
 
   - From the `rust-toolchain.toml` file if present
   - From the `rust-toolchain` file if present
-  - Version 1.6.2 if neither is present
+  - Version 1.63.0 if neither is present
 
 - [rust-analyzer] 2022-08-01
 - [cargo-audit] 0.17.0
@@ -207,7 +208,7 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`scala`](./scala/)
 
 - [Scala] 3.1.0 ([Java] 17.0.3)
-- [sbt] 1.6.2
+- [sbt] 1.7.1
 
 ### [`zig`](./zig/)
 
@@ -300,6 +301,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [sbt]: https://www.scala-sbt.org
 [terraform]: https://terraform.io
 [terragrunt]: https://terragrunt.gruntwork.io
+[vault]: https://www.vaultproject.io
 [virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com

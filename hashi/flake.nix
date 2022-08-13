@@ -12,10 +12,18 @@
 
         inherit (pkgs)
           damon levant mkShell nomad nomad-autoscaler nomad-pack packer
-          terraform;
+          terraform vault;
 
-        hashiTools =
-          [ packer terraform nomad nomad-autoscaler nomad-pack levant damon ];
+        hashiTools = [
+          packer
+          terraform
+          nomad
+          vault
+          nomad-autoscaler
+          nomad-pack
+          levant
+          damon
+        ];
 
         relatedTools = with pkgs; [ terragrunt ];
       in {
@@ -27,6 +35,7 @@
               echo "packer `${packer}/bin/packer --version`"
               ${terraform}/bin/terraform --version
               ${nomad}/bin/nomad --version
+              ${vault}/bin/vault --version
             '';
           };
         };
