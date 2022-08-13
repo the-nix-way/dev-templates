@@ -121,11 +121,7 @@
         };
       };
 
-      lib = let
-        pkgs = nixpkgs;
-        inherit (pkgs.lib) optionals;
-        inherit (pkgs.stdenv) isDarwin isLinux;
-      in {
+      lib = {
         inherit flake-utils nixpkgs;
       };
     } // flake-utils.lib.eachDefaultSystem (system:
