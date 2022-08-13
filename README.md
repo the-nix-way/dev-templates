@@ -44,6 +44,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Nim]                    | [`nim`](./nim/)           |
 | [Nix]                    | [`nix`](./nix/)           |
 | [Node.js][node]          | [`node`](./node/)         |
+| [OCaml]                  | [`ocaml`](./ocaml/)       |
 | [Open Policy Agent][opa] | [`opa`](./opa)            |
 | [Protobuf]               | [`protobuf`](./protobuf/) |
 | [Ruby]                   | [`ruby`](./ruby/)         |
@@ -162,6 +163,13 @@ The sections below list what each template includes. In all cases, you're free t
 - [Yarn] 1.22.19
 - [node2nix] 1.11.1
 
+### [`ocaml`](./ocaml/)
+
+- [OCaml] 4.13.1
+- [Dune] 3.4.1
+- [odoc] 2.1.1
+- [ocamlformat] 0.24.0
+
 ### [`opa`](./opa/)
 
 - [Open Policy Agent][opa] 0.43.0
@@ -236,6 +244,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [dhall-toml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml
 [dhall-yaml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml
+[dune]: https://dune.build
 [elixir]: https://elixir-lang.org
 [elm]: https://elm-lang.org
 [elm2nix]: https://github.com/cachix/elm2nix
@@ -273,6 +282,9 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nomad-autoscaler]: TOhttps://github.com/hashicorp/nomad-autoscaler
 [nomad-pack]: https://github.com/hashicorp/nomad-pack
 [npm]: https://npmjs.org
+[ocaml]: https://ocaml.org
+[ocamlformat]: https://github.com/ocaml-ppx/ocamlformat
+[odoc]: https://github.com/ocaml/odoc
 [opa]: https://openpolicyagent.org
 [packer]: https://packer.io
 [pip]: https://pypi.org/project/pip
