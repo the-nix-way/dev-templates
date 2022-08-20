@@ -13,7 +13,8 @@
         inherit (pkgs) conftest mkShell open-policy-agent;
 
         opaTools = [ conftest open-policy-agent ];
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = opaTools;

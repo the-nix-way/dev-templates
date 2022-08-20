@@ -13,7 +13,8 @@
         gleamPkg = pkgs.gleam;
 
         inherit (pkgs) mkShell;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ gleamPkg ];

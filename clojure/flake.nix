@@ -21,7 +21,8 @@
 
         pkgs = import nixpkgs { inherit config system; };
         inherit (pkgs) boot clojure leiningen mkShell;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ boot clojure leiningen ];

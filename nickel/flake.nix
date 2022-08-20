@@ -11,7 +11,8 @@
       let
         pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) mkShell nickel;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ nickel ];

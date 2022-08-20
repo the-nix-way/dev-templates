@@ -25,7 +25,8 @@
         kotlin = pkgs.kotlin;
         buildTools = with pkgs; [ gradle ];
         otherTools = with pkgs; [ gcc ncurses patchelf zlib ];
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ kotlin ] ++ buildTools ++ otherTools;

@@ -24,7 +24,8 @@
         ];
 
         inherit (pkgs) mkShell;
-      in {
+      in
+      {
         devShells = { default = mkShell { buildInputs = nixRelatedTools; }; };
       });
 }

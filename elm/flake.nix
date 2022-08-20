@@ -13,7 +13,8 @@
         inherit (pkgs) mkShell;
 
         elm = pkgs.elmPackages.elm;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ elm ] ++ (with pkgs; [ elm2nix ]);

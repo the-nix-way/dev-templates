@@ -13,7 +13,8 @@
         goPkg = pkgs.go_1_18;
 
         inherit (pkgs) mkShellNoCC;
-      in {
+      in
+      {
         apps.default = {
           type = "app";
           program = "${goPkg}/bin/go";

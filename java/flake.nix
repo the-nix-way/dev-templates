@@ -21,7 +21,8 @@
         java = jdk;
         buildTools = with pkgs; [ ant gradle maven ];
         inherit (pkgs) mkShell;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ java ] ++ buildTools;

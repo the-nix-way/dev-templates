@@ -11,7 +11,8 @@
       let
         pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) cabal-install ghc mkShell;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ cabal-install ghc ];

@@ -37,7 +37,8 @@
         dhallToolsLinux = optionals isLinux (mkDhallTools [ "csv" "text" ]);
 
         dhallTools = dhallToolsCommon ++ dhallToolsLinux;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ dhall ] ++ dhallTools;

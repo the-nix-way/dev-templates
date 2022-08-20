@@ -141,7 +141,8 @@
             )
           done
         '';
-      in {
+      in
+      {
         devShells = { default = mkShell { buildInputs = [ format update ]; }; };
       });
 }

@@ -11,7 +11,8 @@
       let
         pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) cue mkShell;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ cue ];

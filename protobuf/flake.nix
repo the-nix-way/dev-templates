@@ -11,7 +11,8 @@
       let
         pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) buf mkShell protobuf;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ buf protobuf ];

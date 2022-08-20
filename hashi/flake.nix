@@ -28,7 +28,8 @@
         ];
 
         relatedTools = with pkgs; [ terragrunt ];
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = hashiTools ++ relatedTools;

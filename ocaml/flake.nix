@@ -14,7 +14,8 @@
         ocaml = pkgs.ocamlPackages.ocaml;
         ocamlTools = with pkgs.ocamlPackages;
           [ dune_3 odoc ] ++ (with pkgs; [ ocamlformat ]);
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ ocaml ] ++ ocamlTools;

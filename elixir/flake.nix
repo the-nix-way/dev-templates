@@ -21,7 +21,8 @@
         linuxDeps = optionals isLinux [ gigalixir inotify-tools libnotify ];
         darwinDeps = optionals isDarwin [ terminal-notifier ]
           ++ [ CoreFoundation CoreServices ];
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ elixir elixir_ls ] ++ linuxDeps ++ darwinDeps;

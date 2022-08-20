@@ -20,7 +20,8 @@
         pythonTools = with pkgs;
           [ virtualenv ] ++ (with pkgs.python311Packages; [ pip ]);
         nixTools = [ machNix ];
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ python ] ++ pythonTools ++ nixTools;

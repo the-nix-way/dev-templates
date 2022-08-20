@@ -25,7 +25,8 @@
         scala = pkgs.scala_3;
 
         buildTools = with pkgs; [ sbt ];
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ scala ] ++ buildTools;

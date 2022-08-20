@@ -13,7 +13,8 @@
         inherit (pkgs) mkShell;
 
         ruby = pkgs.ruby_3_1;
-      in {
+      in
+      {
         devShells = {
           default = mkShell {
             buildInputs = [ ruby ];

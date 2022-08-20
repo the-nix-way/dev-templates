@@ -18,18 +18,20 @@
         inherit (pkgs.lib) optionals;
         inherit (pkgs.stdenv) isLinux;
 
-        rust = if builtins.pathExists ./rust-toolchain.toml then
-          rust-bin.fromRustupToolchainFile ./rust-toolchain.toml
-        else if builtins.pathExists ./rust-toolchain then
-          rust-bin.fromRustupToolchainFile ./rust-toolchain
-        else
-          rust-bin.stable.latest.default;
+        rust =
+          if builtins.pathExists ./rust-toolchain.toml then
+            rust-bin.fromRustupToolchainFile ./rust-toolchain.toml
+          else if builtins.pathExists ./rust-toolchain then
+            rust-bin.fromRustupToolchainFile ./rust-toolchain
+          else
+            rust-bin.stable.latest.default;
 
         deps = with pkgs; [ openssl pkgconfig ];
         rustTools = with pkgs;
           [ cargo-audit cargo-deny cargo-cross rust-analyzer ]
           ++ optionals isLinux (with pkgs; [ cargo-watch ]);
-      in {
+      in
+      {
         packages.default = rust;
 
         devShells = {
