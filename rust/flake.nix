@@ -2,13 +2,13 @@
   description = "A Nix-flake-based Rust development environment";
 
   inputs = {
-    dev.url = "github:the-nix-way/dev-templates";
+    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, dev, rust-overlay }:
-    let inherit (dev.lib) flake-utils nixpkgs;
-    in flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, flake-utils, nixpkgs, rust-overlay }:
+    flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];
 

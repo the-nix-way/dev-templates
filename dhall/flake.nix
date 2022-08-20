@@ -1,11 +1,13 @@
 {
   description = "A Nix-flake-based Dhall development environment";
 
-  inputs = { dev.url = "github:the-nix-way/dev-templates"; };
+  inputs = {
+    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:NixOS/nixpkgs";
+  };
 
-  outputs = { self, dev }:
-    let inherit (dev.lib) flake-utils nixpkgs;
-    in flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, flake-utils, nixpkgs }:
+    flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
         dhall = pkgs.dhall;

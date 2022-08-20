@@ -7,7 +7,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, flake-utils, nixpkgs }:
     {
       templates = {
         cue = {
@@ -120,10 +120,6 @@
           description = "Zig development environment";
         };
       };
-
-      lib = {
-        inherit flake-utils nixpkgs;
-      };
     } // flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
@@ -139,16 +135,13 @@
             (
               cd $dir
               ${exec "nix"} flake update # Update flake.lock
-              ${exec "direnv"} reload    # Make sure things work after the update
+              ${
+                exec "direnv"
+              } reload    # Make sure things work after the update
             )
           done
         '';
       in {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ format update ];
-          };
-        };
-      }
-    );
+        devShells = { default = mkShell { buildInputs = [ format update ]; }; };
+      });
 }

@@ -2,13 +2,13 @@
   description = "A Nix-flake-based Python development environment";
 
   inputs = {
-    dev.url = "github:the-nix-way/dev-templates";
+    flake-utils.url = "github:numtide/flake-utils";
     mach-nix.url = "github:/DavHau/mach-nix";
+    nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, dev, mach-nix }:
-    let inherit (dev.lib) flake-utils nixpkgs;
-    in flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, flake-utils, mach-nix, nixpkgs }:
+    flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) mkShell;
