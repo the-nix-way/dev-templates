@@ -127,7 +127,7 @@
         exec = pkg: "${pkgs.${pkg}}/bin/${pkg}";
 
         format = writeScriptBin "format" ''
-          ${exec "nixfmt"} **/*.nix
+          ${exec "nixpkgs-fmt"} **/*.nix
         '';
 
         update = writeScriptBin "update" ''
