@@ -7,20 +7,20 @@
     let inherit (dev.lib) flake-utils nixpkgs;
     in flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs { inherit system; };
-
-        inherit (pkgs) mkShell node2nix;
-
-        nodejs = pkgs.nodejs-18_x;
-        pnpm = pkgs.nodePackages.pnpm;
-        yarn = (pkgs.yarn.override { inherit nodejs; });
+        nodeOverlay = self: super: rec {
+          nodejs = super.nodejs-18_x;
+          pnpm = super.nodePackages.pnpm;
+          yarn = (super.yarn.override { inherit nodejs; });
+        };
+        overlays = [ nodeOverlay ];
+        pkgs = import nixpkgs { inherit overlays system; };
       in {
         devShells = {
-          default = mkShell {
-            buildInputs = [ node2nix nodejs pnpm yarn ];
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; [ node2nix nodejs pnpm yarn ];
 
             shellHook = ''
-              echo "node `${nodejs}/bin/node --version`"
+              echo "node `${pkgs.nodejs}/bin/node --version`"
             '';
           };
         };
