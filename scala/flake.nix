@@ -6,35 +6,37 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        jdk = "jdk17";
 
-        config = {
-          packageOverrides = p: {
-            sbt = p.sbt.override { jre = p.${jdk}; };
-            scala_3 = p.scala_3.override { jre = p.${jdk}; };
+    let
+      javaVersion = 17;
+
+      overlays = [
+        (self: super: rec {
+          jdk = super."jdk${toString javaVersion}";
+          sbt = super.sbt.override {
+            jre = jdk;
           };
-        };
-
-        pkgs = import nixpkgs { inherit config jdk system; };
-
-        inherit (pkgs) mkShell;
-
-        scala = pkgs.scala_3;
-
-        buildTools = with pkgs; [ sbt ];
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ scala ] ++ buildTools;
-
-            shellHook = ''
-              ${scala}/bin/scala -version
-            '';
+          scala = super.scala_3.override {
+            jre = jdk;
           };
-        };
-      });
+        })
+      ];
+
+      pkgs = import nixpkgs { inherit overlays system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ scala sbt coursier ];
+
+        shellHook = ''
+          ${pkgs.scala}/bin/scala -version
+        '';
+      };
+    });
 }

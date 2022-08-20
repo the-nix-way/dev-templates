@@ -6,23 +6,23 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        gleamPkg = pkgs.gleam;
+    let
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ gleam ];
 
-        inherit (pkgs) mkShell;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ gleamPkg ];
-
-            shellHook = ''
-              ${gleamPkg}/bin/gleam --version
-            '';
-          };
-        };
-      });
+        shellHook = ''
+          ${pkgs.gleam}/bin/gleam --version
+        '';
+      };
+    });
 }

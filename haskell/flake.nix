@@ -6,22 +6,24 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) cabal-install ghc mkShell;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ cabal-install ghc ];
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
 
-            shellHook = ''
-              ${ghc}/bin/ghc --version
-              ${cabal-install}/bin/cabal --version
-            '';
-          };
-        };
-      });
+    flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ cabal-install ghc ];
+
+        shellHook = with pkgs; ''
+          ${ghc}/bin/ghc --version
+          ${cabal-install}/bin/cabal --version
+        '';
+      };
+    });
 }

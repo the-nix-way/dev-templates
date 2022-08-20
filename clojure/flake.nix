@@ -6,31 +6,38 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        jdk = "jdk17";
-
-        config = {
-          packageOverrides = p: {
-            boot = p.boot.override { jdk = p.${jdk}; };
-            clojure = p.clojure.override { jdk = p.${jdk}; };
-            leiningen = p.leiningen.override { jdk = p.${jdk}; };
+    let
+      javaVersion = 17;
+      overlays = [
+        (self: super: rec {
+          jdk = super."jdk${toString javaVersion}";
+          boot = super.boot.override {
+            inherit jdk;
           };
-        };
-
-        pkgs = import nixpkgs { inherit config system; };
-        inherit (pkgs) boot clojure leiningen mkShell;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ boot clojure leiningen ];
-
-            shellHook = ''
-              ${clojure}/bin/clj --version
-            '';
+          clojure = super.clojure.override {
+            inherit jdk;
           };
-        };
-      });
+          leiningen = super.leiningen.override {
+            inherit jdk;
+          };
+        })
+      ];
+      pkgs = import nixpkgs { inherit overlays system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ boot clojure leiningen ];
+
+        shellHook = ''
+          ${pkgs.clojure}/bin/clj --version
+        '';
+      };
+    });
 }

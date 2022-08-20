@@ -7,16 +7,19 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-
-        inherit (pkgs)
-          damon levant mkShell nomad nomad-autoscaler nomad-pack packer
-          terraform vault;
-
-        hashiTools = [
+    let
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [
           packer
           terraform
           nomad
@@ -25,22 +28,15 @@
           nomad-pack
           levant
           damon
+          terragrunt
         ];
 
-        relatedTools = with pkgs; [ terragrunt ];
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = hashiTools ++ relatedTools;
-
-            shellHook = ''
-              echo "packer `${packer}/bin/packer --version`"
-              ${terraform}/bin/terraform --version
-              ${nomad}/bin/nomad --version
-              ${vault}/bin/vault --version
-            '';
-          };
-        };
-      });
+        shellHook = with pkgs; ''
+          echo "packer `${packer}/bin/packer --version`"
+          ${terraform}/bin/terraform --version
+          ${nomad}/bin/nomad --version
+          ${vault}/bin/vault --version
+        '';
+      };
+    });
 }

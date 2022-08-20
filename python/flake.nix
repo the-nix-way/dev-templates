@@ -7,29 +7,31 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, mach-nix, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , mach-nix
+    , nixpkgs
+    }:
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) mkShell;
+    let
+      overlays = [
+        (self: super: {
+          machNix = mach-nix.defaultPackage.${system};
+          python = super.python311;
+        })
+      ];
 
-        python = pkgs.python311;
+      pkgs = import nixpkgs { inherit overlays system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ python machNix virtualenv ] ++
+          (with pkgs.python311Packages; [ pip ]);
 
-        machNix = mach-nix.defaultPackage.${system};
-
-        pythonTools = with pkgs;
-          [ virtualenv ] ++ (with pkgs.python311Packages; [ pip ]);
-        nixTools = [ machNix ];
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ python ] ++ pythonTools ++ nixTools;
-
-            shellHook = ''
-              ${python}/bin/python --version
-            '';
-          };
-        };
-      });
+        shellHook = ''
+          ${pkgs.python}/bin/python --version
+        '';
+      };
+    });
 }

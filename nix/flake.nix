@@ -6,26 +6,27 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-
-        dhallNix = pkgs.haskellPackages.dhall-nix;
-
-        nixRelatedTools = with pkgs; [
+    let
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShell = {
+        buildInputs = with pkgs; [
           cachix
-          dhallNix
           lorri
           niv
           nixfmt
           statix
           vulnix
+          haskellPackages.dhall-nix
         ];
-
-        inherit (pkgs) mkShell;
-      in
-      {
-        devShells = { default = mkShell { buildInputs = nixRelatedTools; }; };
-      });
+      };
+    });
 }

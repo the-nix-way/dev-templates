@@ -7,41 +7,48 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, flake-utils, nixpkgs, rust-overlay }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    , rust-overlay
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        overlays = [ (import rust-overlay) ];
+    let
+      overlays = [
+        (import rust-overlay)
+        (self: super: {
+          rustToolchain =
+            let
+              rust = super.rust-bin;
+            in
+            if builtins.pathExists ./rust-toolchain.toml then
+              rust.fromRustupToolchainFile ./rust-toolchain.toml
+            else if builtins.pathExists ./rust-toolchain then
+              rust.fromRustupToolchainFile ./rust-toolchain
+            else
+              rust.stable.latest.default;
+        })
+      ];
 
-        pkgs = import nixpkgs { inherit system overlays; };
+      pkgs = import nixpkgs { inherit system overlays; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        nativeBuildInputs = with pkgs; [
+          rustToolchain
+          openssl
+          pkg-config
+          cargo-audit
+          cargo-deny
+          cargo-cross
+          rust-analyzer
+        ] ++ pkgs.lib.optionals (pkgs.stdenv.isLinux) (with pkgs; [ cargo-watch ]); # Currently broken on macOS
 
-        inherit (pkgs) mkShell rust-bin;
-        inherit (pkgs.lib) optionals;
-        inherit (pkgs.stdenv) isLinux;
-
-        rust =
-          if builtins.pathExists ./rust-toolchain.toml then
-            rust-bin.fromRustupToolchainFile ./rust-toolchain.toml
-          else if builtins.pathExists ./rust-toolchain then
-            rust-bin.fromRustupToolchainFile ./rust-toolchain
-          else
-            rust-bin.stable.latest.default;
-
-        deps = with pkgs; [ openssl pkgconfig ];
-        rustTools = with pkgs;
-          [ cargo-audit cargo-deny cargo-cross rust-analyzer ]
-          ++ optionals isLinux (with pkgs; [ cargo-watch ]);
-      in
-      {
-        packages.default = rust;
-
-        devShells = {
-          default = mkShell {
-            nativeBuildInputs = [ rust ] ++ deps ++ rustTools;
-
-            shellHook = ''
-              ${rust}/bin/cargo --version
-            '';
-          };
-        };
-      });
+        shellHook = ''
+          ${pkgs.rustToolchain}/bin/cargo --version
+        '';
+      };
+    });
 }

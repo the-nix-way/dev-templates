@@ -6,23 +6,27 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) mkShell;
+    let
+      overlays = [
+        (self: super: {
+          ruby = super.ruby_3_1;
+        })
+      ];
+      pkgs = import nixpkgs { inherit overlays system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ ruby ];
 
-        ruby = pkgs.ruby_3_1;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ ruby ];
-
-            shellHook = ''
-              ${ruby}/bin/ruby --version
-            '';
-          };
-        };
-      });
+        shellHook = ''
+          ${pkgs.ruby}/bin/ruby --version
+        '';
+      };
+    });
 }

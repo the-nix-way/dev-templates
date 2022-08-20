@@ -6,22 +6,23 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) buf mkShell protobuf;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ buf protobuf ];
+    let
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ buf protobuf ];
 
-            shellHook = ''
-              echo "buf `${buf}/bin/buf --version`"
-              ${protobuf}/bin/protoc --version
-            '';
-          };
-        };
-      });
+        shellHook = with pkgs; ''
+          echo "buf `${buf}/bin/buf --version`"
+          ${protobuf}/bin/protoc --version
+        '';
+      };
+    });
 }

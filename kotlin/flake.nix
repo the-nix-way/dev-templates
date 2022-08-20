@@ -6,35 +6,37 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        jdk = pkgs.jdk17;
+    let
+      javaVersion = 17;
 
-        config = {
-          packageOverrides = p: {
-            gradle = (p.gradle.override { java = jdk; });
-
-            kotlin = (p.kotlin.override { jre = jdk; });
+      overlays = [
+        (self: super: rec {
+          jdk = pkgs."jdk${toString javaVersion}";
+          gradle = super.gradle.override {
+            java = jdk;
           };
-        };
-
-        pkgs = import nixpkgs { inherit config system; };
-        inherit (pkgs) mkShell;
-
-        kotlin = pkgs.kotlin;
-        buildTools = with pkgs; [ gradle ];
-        otherTools = with pkgs; [ gcc ncurses patchelf zlib ];
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ kotlin ] ++ buildTools ++ otherTools;
-
-            shellHook = ''
-              ${kotlin}/bin/kotlin -version
-            '';
+          kotlin = super.kotlin.override {
+            jre = jdk;
           };
-        };
-      });
+        })
+      ];
+
+      pkgs = import nixpkgs { inherit overlays system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ kotlin gradle gcc ncurses patchelf zlib ];
+
+        shellHook = ''
+          ${pkgs.kotlin}/bin/kotlin -version
+        '';
+      };
+    });
 }

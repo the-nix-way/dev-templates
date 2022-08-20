@@ -6,24 +6,24 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) mkShell;
-        ocaml = pkgs.ocamlPackages.ocaml;
-        ocamlTools = with pkgs.ocamlPackages;
-          [ dune_3 odoc ] ++ (with pkgs; [ ocamlformat ]);
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ ocaml ] ++ ocamlTools;
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
 
-            shellHook = ''
-              ${ocaml}/bin/ocaml --version
-            '';
-          };
-        };
-      });
+    flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ ocaml ocamlformat ] ++
+          (with pkgs.ocamlPackages; [ dune_3 odoc ]);
+
+        shellHook = ''
+          ${pkgs.ocaml}/bin/ocaml --version
+        '';
+      };
+    });
 }

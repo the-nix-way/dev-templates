@@ -6,31 +6,37 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        jdk = pkgs.jdk17;
+    let
+      javaVersion = 17;
 
-        config = {
-          packageOverrides = p: {
-            gradle = (p.gradle.override { java = jdk; });
+      overlays = [
+        (self: super: rec {
+          jdk = super."jdk${toString javaVersion}";
+          gradle = super.gradle.override {
+            java = jdk;
           };
-        };
-
-        pkgs = import nixpkgs { inherit config jdk system; };
-        java = jdk;
-        buildTools = with pkgs; [ ant gradle maven ];
-        inherit (pkgs) mkShell;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ java ] ++ buildTools;
-
-            shellHook = ''
-              ${java}/bin/java -version
-            '';
+          maven = super.maven.override {
+            inherit jdk;
           };
-        };
-      });
+        })
+      ];
+
+      pkgs = import nixpkgs { inherit overlays system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ gradle jdk maven ];
+
+        shellHook = ''
+          ${pkgs.jdk}/bin/java -version
+        '';
+      };
+    });
 }

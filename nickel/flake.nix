@@ -6,21 +6,23 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) mkShell nickel;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ nickel ];
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
 
-            shellHook = ''
-              ${nickel}/bin/nickel --version
-            '';
-          };
-        };
-      });
+    flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = with pkgs; [ nickel ];
+
+        shellHook = ''
+          ${pkgs.nickel}/bin/nickel --version
+        '';
+      };
+    });
 }

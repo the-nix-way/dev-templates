@@ -35,8 +35,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Elixir]                 | [`elixir`](./elixir/)     |
 | [Elm]                    | [`elm`](./elm/)           |
 | [Gleam]                  | [`gleam`](./gleam/)       |
-| [Go] 1.17                | [`go1_17`](./go1.17/)     |
-| [Go] 1.18                | [`go1_18`](./go1.18/)     |
+| [Go]                     | [`go`](./go/)             |
 | [Hashicorp] tools        | [`hashi`](./hashi/)       |
 | [Java]                   | [`java`](./java/)         |
 | [Kotlin]                 | [`kotlin`](./kotlin/)     |
@@ -96,15 +95,9 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Gleam] 0.22.1
 
-### [`go1.17`](./go1.17/)
+### [`go`](./go/)
 
-- [Go] 1.17
-- Standard Go tools ([goimports], [godoc], and others)
-- [golangci-lint]
-
-### [`go1.18`](./go1.18/)
-
-- [Go] 1.18
+- [Go] 1.19
 - Standard Go tools ([goimports], [godoc], and others)
 - [golangci-lint]
 

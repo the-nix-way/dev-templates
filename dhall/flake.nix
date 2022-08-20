@@ -6,47 +6,39 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs }:
+  outputs =
+    { self
+    , flake-utils
+    , nixpkgs
+    }:
+
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        dhall = pkgs.dhall;
+    let
+      pkgs = import nixpkgs { inherit system; };
 
-        inherit (pkgs) mkShell;
-        inherit (pkgs.lib) optionals;
-        inherit (pkgs.stdenv) isLinux;
+      # Helper function for building dhall-* tools
+      mkDhallTools = ls:
+        builtins.map (tool: pkgs.haskellPackages."dhall-${tool}") ls;
 
-        # Helper function for building dhall-* tools
-        mkDhallTools = ls:
-          builtins.map (tool: pkgs.haskellPackages."dhall-${tool}") ls;
+      dhallTools = mkDhallTools [
+        "bash"
+        "docs"
+        "json"
+        "lsp-server"
+        "nix"
+        "nixpkgs"
+        "openapi"
+        "toml"
+        "yaml"
+      ] ++ pkgs.lib.optionals (pkgs.stdenv.isLinux) (mkDhallTools [ "csv" "text" ]); # Linux only
+    in
+    {
+      devShell = pkgs.mkShell {
+        buildInputs = (with pkgs; [ dhall ]) ++ dhallTools;
 
-        # dhall-* tools available only on all platforms
-        dhallToolsCommon = mkDhallTools [
-          "bash"
-          "docs"
-          "json"
-          "lsp-server"
-          "nix"
-          "nixpkgs"
-          "openapi"
-          "toml"
-          "yaml"
-        ];
-
-        # dhall-* tools available only on Linux
-        dhallToolsLinux = optionals isLinux (mkDhallTools [ "csv" "text" ]);
-
-        dhallTools = dhallToolsCommon ++ dhallToolsLinux;
-      in
-      {
-        devShells = {
-          default = mkShell {
-            buildInputs = [ dhall ] ++ dhallTools;
-
-            shellHook = ''
-              echo "dhall `${dhall}/bin/dhall --version`"
-            '';
-          };
-        };
-      });
+        shellHook = ''
+          echo "dhall `${pkgs.dhall}/bin/dhall --version`"
+        '';
+      };
+    });
 }
