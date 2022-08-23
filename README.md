@@ -112,6 +112,7 @@ The sections below list what each template includes. In all cases, you're free t
 - [levant] 0.3.1-dev
 - [damon]
 - [Terragrunt] 0.37.0
+- [tflint] 0.39.3
 
 ### [`haskell`](./haskell/)
 
@@ -294,6 +295,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [sbt]: https://www.scala-sbt.org
 [terraform]: https://terraform.io
 [terragrunt]: https://terragrunt.gruntwork.io
+[tflint]: https://github.com/terraform-linters/tflint
 [vault]: https://www.vaultproject.io
 [virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix

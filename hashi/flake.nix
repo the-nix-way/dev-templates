@@ -22,6 +22,7 @@
         buildInputs = with pkgs; [
           packer
           terraform
+          tflint
           nomad
           vault
           nomad-autoscaler
