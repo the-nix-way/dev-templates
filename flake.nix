@@ -35,14 +35,9 @@
           description = "Gleam development environment";
         };
 
-        go1_17 = {
-          path = ./go1.17;
-          description = "Go 1.17 development environment";
-        };
-
-        go1_18 = {
-          path = ./go1.18;
-          description = "Go 1.18 development environment";
+        go = {
+          path = ./go;
+          description = "Go (Golang) development environment";
         };
 
         hashi = {
