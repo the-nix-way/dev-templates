@@ -40,9 +40,8 @@
           rustToolchain
           openssl
           pkg-config
-          cargo-audit
           cargo-deny
-          cargo-cross
+          cargo-edit
           rust-analyzer
         ] ++ pkgs.lib.optionals (pkgs.stdenv.isLinux) (with pkgs; [ cargo-watch ]); # Currently broken on macOS
 
