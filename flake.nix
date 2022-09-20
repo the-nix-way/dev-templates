@@ -10,6 +10,11 @@
   outputs = { self, flake-utils, nixpkgs }:
     {
       templates = {
+        clojure = {
+          path = ./clojure;
+          description = "Clojure development environment";
+        };
+
         cue = {
           path = ./cue;
           description = "Cue development environment";
