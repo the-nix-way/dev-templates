@@ -17,7 +17,7 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = (with pkgs.elmPackages; [ elm ]) ++ (with pkgs; [ elm2nix ]);
 
         shellHook = with pkgs.elmPackages; ''

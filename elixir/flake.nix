@@ -17,7 +17,7 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = (with pkgs; [ elixir ]) ++
           pkgs.lib.optionals (pkgs.stdenv.isLinux) (with pkgs; [ gigalixir inotify-tools libnotify ]) ++ # Linux only
           pkgs.lib.optionals (pkgs.stdenv.isDarwin) (with pkgs; [ terminal-notifier ]) ++ # macOS only

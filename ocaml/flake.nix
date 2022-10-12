@@ -17,7 +17,7 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [ ocaml ocamlformat ] ++
           (with pkgs.ocamlPackages; [ dune_3 odoc ]);
 

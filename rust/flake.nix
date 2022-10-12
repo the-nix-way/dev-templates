@@ -35,7 +35,7 @@
       pkgs = import nixpkgs { inherit system overlays; };
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
           rustToolchain
           openssl

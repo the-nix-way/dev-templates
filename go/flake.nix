@@ -19,9 +19,9 @@
       pkgs = import nixpkgs { inherit overlays system; };
     in
     {
-      devShell = pkgs.mkShellNoCC {
+      devShells.default = pkgs.mkShellNoCC {
         buildInputs = with pkgs; [
-          # go 1.17.1 (specified by overlay)
+          # go 1.19 (specified by overlay)
           go
 
           # goimports, godoc, etc.

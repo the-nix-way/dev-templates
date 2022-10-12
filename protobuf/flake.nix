@@ -16,7 +16,7 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [ buf protobuf ];
 
         shellHook = with pkgs; ''

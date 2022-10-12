@@ -25,7 +25,7 @@
       pkgs = import nixpkgs { inherit overlays system; };
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [ python machNix virtualenv ] ++
           (with pkgs.python311Packages; [ pip ]);
 

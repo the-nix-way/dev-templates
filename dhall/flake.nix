@@ -33,7 +33,7 @@
       ] ++ pkgs.lib.optionals (pkgs.stdenv.isLinux) (mkDhallTools [ "csv" "text" ]); # Linux only
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = (with pkgs; [ dhall ]) ++ dhallTools;
 
         shellHook = ''
