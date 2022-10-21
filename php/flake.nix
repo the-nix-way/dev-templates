@@ -14,17 +14,11 @@
 
     flake-utils.lib.eachDefaultSystem (system:
     let
-      overlays = [
-        (self: super: rec {
-          php = super.php;
-          composer = super.phpPackages.composer;
-        })
-      ];
-      pkgs = import nixpkgs { inherit overlays system; };
+      pkgs = import nixpkgs { inherit system; };
     in
     {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; [ composer php ];
+        buildInputs = with pkgs; [ phpPackages.composer php ];
 
         shellHook = ''
           echo "`${pkgs.php}/bin/php --version`"
