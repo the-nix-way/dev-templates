@@ -173,8 +173,8 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`php`](./php/)
 
-- [PHP][php] 8.1.10
-- [Composer][composer] 2.4.2
+- [PHP] 8.1.10
+- [Composer] 2.4.2
 
 ### [`protobuf`](./protobuf/)
 
@@ -309,3 +309,4 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org
+
