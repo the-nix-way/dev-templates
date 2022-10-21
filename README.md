@@ -45,6 +45,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Node.js][node]          | [`node`](./node/)         |
 | [OCaml]                  | [`ocaml`](./ocaml/)       |
 | [Open Policy Agent][opa] | [`opa`](./opa)            |
+| [PHP]                    | [`php`](./php/)           |
 | [Protobuf]               | [`protobuf`](./protobuf/) |
 | [Ruby]                   | [`ruby`](./ruby/)         |
 | [Rust]                   | [`rust`](./rust/)         |
@@ -170,6 +171,11 @@ The sections below list what each template includes. In all cases, you're free t
 - [Open Policy Agent][opa] 0.43.0
 - [Conftest] 0.34.0
 
+### [`php`](./php/)
+
+- [PHP][php] 8.1.10
+- [Composer][composer] 2.4.2
+
 ### [`protobuf`](./protobuf/)
 
 - The [Buf CLI][buf] 1.7.0
@@ -222,6 +228,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cargo-deny]: https://crates.io/crates/cargo-deny
 [clippy]: https://github.com/rust-lang/rust-clippy
 [clojure]: https://clojure.org
+[composer]: https://getcomposer.org/
 [conftest]: https://www.conftest.dev
 [cross]: https://github.com/cross-rs/cross
 [cue]: https://cuelang.org
@@ -284,6 +291,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [packer]: https://packer.io
 [pip]: https://pypi.org/project/pip
 [phoenix]: https://phoenixframework.org
+[php]: https://php.net/
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
 [python]: https://python.org

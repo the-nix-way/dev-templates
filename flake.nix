@@ -90,6 +90,11 @@
           description = "Open Policy Agent development environment";
         };
 
+        php = {
+          path = ./php;
+          description = "PHP development environment";
+        };
+
         protobuf = {
           path = ./protobuf;
           description = "Protobuf development environment";
