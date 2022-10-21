@@ -21,7 +21,7 @@
       pkgs = import nixpkgs { inherit overlays system; };
     in
     {
-      devShell = pkgs.mkShell {
+      devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [ ruby ];
 
         shellHook = ''

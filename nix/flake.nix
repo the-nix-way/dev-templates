@@ -17,7 +17,7 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      devShell = {
+      devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [
           cachix
           lorri
