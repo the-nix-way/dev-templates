@@ -42,8 +42,9 @@
           pkg-config
           cargo-deny
           cargo-edit
+          cargo-watch
           rust-analyzer
-        ] ++ pkgs.lib.optionals (pkgs.stdenv.isLinux) (with pkgs; [ cargo-watch ]); # Currently broken on macOS
+        ];
 
         shellHook = ''
           ${pkgs.rustToolchain}/bin/cargo --version
