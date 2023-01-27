@@ -100,6 +100,11 @@
           description = "Protobuf development environment";
         };
 
+        purescript = {
+          path = ./purescript;
+          description = "Purescript development environment";
+        };
+
         python = {
           path = ./python;
           description = "Python development environment";
