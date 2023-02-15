@@ -32,7 +32,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ kotlin gradle gcc ncurses patchelf zlib ];
+        packages = with pkgs; [ kotlin gradle gcc ncurses patchelf zlib ];
 
         shellHook = ''
           ${pkgs.kotlin}/bin/kotlin -version

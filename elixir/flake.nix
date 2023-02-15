@@ -18,7 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = (with pkgs; [ elixir ]) ++
+        packages = (with pkgs; [ elixir ]) ++
           pkgs.lib.optionals (pkgs.stdenv.isLinux) (with pkgs; [ gigalixir inotify-tools libnotify ]) ++ # Linux only
           pkgs.lib.optionals (pkgs.stdenv.isDarwin) (with pkgs; [ terminal-notifier ]) ++ # macOS only
           (with pkgs.darwin.apple_sdk.frameworks; [ CoreFoundation CoreServices ]);

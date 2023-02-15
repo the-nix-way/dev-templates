@@ -25,7 +25,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ node2nix nodejs pnpm yarn ];
+        packages = with pkgs; [ node2nix nodejs pnpm yarn ];
 
         shellHook = ''
           echo "node `${pkgs.nodejs}/bin/node --version`"

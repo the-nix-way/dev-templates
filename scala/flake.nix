@@ -32,7 +32,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ scala sbt coursier ];
+        packages = with pkgs; [ scala sbt coursier ];
 
         shellHook = ''
           ${pkgs.scala}/bin/scala -version

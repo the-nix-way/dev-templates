@@ -18,7 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ gleam ];
+        packages = with pkgs; [ gleam ];
 
         shellHook = ''
           ${pkgs.gleam}/bin/gleam --version

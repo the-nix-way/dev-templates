@@ -18,7 +18,7 @@
     in
     {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; [ phpPackages.composer php ];
+        packages = with pkgs; [ phpPackages.composer php ];
 
         shellHook = ''
           echo "`${pkgs.php}/bin/php --version`"

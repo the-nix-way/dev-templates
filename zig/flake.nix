@@ -18,7 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ zig ];
+        packages = with pkgs; [ zig ];
 
         shellHook = ''
           echo "zig `${pkgs.zig}/bin/zig version`"

@@ -26,7 +26,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ python machNix virtualenv ] ++
+        packages = with pkgs; [ python machNix virtualenv ] ++
           (with pkgs.python311Packages; [ pip ]);
 
         shellHook = ''

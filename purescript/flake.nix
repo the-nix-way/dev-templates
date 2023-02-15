@@ -22,7 +22,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = [
+        packages = [
           easy-ps.purs
           easy-ps.spago
           easy-ps.purescript-language-server

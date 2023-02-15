@@ -32,7 +32,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ gradle jdk maven ];
+        packages = with pkgs; [ gradle jdk maven ];
 
         shellHook = ''
           ${pkgs.jdk}/bin/java -version

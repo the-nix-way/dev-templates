@@ -33,7 +33,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ boot clojure leiningen ];
+        packages = with pkgs; [ boot clojure leiningen ];
 
         shellHook = ''
           ${pkgs.clojure}/bin/clj --version

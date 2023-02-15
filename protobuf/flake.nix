@@ -17,7 +17,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ buf protobuf ];
+        packages = with pkgs; [ buf protobuf ];
 
         shellHook = with pkgs; ''
           echo "buf `${buf}/bin/buf --version`"

@@ -34,7 +34,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = (with pkgs; [ dhall ]) ++ dhallTools;
+        packages = (with pkgs; [ dhall ]) ++ dhallTools;
 
         shellHook = ''
           echo "dhall `${pkgs.dhall}/bin/dhall --version`"

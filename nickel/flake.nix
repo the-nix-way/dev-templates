@@ -18,7 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ nickel ];
+        packages = with pkgs; [ nickel ];
 
         shellHook = ''
           ${pkgs.nickel}/bin/nickel --version

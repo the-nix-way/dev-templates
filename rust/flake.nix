@@ -36,7 +36,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        nativeBuildInputs = with pkgs; [
+        packages = with pkgs; [
           rustToolchain
           openssl
           pkg-config

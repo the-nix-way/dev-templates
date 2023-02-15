@@ -18,7 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ open-policy-agent conftest ];
+        packages = with pkgs; [ open-policy-agent conftest ];
 
         shellHook = ''
           ${pkgs.open-policy-agent}/bin/opa version

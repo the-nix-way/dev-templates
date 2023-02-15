@@ -20,7 +20,7 @@
     in
     {
       devShells.default = pkgs.mkShellNoCC {
-        buildInputs = with pkgs; [
+        packages = with pkgs; [
           # go 1.19 (specified by overlay)
           go
 

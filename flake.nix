@@ -174,7 +174,11 @@
         '';
       in
       {
-        devShells = { default = mkShell { buildInputs = [ format update ]; }; };
+        devShells = {
+          default = mkShell {
+            packages = [ format update ];
+          };
+        };
 
         packages = rec {
           default = dvt;

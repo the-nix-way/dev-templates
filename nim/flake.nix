@@ -18,7 +18,7 @@
     in
     {
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; [ nim ];
+        packages = with pkgs; [ nim ];
 
         shellHook = ''
           ${pkgs.nim}/bin/nim --version

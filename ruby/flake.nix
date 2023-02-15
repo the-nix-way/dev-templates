@@ -22,7 +22,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ ruby ];
+        packages = with pkgs; [ ruby ];
 
         shellHook = ''
           ${pkgs.ruby}/bin/ruby --version

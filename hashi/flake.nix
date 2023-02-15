@@ -19,7 +19,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [
+        packages = with pkgs; [
           packer
           terraform
           tflint

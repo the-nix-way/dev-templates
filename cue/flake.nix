@@ -18,7 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ cue ];
+        packages = with pkgs; [ cue ];
 
         shellHook = ''
           ${pkgs.cue}/bin/cue version
