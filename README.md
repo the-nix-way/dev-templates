@@ -18,6 +18,8 @@ nix flake init --template github:the-nix-way/dev-templates#rust
 nix flake new --template github:the-nix-way/dev-templates#rust ${NEW_PROJECT_DIRECTORY}
 ```
 
+> **Note**: All templates are pinned to the [22.11 release][release] of Nixpkgs.
+
 ## How to use the templates
 
 Once your preferred template has been initialized, you can use the provided shell in two ways:
@@ -27,25 +29,25 @@ Once your preferred template has been initialized, you can use the provided shel
 
 ## Available templates
 
-| Language/framework/tool  | Template                      |       
-| :----------------------- | :-----------------------------|       
-| [Clojure]                | [`clojure`](./clojure/)       |       
-| [Cue]                    | [`cue`](./cue/)               |       
-| [Dhall]                  | [`dhall`](./dhall/)           |       
-| [Elixir]                 | [`elixir`](./elixir/)         |       
-| [Elm]                    | [`elm`](./elm/)               |       
-| [Gleam]                  | [`gleam`](./gleam/)           |       
-| [Go]                     | [`go`](./go/)                 |       
-| [Hashicorp] tools        | [`hashi`](./hashi/)           |       
-| [Java]                   | [`java`](./java/)             |       
-| [Kotlin]                 | [`kotlin`](./kotlin/)         |       
-| [Nickel]                 | [`nickel`](./nickel/)         |       
-| [Nim]                    | [`nim`](./nim/)               |       
-| [Nix]                    | [`nix`](./nix/)               |       
-| [Node.js][node]          | [`node`](./node/)             |       
-| [OCaml]                  | [`ocaml`](./ocaml/)           |       
-| [Open Policy Agent][opa] | [`opa`](./opa)                |       
-| [PHP]                    | [`php`](./php/)               |       
+| Language/framework/tool  | Template                      |
+| :----------------------- | :-----------------------------|
+| [Clojure]                | [`clojure`](./clojure/)       |
+| [Cue]                    | [`cue`](./cue/)               |
+| [Dhall]                  | [`dhall`](./dhall/)           |
+| [Elixir]                 | [`elixir`](./elixir/)         |
+| [Elm]                    | [`elm`](./elm/)               |
+| [Gleam]                  | [`gleam`](./gleam/)           |
+| [Go]                     | [`go`](./go/)                 |
+| [Hashicorp] tools        | [`hashi`](./hashi/)           |
+| [Java]                   | [`java`](./java/)             |
+| [Kotlin]                 | [`kotlin`](./kotlin/)         |
+| [Nickel]                 | [`nickel`](./nickel/)         |
+| [Nim]                    | [`nim`](./nim/)               |
+| [Nix]                    | [`nix`](./nix/)               |
+| [Node.js][node]          | [`node`](./node/)             |
+| [OCaml]                  | [`ocaml`](./ocaml/)           |
+| [Open Policy Agent][opa] | [`opa`](./opa)                |
+| [PHP]                    | [`php`](./php/)               |
 | [Protobuf]               | [`protobuf`](./protobuf/)     |
 | [Purescript]             | [`purescript`](./purescript/) |
 | [Ruby]                   | [`ruby`](./ruby/)             |
@@ -306,13 +308,14 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [purescript-language-server]: https://github.com/nwolverson/purescript-language-server
 [purs-tidy]: https://github.com/natefaubion/purescript-tidy
 [python]: https://python.org
+[release]: https://github.com/NixOS/nixpkgs/releases/tag/22.11
 [ruby]: https://ruby-lang.org
 [rust]: https://rust-lang.org
 [rust-analyzer]: https://rust-analyzer.github.io
 [scala]: https://scala-lang.org
 [statix]: https://github.com/nerdypepper/statix
 [sbt]: https://www.scala-sbt.org
-[Spago]: https://github.com/purescript/spago
+[spago]: https://github.com/purescript/spago
 [terraform]: https://terraform.io
 [terragrunt]: https://terragrunt.gruntwork.io
 [tflint]: https://github.com/terraform-linters/tflint
