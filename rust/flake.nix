@@ -48,6 +48,7 @@
           cargo-edit
           cargo-watch
           rust-analyzer
+          evcxr
         ];
 
         shellHook = ''
