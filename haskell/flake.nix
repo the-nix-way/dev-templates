@@ -18,7 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ cabal-install ghc ];
+        packages = with pkgs; [ cabal-install ghc haskell-language-server ];
 
         shellHook = with pkgs; ''
           ${ghc}/bin/ghc --version
