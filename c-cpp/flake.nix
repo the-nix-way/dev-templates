@@ -40,8 +40,12 @@
           pkg-config
           libtool
 
-          automake autoconf
-          cmake cmake-language-server
+          automake
+          autoconf
+
+          cmake
+          cmake-language-server
+
           ninja
 
           unzip # needed for doom emacs gdb support
