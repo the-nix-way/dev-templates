@@ -10,6 +10,11 @@
   outputs = { self, flake-utils, nixpkgs }:
     {
       templates = rec {
+        c-cpp = {
+          path = ./c-cpp;
+          description = "C/CPP development environment based on nixpkg's stdenv";
+        };
+
         clojure = {
           path = ./clojure;
           description = "Clojure development environment";
