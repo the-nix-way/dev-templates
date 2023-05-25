@@ -41,6 +41,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Hashicorp] tools        | [`hashi`](./hashi/)           |
 | [Java]                   | [`java`](./java/)             |
 | [Kotlin]                 | [`kotlin`](./kotlin/)         |
+| [LaTeX]                  | [`latex`](./latex/)         |
 | [Nickel]                 | [`nickel`](./nickel/)         |
 | [Nim]                    | [`nim`](./nim/)               |
 | [Nix]                    | [`nix`](./nix/)               |
@@ -134,6 +135,12 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Kotlin] 1.7.10-release-333
 - [Gradle] 7.5
+
+### [`latex`](./latex/)
+
+- [texlive]
+- [tectonic]
+- [texlab]
 
 ### [`nickel`](./nickel/)
 
@@ -273,6 +280,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [kotlin]: https://kotlinlang.org
+[latex]: https://www.latex-project.org/
 [leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant
 [lorri]: https://github.com/target/lorri
@@ -316,8 +324,11 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [statix]: https://github.com/nerdypepper/statix
 [sbt]: https://www.scala-sbt.org
 [spago]: https://github.com/purescript/spago
+[tectonic]: https://tectonic-typesetting.github.io/
 [terraform]: https://terraform.io
 [terragrunt]: https://terragrunt.gruntwork.io
+[texlab]: https://github.com/latex-lsp/texlab
+[texlive]: https://www.tug.org/texlive/
 [tflint]: https://github.com/terraform-linters/tflint
 [vault]: https://www.vaultproject.io
 [virtualenv]: https://pypi.org/project/virtualenv
