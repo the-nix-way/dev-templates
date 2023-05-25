@@ -26,6 +26,7 @@
           statix
           vulnix
           haskellPackages.dhall-nix
+          rnix-lsp
         ];
       };
     });
