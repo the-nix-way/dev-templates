@@ -130,6 +130,11 @@
           description = "Scala development environment";
         };
 
+        shell = {
+          path = ./shell;
+          description = "Shell script development environment";
+        };
+
         zig = {
           path = ./zig;
           description = "Zig development environment";
