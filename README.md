@@ -32,6 +32,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | Language/framework/tool  | Template                      |
 | :----------------------- | :-----------------------------|
 | [Clojure]                | [`clojure`](./clojure/)       |
+| [C#][csharp]             | [`csharp`](./csharp/)         |
 | [Cue]                    | [`cue`](./cue/)               |
 | [Dhall]                  | [`dhall`](./dhall/)           |
 | [Elixir]                 | [`elixir`](./elixir/)         |
@@ -64,6 +65,13 @@ The sections below list what each template includes. In all cases, you're free t
 - [Clojure] 1.11.1.1149
 - [Boot] 2.8.3
 - [Leiningen] 2.9.8
+
+### [`csharp`](./csharp/)
+
+- [dotnet] sdk 7
+- [omnisharp-roslyn]
+- [mono]
+- [msbuild]
 
 ### [`cue`](./cue/)
 
@@ -241,6 +249,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [composer]: https://getcomposer.org/
 [conftest]: https://www.conftest.dev
 [cross]: https://github.com/cross-rs/cross
+[csharp]: https://dotnet.microsoft.com/en-us/languages/csharp
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
 [dhall]: https://dhall-lang.org
@@ -256,6 +265,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [dhall-toml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml
 [dhall-yaml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml
+[dotnet]: https://dotnet.microsoft.com/en-us/
 [dune]: https://dune.build
 [elixir]: https://elixir-lang.org
 [elm]: https://elm-lang.org
@@ -279,6 +289,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [mach-nix]: https://github.com/DavHau/mach-nix
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+[mono]: https://www.mono-project.com/
+[msbuild]: https://github.com/dotnet/msbuild
 [nickel]: https://nickel-lang.org
 [nim]: https://nim-lang.org
 [nimble]: https://github.com/nim-lang/nimble
@@ -297,6 +309,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [ocaml]: https://ocaml.org
 [ocamlformat]: https://github.com/ocaml-ppx/ocamlformat
 [odoc]: https://github.com/ocaml/odoc
+[omnisharp-roslyn]: https://github.com/OmniSharp/omnisharp-roslyn
 [opa]: https://openpolicyagent.org
 [packer]: https://packer.io
 [pip]: https://pypi.org/project/pip
