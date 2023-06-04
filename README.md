@@ -54,6 +54,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Ruby]                   | [`ruby`](./ruby/)             |
 | [Rust]                   | [`rust`](./rust/)             |
 | [Scala]                  | [`scala`](./scala/)           |
+| [Shell]                  | [`shell`](./shell/)           |
 | [Zig]                    | [`zig`](./zig/)               |
 
 ## Template contents
@@ -227,6 +228,10 @@ The sections below list what each template includes. In all cases, you're free t
 - [Scala] 3.1.0 ([Java] 17.0.3)
 - [sbt] 1.7.1
 
+### [`shell`](./shell/)
+
+- [shellcheck]
+
 ### [`zig`](./zig/)
 
 - [Zig] 0.9.1
@@ -321,6 +326,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [rust]: https://rust-lang.org
 [rust-analyzer]: https://rust-analyzer.github.io
 [scala]: https://scala-lang.org
+[shellcheck]: https://www.shellcheck.net/
 [statix]: https://github.com/nerdypepper/statix
 [sbt]: https://www.scala-sbt.org
 [spago]: https://github.com/purescript/spago
