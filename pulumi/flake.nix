@@ -14,9 +14,33 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
+            # Pulumi plus:
+            # pulumi-watch
+            # pulumi-analyzer-* utilities
+            # pulumi-language-* utilities
+            # pulumi-resource-* utilities
             pulumi-bin
+
+            # Python SDK
             python311
+
+            # Go SDK
+            go_1_20
+
+            # Node.js SDK
+            nodejs
+
+            # .NET SDK
+            dotnet-sdk_6
+
+            # Java SDK
+            jdk
+            maven
+
+            # Kubernetes
             kubectl
+
+            # Miscellaneous utilities
             jq
           ];
         };
