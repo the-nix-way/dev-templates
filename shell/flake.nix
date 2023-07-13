@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based LaTeX development environment";
+  description = "A Nix-flake-based Shell development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
