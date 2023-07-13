@@ -1,43 +1,32 @@
 {
   description = "A Nix-flake-based Clojure development environment";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
   outputs =
     { self
     , nixpkgs
-    , flake-utils
     }:
 
-    flake-utils.lib.eachDefaultSystem (system:
     let
       javaVersion = 17;
       overlays = [
-        (self: super: rec {
-          jdk = super."jdk${toString javaVersion}";
-          boot = super.boot.override {
-            inherit jdk;
-          };
-          clojure = super.clojure.override {
-            inherit jdk;
-          };
-          leiningen = super.leiningen.override {
-            inherit jdk;
-          };
+        (final: prev: rec {
+          jdk = prev."jdk${toString javaVersion}";
+          boot = prev.boot.override { inherit jdk; };
+          clojure = prev.clojure.override { inherit jdk; };
+          leiningen = prev.leiningen.override { inherit jdk; };
         })
       ];
-      pkgs = import nixpkgs { inherit overlays system; };
-    in
-    {
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ boot clojure leiningen ];
-
-        shellHook = ''
-          ${pkgs.clojure}/bin/clj --version
-        '';
-      };
-    });
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit overlays system; };
+      });
+    in {
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [ boot clojure leiningen ];
+        };
+      });
+    };
 }
