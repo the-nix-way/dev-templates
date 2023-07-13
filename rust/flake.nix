@@ -22,13 +22,17 @@
           rustToolchain =
             let
               rust = super.rust-bin;
+              toolchain =
+                if builtins.pathExists ./rust-toolchain.toml then
+                  rust.fromRustupToolchainFile ./rust-toolchain.toml
+                else if builtins.pathExists ./rust-toolchain then
+                  rust.fromRustupToolchainFile ./rust-toolchain
+                else
+                  rust.stable.latest.default;
             in
-            if builtins.pathExists ./rust-toolchain.toml then
-              rust.fromRustupToolchainFile ./rust-toolchain.toml
-            else if builtins.pathExists ./rust-toolchain then
-              rust.fromRustupToolchainFile ./rust-toolchain
-            else
-              rust.stable.latest.default;
+            toolchain.override {
+              extensions = [ "rust-src" ]; # https://github.com/the-nix-way/dev-templates/issues/4
+            };
         })
       ];
 
@@ -44,6 +48,7 @@
           cargo-edit
           cargo-watch
           rust-analyzer
+          evcxr
         ];
 
         shellHook = ''
