@@ -110,6 +110,11 @@
           description = "Protobuf development environment";
         };
 
+        pulumi = {
+          path = ./pulumi;
+          description = "Pulumi development environment";
+        };
+
         purescript = {
           path = ./purescript;
           description = "Purescript development environment";
