@@ -2,42 +2,34 @@
   description = "A Nix-flake-based Purescript development environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     easy-purescript-nix = {
       url = "github:justinwoo/easy-purescript-nix";
       flake = false;
     };
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    , easy-purescript-nix
-    }:
-
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, nixpkgs, easy-purescript-nix }:
     let
-      pkgs = import nixpkgs { inherit system; };
-      easy-ps = import easy-purescript-nix { inherit pkgs; };
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit system; };
+      });
     in
     {
-      devShells.default = pkgs.mkShell {
-        packages = (with pkgs; [ nodejs ]) ++ (with easy-ps; [
-          purs
-          spago
-          purescript-language-server
-          purs-tidy
-        ]);
-
-        shellHook = with easy-ps; ''
-          echo "Purs `${purs}/bin/purs --version`"
-          echo "Spago `${spago}/bin/spago --version`"
-          echo "Purescript Language Server `${purescript-language-server}/bin/purescript-language-server --version`"
-          echo "Purs Tidy `${purs-tidy}/bin/purs-tidy --version`"
-          echo "Node.js `${pkgs.nodejs}/bin/node --version`"
-        '';
-      };
-    });
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default =
+          let
+            easy-ps = import easy-purescript-nix { inherit pkgs; };
+          in
+          pkgs.mkShell {
+            packages = (with pkgs; [ nodejs ]) ++ (with easy-ps; [
+              purs
+              spago
+              purescript-language-server
+              purs-tidy
+            ]);
+          };
+      });
+    };
 }

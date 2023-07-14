@@ -2,32 +2,27 @@
   description = "A Nix-flake-based Rust development environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    , rust-overlay
-    }:
-
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, nixpkgs, rust-overlay }:
     let
       overlays = [
-        (import rust-overlay)
-        (self: super: {
-          rustToolchain = super.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
+        rust-overlay.overlays.default
+        (final: prev: {
+          rustToolchain = prev.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
         })
       ];
-
-      pkgs = import nixpkgs { inherit system overlays; };
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit overlays system; };
+      });
     in
     {
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
           rustToolchain
           openssl
           pkg-config
@@ -36,10 +31,7 @@
           cargo-watch
           rust-analyzer
         ];
-
-        shellHook = ''
-          ${pkgs.rustToolchain}/bin/cargo --version
-        '';
-      };
-    });
+        };
+      });
+    };
 }

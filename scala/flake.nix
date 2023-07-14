@@ -1,42 +1,28 @@
 {
   description = "A Nix-flake-based Scala development environment";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    }:
-
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, nixpkgs }:
     let
-      javaVersion = 17;
-
+      javaVersion = 20;
       overlays = [
-        (self: super: rec {
-          jdk = super."jdk${toString javaVersion}";
-          sbt = super.sbt.override {
-            jre = jdk;
-          };
-          scala = super.scala_3.override {
-            jre = jdk;
-          };
+        (final: prev: rec {
+          jdk = prev."jdk${toString javaVersion}";
+          sbt = prev.sbt.override { jre = jdk; };
+          scala = prev.scala_3.override { jre = jdk; };
         })
       ];
-
-      pkgs = import nixpkgs { inherit overlays system; };
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit system; };
+      });
     in
     {
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ scala sbt coursier ];
-
-        shellHook = ''
-          ${pkgs.scala}/bin/scala -version
-        '';
-      };
-    });
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default = pkgs.mkShell {
+         packages = with pkgs; [ scala sbt coursier ];
+        };
+      });
+    };
 }

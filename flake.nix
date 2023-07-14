@@ -183,7 +183,7 @@
             (
               cd $dir
               ${exec "nix"} flake update # Update flake.lock
-              ${exec "direnv"} reload    # Make sure things work after the update
+              ${exec "nix"} flake check  # Make sure things work after the update
             )
           done
         '';

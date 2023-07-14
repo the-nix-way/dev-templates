@@ -1,35 +1,27 @@
 {
   description = "A Nix-flake-based Node.js development environment";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    }:
-
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, nixpkgs }:
     let
       overlays = [
-        (self: super: rec {
-          nodejs = super.nodejs-18_x;
-          pnpm = super.nodePackages.pnpm;
-          yarn = (super.yarn.override { inherit nodejs; });
+        (final: prev: rec {
+          nodejs = prev.nodejs-18_x;
+          pnpm = prev.nodePackages.pnpm;
+          yarn = (prev.yarn.override { inherit nodejs; });
         })
       ];
-      pkgs = import nixpkgs { inherit overlays system; };
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit overlays system; };
+      });
     in
     {
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ node2nix nodejs pnpm yarn ];
-
-        shellHook = ''
-          echo "node `${pkgs.nodejs}/bin/node --version`"
-        '';
-      };
-    });
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [ node2nix nodejs pnpm yarn ];
+        };
+      });
+    };
 }

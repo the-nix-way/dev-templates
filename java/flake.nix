@@ -1,42 +1,28 @@
 {
   description = "A Nix-flake-based Java development environment";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    }:
-
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, nixpkgs }:
     let
-      javaVersion = 17;
-
+      javaVersion = 20; # Change this value to update the whole stack
       overlays = [
-        (self: super: rec {
-          jdk = super."jdk${toString javaVersion}";
-          gradle = super.gradle.override {
-            java = jdk;
-          };
-          maven = super.maven.override {
-            inherit jdk;
-          };
+        (final: prev: rec {
+          jdk = prev."jdk${toString javaVersion}";
+          gradle = prev.gradle.override { java = jdk; };
+          maven = prev.maven.override { inherit jdk; };
         })
       ];
-
-      pkgs = import nixpkgs { inherit overlays system; };
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit overlays system; };
+      });
     in
     {
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [ gradle jdk maven ];
-
-        shellHook = ''
-          ${pkgs.jdk}/bin/java -version
-        '';
-      };
-    });
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [ gradle jdk maven ];
+        };
+      });
+    };
 }
