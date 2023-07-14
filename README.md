@@ -40,7 +40,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Hashicorp] tools        | [`hashi`](./hashi/)           |
 | [Java]                   | [`java`](./java/)             |
 | [Kotlin]                 | [`kotlin`](./kotlin/)         |
-| [LaTeX]                  | [`latex`](./latex/)         |
+| [LaTeX]                  | [`latex`](./latex/)           |
 | [Nickel]                 | [`nickel`](./nickel/)         |
 | [Nim]                    | [`nim`](./nim/)               |
 | [Nix]                    | [`nix`](./nix/)               |
@@ -49,6 +49,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Open Policy Agent][opa] | [`opa`](./opa)                |
 | [PHP]                    | [`php`](./php/)               |
 | [Protobuf]               | [`protobuf`](./protobuf/)     |
+| [Pulumi]                 | [`pulumi`](./pulumi/)         |
 | [Purescript]             | [`purescript`](./purescript/) |
 | [Ruby]                   | [`ruby`](./ruby/)             |
 | [Rust]                   | [`rust`](./rust/)             |
@@ -194,6 +195,16 @@ The sections below list what each template includes. In all cases, you're free t
 - The [Buf CLI][buf] 1.23.1
 - [protoc][protobuf] 3.21.12
 
+### [`pulumi`](./pulumi/)
+
+- [Pulumi] 3.72.1
+- [Python] 3.11.4
+- [Go] 1.20.5
+- [Node.js][node] 18.16.1
+- [dotnet] sdk 6
+- [Java] 19.0.1 and [Maven] 3.9.2
+- [jq] 1.6
+
 ### [`purescript`](./purescript/)
 
 - [Purescript] (purs) 0.15.9
@@ -282,6 +293,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [haskell]: https://haskell.org
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
+[jq]: https://jqlang.github.io/jq
 [kotlin]: https://kotlinlang.org
 [latex]: https://www.latex-project.org/
 [leiningen]: https://leiningen.org
@@ -316,7 +328,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [php]: https://php.net/
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
-[Purescript]: https://github.com/purescript/purescript
+[pulumi]: https://pulumi.com/
+[purescript]: https://github.com/purescript/purescript
 [purescript-language-server]: https://github.com/nwolverson/purescript-language-server
 [purs-tidy]: https://github.com/natefaubion/purescript-tidy
 [python]: https://python.org
