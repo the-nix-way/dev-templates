@@ -64,86 +64,82 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`clojure`](./clojure/)
 
-- [Clojure] 1.11.1.1149
+- [Clojure] 1.11.1.1347
 - [Boot] 2.8.3
-- [Leiningen] 2.9.8
+- [Leiningen] 2.10.0
 
 ### [`csharp`](./csharp/)
 
-- [dotnet] sdk 7
+- [dotnet] sdk 7 (7.0.305)
 - [omnisharp-roslyn]
-- [mono]
-- [msbuild]
+- [Mono] 6.12.0.182
+- [msbuild] 16.10.1
 
 ### [`cue`](./cue/)
 
-- [Cue] 0.4.3
-- [nix-cue]
+- [Cue] 0.5.0
 
 ### [`dhall`](./dhall)
 
-- [Dhall] 1.40.2
+- [Dhall] 1.41.2
 - [dhall-bash]
-- [dhall-csv] (Linux only)
 - [dhall-docs]
 - [dhall-json]
 - [dhall-lsp-server]
 - [dhall-nix]
 - [dhall-nixpkgs]
 - [dhall-openapi]
-- [dhall-text] (Linux only)
 - [dhall-toml]
 - [dhall-yaml]
 
 ### [`elixir`](./elixir/)
 
-- [Elixir] 1.13.4, including [mix] and [IEx]
+- [Elixir] 1.14.5, including [mix] and [IEx]
 - [gigalixir] (Linux only)
 
 ### [`elm`](./elm/)
 
 - [Elm] 0.19.1
-- [elm2nix] 0.2.1
+- [elm2nix]
 
 ### [`gleam`](./gleam/)
 
-- [Gleam] 0.22.1
+- [Gleam] 0.30.0
 
 ### [`go`](./go/)
 
-- [Go] 1.19
+- [Go] 1.20.5
 - Standard Go tools ([goimports], [godoc], and others)
 - [golangci-lint]
 
 ### [`hashi`](./hashi/)
 
-- [Packer] 1.8.2
-- [Terraform] 1.2.7
-- [Nomad] 1.2.9
-- [Vault] 1.11.2
+- [Packer] 1.8.6
+- [Terraform] 1.5.2
+- [Nomad] 1.4.6
+- [Vault] 1.13.3
 - [nomad-autoscaler] 0.3.6-dev
 - [nomad-pack] 0.0.1-techpreview.3
-- [levant] 0.3.1-dev
+- [levant] 0.3.2-dev
 - [damon]
-- [Terragrunt] 0.37.0
-- [tflint] 0.39.3
+- [Terragrunt] 0.45.13
+- [tflint] 0.46.1
 
 ### [`haskell`](./haskell/)
 
-- [GHC][haskell] 9.0.2
-- [cabal] 3.6.2.0
+- [GHC][haskell] 9.2.8
+- [cabal] 3.10.1.0
 
 ### [`java`](./java)
 
-- [Java] 17.0.3
-- [Maven] 3.8.5
-- [Gradle] 7.5
-- [Ant] 1.10.11
+- [Java] 20.0.1+9
+- [Maven] 3.9.2
+- [Gradle] 9.0.1
 
 ### [`kotlin`](./kotlin/)
 
-- [Kotlin] 1.7.10-release-333
-- [Gradle] 7.5
+- [Kotlin] 1.9.0
+- [Gradle] 8.0.1
 
 ### [`latex`](./latex/)
 
@@ -157,66 +153,65 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`nim`](./nim)
 
-- [Nim] 1.6.6
-- [nimble] 0.13.1
+- [Nim] 1.6.14
+- [nimble] 0.14.2
 
 ### [`nix`](./nix/)
 
-- [Cachix] 0.8.1
-- [dhall-to-nix] 1.1.23
-- [lorri]
-- [niv]
-- [nixfmt]
-- [statix]
+- [Cachix] 1.6
+- [dhall-to-nix] 1.1.25
+- [lorri] 1.6.0
+- [niv] 0.2.22
+- [nixfmt] 0.5.0
+- [statix] 0.5.6
 - [vulnix]
 
 ### [`node`](./node/)
 
-- [Node.js][node] 18.7.0
-- [npm] 8.15.0
-- [pnpm] 7.9.1
+- [Node.js][node] 18.16.1
+- [npm] 9.5.1
+- [pnpm] 8.6.6
 - [Yarn] 1.22.19
 - [node2nix] 1.11.1
 
 ### [`ocaml`](./ocaml/)
 
-- [OCaml] 4.13.1
-- [Dune] 3.4.1
-- [odoc] 2.1.1
-- [ocamlformat] 0.24.0
+- [OCaml] 4.14.1
+- [Dune] 3.9.1
+- [odoc] 2.2.0
+- [ocamlformat] 0.25.1
 
 ### [`opa`](./opa/)
 
-- [Open Policy Agent][opa] 0.43.0
-- [Conftest] 0.34.0
+- [Open Policy Agent][opa] 0.54.0
+- [Conftest] 0.44.0
 
 ### [`php`](./php/)
 
-- [PHP] 8.1.10
-- [Composer] 2.4.2
+- [PHP] 8.2.8
+- [Composer] 2.5.8
 
 ### [`protobuf`](./protobuf/)
 
-- The [Buf CLI][buf] 1.7.0
-- [protoc][protobuf] 3.19.4
+- The [Buf CLI][buf] 1.23.1
+- [protoc][protobuf] 3.21.12
 
 ### [`purescript`](./purescript/)
 
-- [Purescript]
-- [Spago]
-- [purescript-language-server]
-- [purs-tidy]
+- [Purescript] (purs) 0.15.9
+- [Spago] 0.21.0
+- [purescript-language-server] 0.17.1
+- [purs-tidy] 0.10.0
 
 ### [`python`](./python/)
 
-- [Python] 3.11.0rc1
-- [pip] 22.1.2
-- [Virtualenv] 20.15.1
-- [mach-nix]
+- [Python] 3.11.4
+- [pip] 23.0.1
+- [Virtualenv] 20.19.0
 
 ### [`ruby`](./ruby/)
 
-- [Ruby] 3.1.2p20, plus the standard Ruby tools (`bundle`, `gem`, etc.)
+- [Ruby] 3.2.2, plus the standard Ruby tools (`bundle`, `gem`, etc.)
 
 ### [`rust`](./rust/)
 
@@ -224,31 +219,29 @@ The sections below list what each template includes. In all cases, you're free t
 
   - From the `rust-toolchain.toml` file if present
   - From the `rust-toolchain` file if present
-  - Version 1.63.0 if neither is present
+  - Version 1.70.0 if neither is present
 
-- [rust-analyzer] 2022-08-01
+- [rust-analyzer] 2023-07-10
 - [cargo-audit] 0.17.0
 - [cargo-deny] 0.12.1
-- [cross] 0.2.4
 
 ### [`scala`](./scala/)
 
-- [Scala] 3.1.0 ([Java] 17.0.3)
-- [sbt] 1.7.1
+- [Scala] 2.13.11 ([Java] 19.0.1)
+- [sbt] 1.9.2
 
 ### [`shell`](./shell/)
 
-- [shellcheck]
+- [shellcheck] 0.9.0
 
 ### [`zig`](./zig/)
 
-- [Zig] 0.9.1
+- [Zig] 0.10.1
 
 ## Code organization
 
 All of the templates have only the root [flake](./flake.nix) as a flake input. That root flake provides a common revision of [Nixpkgs] and [`flake-utils`][flake-utils] to all the templates.
 
-[ant]: https://ant.apache.org
 [boot]: https://www.boot-clj.com
 [buf]: https://github.com/bufbuild/buf
 [cabal]: https://www.haskell.org/cabal
@@ -260,20 +253,17 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [clojure]: https://clojure.org
 [composer]: https://getcomposer.org/
 [conftest]: https://www.conftest.dev
-[cross]: https://github.com/cross-rs/cross
 [csharp]: https://dotnet.microsoft.com/en-us/languages/csharp
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
 [dhall]: https://dhall-lang.org
 [dhall-bash]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash
-[dhall-csv]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-csv
 [dhall-docs]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-docs
 [dhall-json]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json
 [dhall-lsp-server]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server
 [dhall-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [dhall-nixpkgs]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nixpkgs
 [dhall-openapi]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-openapi
-[dhall-text]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-text
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [dhall-toml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml
 [dhall-yaml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml
@@ -299,7 +289,6 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant
 [lorri]: https://github.com/target/lorri
-[mach-nix]: https://github.com/DavHau/mach-nix
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
 [mono]: https://www.mono-project.com/
@@ -309,7 +298,6 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nimble]: https://github.com/nim-lang/nimble
 [niv]: https://github.com/nmattia/niv
 [nix]: https://nixos.org
-[nix-cue]: https://github.com/jmgilman/nix-cue
 [nixfmt]: https://github.com/serokell/nixfmt
 [nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv
