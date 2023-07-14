@@ -21,7 +21,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-         packages = with pkgs; [ scala sbt coursier ];
+          packages = with pkgs; [ scala sbt coursier ];
         };
       });
     };
