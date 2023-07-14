@@ -18,8 +18,6 @@ nix flake init --template github:the-nix-way/dev-templates#rust
 nix flake new --template github:the-nix-way/dev-templates#rust ${NEW_PROJECT_DIRECTORY}
 ```
 
-> **Note**: All templates are pinned to the [22.11 release][release] of Nixpkgs.
-
 ## How to use the templates
 
 Once your preferred template has been initialized, you can use the provided shell in two ways:
