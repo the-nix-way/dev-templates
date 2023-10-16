@@ -28,7 +28,7 @@ Once your preferred template has been initialized, you can use the provided shel
 ## Available templates
 
 | Language/framework/tool  | Template                      |
-| :----------------------- | :-----------------------------|
+| :----------------------- | :---------------------------- |
 | [Clojure]                | [`clojure`](./clojure/)       |
 | [C#][csharp]             | [`csharp`](./csharp/)         |
 | [Cue]                    | [`cue`](./cue/)               |
@@ -38,6 +38,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Gleam]                  | [`gleam`](./gleam/)           |
 | [Go]                     | [`go`](./go/)                 |
 | [Hashicorp] tools        | [`hashi`](./hashi/)           |
+| [Haxe]                   | [`haxe`](./haxe/)             |
 | [Java]                   | [`java`](./java/)             |
 | [Kotlin]                 | [`kotlin`](./kotlin/)         |
 | [LaTeX]                  | [`latex`](./latex/)           |
@@ -128,6 +129,10 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [GHC][haskell] 9.2.8
 - [cabal] 3.10.1.0
+
+### [`haxe`](./haxe/)
+
+- [Haxe] 4.2.5
 
 ### [`java`](./java)
 
@@ -291,6 +296,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [gradle]: https://gradle.org
 [hashicorp]: https://hashicorp.com
 [haskell]: https://haskell.org
+[haxe]: https://haxe.org/
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [jq]: https://jqlang.github.io/jq
@@ -353,4 +359,3 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [zig]: https://ziglang.org
-
