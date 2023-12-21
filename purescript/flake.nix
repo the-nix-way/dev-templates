@@ -2,7 +2,7 @@
   description = "A Nix-flake-based Purescript development environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
     easy-purescript-nix = {
       url = "github:justinwoo/easy-purescript-nix";
       flake = false;

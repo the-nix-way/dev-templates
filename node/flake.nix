@@ -1,13 +1,13 @@
 {
   description = "A Nix-flake-based Node.js development environment";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
 
   outputs = { self, nixpkgs }:
     let
       overlays = [
         (final: prev: rec {
-          nodejs = prev.nodejs-18_x;
+          nodejs = prev.nodejs_latest;
           pnpm = prev.nodePackages.pnpm;
           yarn = (prev.yarn.override { inherit nodejs; });
         })

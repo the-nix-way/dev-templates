@@ -1,7 +1,7 @@
 {
   description = "A Nix-flake-based Nickel development environment";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
 
   outputs = { self, nixpkgs }:
     let
