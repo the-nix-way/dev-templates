@@ -23,7 +23,9 @@
             else if builtins.pathExists ./rust-toolchain then
               rust.fromRustupToolchainFile ./rust-toolchain
             else
-              rust.stable.latest.default;
+              rust.stable.latest.default.override {
+                extensions = [ "rust-src" "rustfmt" ];
+              };
         })
       ];
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
