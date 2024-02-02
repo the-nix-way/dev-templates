@@ -57,7 +57,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Rust]                   | [`rust`](./rust/)             |
 | [Scala]                  | [`scala`](./scala/)           |
 | [Shell]                  | [`shell`](./shell/)           |
-| [Vlang]                  | [`vlang`](./shell/)           |
+| [Vlang]                  | [`vlang`](./vlang/)           |
 | [Zig]                    | [`zig`](./zig/)               |
 
 ## Template contents
