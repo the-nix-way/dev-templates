@@ -206,6 +206,11 @@
           description = "Shell script development environment";
         };
 
+        vlang = {
+          path = ./vlang;
+          description = "Vlang developent environment";
+        };
+
         zig = {
           path = ./zig;
           description = "Zig development environment";
