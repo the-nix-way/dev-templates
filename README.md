@@ -56,6 +56,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Rust]                   | [`rust`](./rust/)             |
 | [Scala]                  | [`scala`](./scala/)           |
 | [Shell]                  | [`shell`](./shell/)           |
+| [Vlang]                  | [`vlang`](./shell/)           |
 | [Zig]                    | [`zig`](./zig/)               |
 
 ## Template contents
@@ -248,6 +249,10 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [shellcheck] 0.9.0
 
+### [`Vlang`](./vlang/)
+
+- [Vlang] 0.4.4
+
 ### [`zig`](./zig/)
 
 - [Zig] 0.10.1
@@ -358,4 +363,5 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
+[vlang]: https://vlang.io/
 [zig]: https://ziglang.org
