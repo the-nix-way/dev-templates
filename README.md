@@ -52,6 +52,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Protobuf]               | [`protobuf`](./protobuf/)     |
 | [Pulumi]                 | [`pulumi`](./pulumi/)         |
 | [Purescript]             | [`purescript`](./purescript/) |
+| [R]                      | [`r`](./r/)                   |
 | [Ruby]                   | [`ruby`](./ruby/)             |
 | [Rust]                   | [`rust`](./rust/)             |
 | [Scala]                  | [`scala`](./scala/)           |
@@ -223,6 +224,12 @@ The sections below list what each template includes. In all cases, you're free t
 - [pip] 23.0.1
 - [Virtualenv] 20.19.0
 
+### [`r`](./r/)
+
+- [R] 4.3.1
+- [rmarkdown] 2.22
+- [knitr] 1.43 ([pandoc] and [texlive])
+
 ### [`ruby`](./ruby/)
 
 - [Ruby] 3.2.2, plus the standard Ruby tools (`bundle`, `gem`, etc.)
@@ -300,6 +307,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [jq]: https://jqlang.github.io/jq
+[knitr]: https://yihui.org/knitr/
 [kotlin]: https://kotlinlang.org
 [latex]: https://www.latex-project.org/
 [leiningen]: https://leiningen.org
@@ -328,6 +336,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [odoc]: https://github.com/ocaml/odoc
 [omnisharp-roslyn]: https://github.com/OmniSharp/omnisharp-roslyn
 [opa]: https://openpolicyagent.org
+[pandoc]: https://pandoc.org/
 [packer]: https://packer.io
 [pip]: https://pypi.org/project/pip
 [phoenix]: https://phoenixframework.org
@@ -339,7 +348,9 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [purescript-language-server]: https://github.com/nwolverson/purescript-language-server
 [purs-tidy]: https://github.com/natefaubion/purescript-tidy
 [python]: https://python.org
+[r]: https://www.r-project.org/
 [release]: https://github.com/NixOS/nixpkgs/releases/tag/22.11
+[rmarkdown]: https://rmarkdown.rstudio.com/
 [ruby]: https://ruby-lang.org
 [rust]: https://rust-lang.org
 [rust-analyzer]: https://rust-analyzer.github.io
