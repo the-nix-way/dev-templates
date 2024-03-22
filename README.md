@@ -62,6 +62,20 @@ Once your preferred template has been initialized, you can use the provided shel
 
 The sections below list what each template includes. In all cases, you're free to add and remove packages as you see fit; the templates are just boilerplate.
 
+### [`c-cpp`](./c-cpp/)
+
+- [clang-tools] 17.0.6
+- [cmake] 3.28.3
+- [codespell] 2.2.6
+- [conan] 2.0.17
+- [cppcheck] 2.13.4
+- [doxygen] 1.10.0
+- [gdb] 14.1
+- [gtest] 1.12.1
+- [lcov] 1.0
+- [vcpkg]
+- [vcpkg-tool]
+
 ### [`clojure`](./clojure/)
 
 - [Clojure] 1.11.1.1347
@@ -263,10 +277,15 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cargo]: https://doc.rust-lang.org/cargo
 [cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
+[clang-tools]: https://clang.llvm.org/
 [clippy]: https://github.com/rust-lang/rust-clippy
 [clojure]: https://clojure.org
+[cmake]: https://cmake.org/
+[codespell]: https://github.com/codespell-project/codespell
 [composer]: https://getcomposer.org/
+[conan]: https://conan.io/
 [conftest]: https://www.conftest.dev
+[cppcheck]: http://cppcheck.sourceforge.net/
 [csharp]: https://dotnet.microsoft.com/en-us/languages/csharp
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
@@ -282,11 +301,13 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [dhall-toml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml
 [dhall-yaml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml
 [dotnet]: https://dotnet.microsoft.com/en-us/
+[doxygen]: https://www.doxygen.nl/
 [dune]: https://dune.build
 [elixir]: https://elixir-lang.org
 [elm]: https://elm-lang.org
 [elm2nix]: https://github.com/cachix/elm2nix
 [flake-utils]: https://github.com/numtide/flake-utils
+[gdb]: https://www.gnu.org/software/gdb/
 [gigalixir]: https://www.gigalixir.com
 [gleam]: https://gleam.run
 [go]: https://go.dev
@@ -294,6 +315,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [goimports]: https://pkg.go.dev/golang.org/x/tools/cmd/goimports
 [golangci-lint]: https://github.com/golangci/golangci-lint
 [gradle]: https://gradle.org
+[gtest]: https://github.com/google/googletest
 [hashicorp]: https://hashicorp.com
 [haskell]: https://haskell.org
 [haxe]: https://haxe.org/
@@ -302,6 +324,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [jq]: https://jqlang.github.io/jq
 [kotlin]: https://kotlinlang.org
 [latex]: https://www.latex-project.org/
+[lcov]: https://ltp.sourceforge.net/coverage/lcov.php
 [leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant
 [lorri]: https://github.com/target/lorri
@@ -355,6 +378,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [texlive]: https://www.tug.org/texlive/
 [tflint]: https://github.com/terraform-linters/tflint
 [vault]: https://www.vaultproject.io
+[vcpkg]: https://vcpkg.io/
+[vcpkg-tool]: https://github.com/microsoft/vcpkg-tool
 [virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
