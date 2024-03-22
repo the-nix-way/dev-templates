@@ -392,11 +392,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [texlive]: https://www.tug.org/texlive/
 [tflint]: https://github.com/terraform-linters/tflint
 [vault]: https://www.vaultproject.io
-<<<<<<< HEAD
 [vcpkg]: https://vcpkg.io/
 [vcpkg-tool]: https://github.com/microsoft/vcpkg-tool
-=======
->>>>>>> b89f77d (feature: add python venv)
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [vlang]: https://vlang.io/
