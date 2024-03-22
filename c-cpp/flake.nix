@@ -24,11 +24,19 @@
             conan
             cppcheck
             doxygen
+<<<<<<< HEAD
+=======
+            gdb
+>>>>>>> 66cbf13 (Add C/C++ development flake with some sane defaults.)
             gtest
             lcov
             vcpkg
             vcpkg-tool
+<<<<<<< HEAD
           ] ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
+=======
+          ];
+>>>>>>> 66cbf13 (Add C/C++ development flake with some sane defaults.)
         };
       });
     };
