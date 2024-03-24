@@ -29,6 +29,7 @@ Once your preferred template has been initialized, you can use the provided shel
 
 | Language/framework/tool  | Template                      |
 | :----------------------- | :---------------------------- |
+| [C]/[C++]                | [`c-cpp`](./c-cpp/)           |
 | [Clojure]                | [`clojure`](./clojure/)       |
 | [C#][csharp]             | [`csharp`](./csharp/)         |
 | [Cue]                    | [`cue`](./cue/)               |
@@ -272,6 +273,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 
 [boot]: https://www.boot-clj.com
 [buf]: https://github.com/bufbuild/buf
+[C]: https://www.open-std.org/jtc1/sc22/wg14
+[C++]: https://isocpp.org
 [cabal]: https://www.haskell.org/cabal
 [cachix]: https://www.cachix.org
 [cargo]: https://doc.rust-lang.org/cargo
