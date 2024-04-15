@@ -228,7 +228,6 @@ A dev template that's fully customizable.
 
 - [Python] 3.11.4
 - [pip] 23.0.1
-- [Virtualenv] 20.19.0
 
 ### [`ruby`](./ruby/)
 
@@ -367,7 +366,6 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [texlive]: https://www.tug.org/texlive/
 [tflint]: https://github.com/terraform-linters/tflint
 [vault]: https://www.vaultproject.io
-[virtualenv]: https://pypi.org/project/virtualenv
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
 [vlang]: https://vlang.io/
