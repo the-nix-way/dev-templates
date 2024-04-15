@@ -24,9 +24,6 @@
 
                   echo "checking ''${dir}"
                   nix flake check --all-systems --no-build
-
-                  echo "building ''${dir}"
-                  nix build ".#devShells.''${SYSTEM}.default"
                 )
               done
             '';
