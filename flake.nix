@@ -13,11 +13,25 @@
             text = "nixpkgs-fmt '**/*.nix'";
           };
 
-          check = final.writeShellApplication {
-            name = "check";
+          # only run this locally, as Actions will run out of disk space
+          build = final.writeShellApplication {
+            name = "build";
             text = ''
               SYSTEM=$(nix eval --impure --raw --expr 'builtins.currentSystem')
 
+              for dir in */; do # Iterate through all the templates
+                (
+                  cd "''${dir}"
+
+                  nix build ".#devShells.''${SYSTEM}.default"
+                )
+              done
+            '';
+          };
+
+          check = final.writeShellApplication {
+            name = "check";
+            text = ''
               for dir in */; do # Iterate through all the templates
                 (
                   cd "''${dir}"
@@ -73,7 +87,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ check format update ];
+          packages = with pkgs; [ build check format update ];
         };
       });
 
