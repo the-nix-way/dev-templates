@@ -15,6 +15,16 @@
               ${exec "nixpkgs-fmt"} **/*.nix
             '';
 
+            check = prev.writeScriptBin "check" ''
+              for dir in `ls -d */`; do # Iterate through all the templates
+                (
+                  cd $dir
+
+                  nix flake check --all-systems --no-build
+                )
+              done
+            '';
+
             dvt = prev.writeScriptBin "dvt" ''
               if [ -z $1 ]; then
                 echo "no template specified"
@@ -46,8 +56,6 @@
                   nix flake check --all-systems --no-build
                 )
               done
-
-
             '';
           })
       ];
@@ -59,7 +67,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ format update ];
+          packages = with pkgs; [ check format update ];
         };
       });
 
