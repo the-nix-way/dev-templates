@@ -17,11 +17,10 @@
             cachix
             lorri
             niv
-            nixfmt
+            nixfmt-classic
             statix
             vulnix
             haskellPackages.dhall-nix
-            rnix-lsp
           ];
         };
       });

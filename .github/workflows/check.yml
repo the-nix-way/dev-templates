@@ -1,18 +1,14 @@
 on:
+  pull_request:
   push:
-    tags:
-      - "v*.*.*"
+    branches: [main]
 
 jobs:
-  publish:
+  check:
     runs-on: "ubuntu-22.04"
-    permissions:
-      id-token: "write"
-      contents: "read"
     steps:
       - uses: "actions/checkout@v4"
       - uses: "DeterminateSystems/nix-installer-action@main"
       - uses: "DeterminateSystems/magic-nix-cache-action@main"
-      - uses: "DeterminateSystems/flakehub-push@main"
-        with:
-          visibility: "public"
+      - name: Flake check
+        run: nix develop --command check

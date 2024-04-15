@@ -15,10 +15,12 @@
         default = pkgs.mkShell {
           packages = (with pkgs; [ elixir ]) ++
             # Linux only
-            pkgs.lib.optionals (pkgs.stdenv.isLinux) (with pkgs; [ gigalixir inotify-tools libnotify ]) ++
+            (pkgs.lib.optionals (pkgs.stdenv.isLinux)
+              (with pkgs; [ gigalixir inotify-tools libnotify ])) ++
             # macOS only
-            pkgs.lib.optionals (pkgs.stdenv.isDarwin) (with pkgs; [ terminal-notifier ]) ++
-            (with pkgs.darwin.apple_sdk.frameworks; [ CoreFoundation CoreServices ]);
+            pkgs.lib.optionals (pkgs.stdenv.isDarwin)
+              ((with pkgs; [ terminal-notifier ]) ++
+                (with pkgs.darwin.apple_sdk.frameworks; [ CoreFoundation CoreServices ]));
         };
       });
     };
