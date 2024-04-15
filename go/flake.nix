@@ -1,11 +1,11 @@
 {
-  description = "A Nix-flake-based Go 1.17 development environment";
+  description = "A Nix-flake-based Go 1.22 development environment";
 
   inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
 
   outputs = { self, nixpkgs }:
     let
-      goVersion = 20; # Change this to update the whole stack
+      goVersion = 22; # Change this to update the whole stack
       overlays = [ (final: prev: { go = prev."go_1_${toString goVersion}"; }) ];
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
@@ -16,8 +16,8 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            # go 1.20 (specified by overlay)
-            go
+            # go 1.22 (specified by overlay)
+            go_1_22
 
             # goimports, godoc, etc.
             gotools
