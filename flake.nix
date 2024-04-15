@@ -6,26 +6,35 @@
   outputs = { self, nixpkgs }:
     let
       overlays = [
-        (final: prev:
-          let
-            exec = pkg: "${prev.${pkg}}/bin/${pkg}";
-          in
-          {
-            format = prev.writeScriptBin "format" ''
-              ${exec "nixpkgs-fmt"} **/*.nix
-            '';
+        (final: prev: {
+          format = final.writeShellApplication {
+            name = "format";
+            runtimeInputs = with final; [ nixpkgs-fmt ];
+            text = "nixpkgs-fmt '**/*.nix'";
+          };
 
-            check = prev.writeScriptBin "check" ''
-              for dir in `ls -d */`; do # Iterate through all the templates
+          check = final.writeShellApplication {
+            name = "check";
+            text = ''
+              SYSTEM=$(nix eval --impure --raw --expr 'builtins.currentSystem')
+
+              for dir in */; do # Iterate through all the templates
                 (
-                  cd $dir
+                  cd "''${dir}"
 
+                  echo "checking ''${dir}"
                   nix flake check --all-systems --no-build
+
+                  echo "building ''${dir}"
+                  nix build ".#devShells.''${SYSTEM}.default"
                 )
               done
             '';
+          };
 
-            dvt = prev.writeScriptBin "dvt" ''
+          dvt = final.writeShellApplication {
+            name = "dvt";
+            text = ''
               if [ -z $1 ]; then
                 echo "no template specified"
                 exit 1
@@ -33,31 +42,31 @@
 
               TEMPLATE=$1
 
-              ${exec "nix"} \
+              nix \
                 --experimental-features 'nix-command flakes' \
                 flake init \
                 --template \
                 "github:the-nix-way/dev-templates#''${TEMPLATE}"
             '';
+          };
 
-            update = prev.writeScriptBin "update" ''
-              for dir in `ls -d */`; do # Iterate through all the templates
+          update = final.writeShellApplication {
+            name = "update";
+            text = ''
+              for dir in */; do # Iterate through all the templates
                 (
-                  cd $dir
+                  cd "''${dir}"
 
                   echo "updating ''${dir}"
-
-                  # Update flake.lock
                   nix flake update
 
                   echo "checking ''${dir}"
-
-                  # Make sure things work after the update
                   nix flake check --all-systems --no-build
                 )
               done
             '';
-          })
+          };
+        })
       ];
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
