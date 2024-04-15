@@ -14,6 +14,7 @@
             format = prev.writeScriptBin "format" ''
               ${exec "nixpkgs-fmt"} **/*.nix
             '';
+
             dvt = prev.writeScriptBin "dvt" ''
               if [ -z $1 ]; then
                 echo "no template specified"
@@ -28,14 +29,25 @@
                 --template \
                 "github:the-nix-way/dev-templates#''${TEMPLATE}"
             '';
+
             update = prev.writeScriptBin "update" ''
               for dir in `ls -d */`; do # Iterate through all the templates
                 (
                   cd $dir
-                  ${exec "nix"} flake update # Update flake.lock
-                  ${exec "nix"} flake check  # Make sure things work after the update
+
+                  echo "updating ''${dir}"
+
+                  # Update flake.lock
+                  nix flake update
+
+                  echo "checking ''${dir}"
+
+                  # Make sure things work after the update
+                  nix flake check --all-systems --no-build
                 )
               done
+
+
             '';
           })
       ];
@@ -94,6 +106,11 @@
         elm = {
           path = ./elm;
           description = "Elm development environment";
+        };
+
+        empty = {
+          path = ./empty;
+          description = "Empty dev template that you can customize at will";
         };
 
         gleam = {

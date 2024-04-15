@@ -36,6 +36,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Dhall]                  | [`dhall`](./dhall/)           |
 | [Elixir]                 | [`elixir`](./elixir/)         |
 | [Elm]                    | [`elm`](./elm/)               |
+| Empty (change at will)   | [`empty`](./empty)            |
 | [Gleam]                  | [`gleam`](./gleam/)           |
 | [Go]                     | [`go`](./go/)                 |
 | [Hashicorp] tools        | [`hashi`](./hashi/)           |
@@ -117,6 +118,10 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Elm] 0.19.1
 - [elm2nix]
+
+### [Empty](./empty/)
+
+A dev template that's fully customizable.
 
 ### [`gleam`](./gleam/)
 
