@@ -139,6 +139,7 @@ The sections below list what each template includes. In all cases, you're free t
 - [Java] 20.0.1+9
 - [Maven] 3.9.2
 - [Gradle] 9.0.1
+- [jdtls] 1.31.0
 
 ### [`kotlin`](./kotlin/)
 
@@ -299,6 +300,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [haxe]: https://haxe.org/
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
+[jdtls]: https://projects.eclipse.org/projects/eclipse.jdt.ls
 [jq]: https://jqlang.github.io/jq
 [kotlin]: https://kotlinlang.org
 [latex]: https://www.latex-project.org/
