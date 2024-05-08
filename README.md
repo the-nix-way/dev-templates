@@ -254,11 +254,11 @@ A dev template that's fully customizable.
 
   - From the `rust-toolchain.toml` file if present
   - From the `rust-toolchain` file if present
-  - Version 1.70.0 if neither is present
+  - Version 1.77.2 if neither is present
 
-- [rust-analyzer] 2023-07-10
-- [cargo-audit] 0.17.0
-- [cargo-deny] 0.12.1
+- [rust-analyzer] 2024-04-08
+- [cargo-edit] 0.12.2
+- [cargo-deny] 0.14.21
 
 ### [`scala`](./scala/)
 
