@@ -16,8 +16,8 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            # go 1.22 (specified by overlay)
-            go_1_22
+            # go (version is specified by overlay)
+            go
 
             # goimports, godoc, etc.
             gotools
