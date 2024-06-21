@@ -1,7 +1,7 @@
 {
   description = "A Nix-flake-based Gleam development environment";
 
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
   outputs = { self, nixpkgs }:
     let
