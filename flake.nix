@@ -226,6 +226,11 @@
           description = "Python development environment";
         };
 
+        r = {
+          path = ./r;
+          description = "R development environment";
+        };
+
         ruby = {
           path = ./ruby;
           description = "Ruby development environment";
