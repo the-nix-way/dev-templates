@@ -191,6 +191,11 @@
           description = "Node.js development environment";
         };
 
+        ocaml = {
+          path = ./ocaml;
+          description = "OCaml development environment";
+        };
+
         opa = {
           path = ./opa;
           description = "Open Policy Agent development environment";
