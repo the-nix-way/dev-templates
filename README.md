@@ -29,6 +29,7 @@ Once your preferred template has been initialized, you can use the provided shel
 
 | Language/framework/tool  | Template                      |
 | :----------------------- | :---------------------------- |
+| [Bun]                    | [`bun`](./bun/)               |
 | [C]/[C++]                | [`c-cpp`](./c-cpp/)           |
 | [Clojure]                | [`clojure`](./clojure/)       |
 | [C#][csharp]             | [`csharp`](./csharp/)         |
@@ -64,6 +65,10 @@ Once your preferred template has been initialized, you can use the provided shel
 ## Template contents
 
 The sections below list what each template includes. In all cases, you're free to add and remove packages as you see fit; the templates are just boilerplate.
+
+### [`bun`](./bun/)
+
+- [bun] 1.1.8
 
 ### [`c-cpp`](./c-cpp/)
 
@@ -283,6 +288,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 
 [boot]: https://www.boot-clj.com
 [buf]: https://github.com/bufbuild/buf
+[bun]: https://bun.sh/
 [C]: https://www.open-std.org/jtc1/sc22/wg14
 [C++]: https://isocpp.org
 [cabal]: https://www.haskell.org/cabal
