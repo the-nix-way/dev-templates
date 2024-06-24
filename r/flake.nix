@@ -21,7 +21,8 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs;
-            [ rEnv
+            [
+              rEnv
               pandoc
               texlive.combined.scheme-full
             ];

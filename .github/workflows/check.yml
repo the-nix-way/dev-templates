@@ -12,3 +12,6 @@ jobs:
       - uses: "DeterminateSystems/magic-nix-cache-action@main"
       - name: Flake check
         run: nix develop --command check
+      - name: Check formatting
+        run: |
+          git ls-files '*.nix' | nix develop --command xargs nixpkgs-fmt --check
