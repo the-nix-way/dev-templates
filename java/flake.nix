@@ -21,7 +21,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ gradle jdk maven ];
+          packages = with pkgs; [ gradle jdk maven jdt-language-server ];
         };
       });
     };

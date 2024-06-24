@@ -25,7 +25,7 @@
             python311
 
             # Go SDK
-            go_1_20
+            go_1_22
 
             # Node.js SDK
             nodejs
