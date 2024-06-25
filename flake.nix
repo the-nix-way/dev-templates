@@ -82,7 +82,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ build check format update ];
+          packages = with pkgs; [ build check format update nixpkgs-fmt ];
         };
       });
 
