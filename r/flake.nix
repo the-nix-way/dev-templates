@@ -7,8 +7,8 @@
     let
       overlays = [
         (final: prev: rec {
-          rEnv = prev.rWrapper.override {
-            packages = with prev.rPackages; [ knitr ];
+          rEnv = final.rWrapper.override {
+            packages = with final.rPackages; [ knitr ];
           };
         })
       ];

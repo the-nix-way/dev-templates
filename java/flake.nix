@@ -5,7 +5,7 @@
 
   outputs = { self, nixpkgs }:
     let
-      javaVersion = 20; # Change this value to update the whole stack
+      javaVersion = 22; # Change this value to update the whole stack
       overlays = [
         (final: prev: rec {
           jdk = prev."jdk${toString javaVersion}";
@@ -21,7 +21,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ gradle jdk maven jdt-language-server ];
+          packages = with pkgs; [ jdk gradle maven jdt-language-server ];
         };
       });
     };

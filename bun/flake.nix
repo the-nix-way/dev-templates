@@ -5,14 +5,9 @@
 
   outputs = { self, nixpkgs }:
     let
-      overlays = [
-        (final: prev: rec {
-          bun = prev.bun;
-        })
-      ];
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit overlays system; };
+        pkgs = import nixpkgs { inherit system; };
       });
     in
     {

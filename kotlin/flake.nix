@@ -5,8 +5,7 @@
 
   outputs = { self, nixpkgs }:
     let
-      javaVersion = 20;
-
+      javaVersion = 22; # Change this value to update the whole stack
       overlays = [
         (final: prev: rec {
           jdk = prev."jdk${toString javaVersion}";

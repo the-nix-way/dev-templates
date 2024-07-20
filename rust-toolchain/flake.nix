@@ -14,7 +14,7 @@
       overlays = [
         rust-overlay.overlays.default
         (final: prev: {
-          rustToolchain = prev.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
+          rustToolchain = final.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
         })
       ];
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
