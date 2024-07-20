@@ -96,6 +96,11 @@
 
     {
       templates = rec {
+        bun = {
+          path = ./bun;
+          description = "Bun development environment";
+        };
+
         c-cpp = {
           path = ./c-cpp;
           description = "C/C++ development environment";
