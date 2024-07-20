@@ -9,6 +9,8 @@ jobs:
     steps:
       - uses: "actions/checkout@v4"
       - uses: "DeterminateSystems/flake-checker-action@main"
+        with:
+          fail-mode: true
       - uses: "DeterminateSystems/nix-installer-action@main"
       - uses: "DeterminateSystems/magic-nix-cache-action@main"
       - name: Flake check
