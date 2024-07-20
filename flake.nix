@@ -261,6 +261,11 @@
           description = "Shell script development environment";
         };
 
+        swift = {
+          path = ./swift;
+          description = "Swift development environment";
+        };
+
         vlang = {
           path = ./vlang;
           description = "Vlang developent environment";
