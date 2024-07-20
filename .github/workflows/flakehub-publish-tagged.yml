@@ -16,3 +16,4 @@ jobs:
       - uses: "DeterminateSystems/flakehub-push@main"
         with:
           visibility: "public"
+          include-output-paths: true
