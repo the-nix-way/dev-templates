@@ -96,6 +96,8 @@
 
     {
       templates = rec {
+        default = empty;
+
         bun = {
           path = ./bun;
           description = "Bun development environment";
