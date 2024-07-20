@@ -11,18 +11,19 @@
 
   outputs = { self, nixpkgs, rust-overlay }:
     let
-      overlays = [
-        rust-overlay.overlays.default
-        (final: prev: {
-          rustToolchain = final.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
-        })
-      ];
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit overlays system; };
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ rust-overlay.overlays.default self.overlays.default ];
+        };
       });
     in
     {
+      overlays.default = final: prev: {
+        rustToolchain = final.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
+      };
+
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
