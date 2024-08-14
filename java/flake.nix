@@ -16,7 +16,7 @@
       overlays.default =
         final: prev: rec {
           jdk = prev."jdk${toString javaVersion}";
-          maven = prev.maven.override { jre = jdk; };
+          maven = prev.maven.override { jdk_headless = jdk; };
           gradle = prev.gradle.override { java = jdk; };
         };
 
