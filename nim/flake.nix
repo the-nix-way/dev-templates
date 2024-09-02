@@ -13,7 +13,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ nim ];
+          packages = with pkgs; [ nim nimble ];
         };
       });
     };
