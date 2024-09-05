@@ -53,6 +53,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Open Policy Agent][opa] | [`opa`](./opa)                |
 | [PHP]                    | [`php`](./php/)               |
 | [Protobuf]               | [`protobuf`](./protobuf/)     |
+| [Python]                 | [`python`](./python/)         |
 | [Pulumi]                 | [`pulumi`](./pulumi/)         |
 | [Purescript]             | [`purescript`](./purescript/) |
 | [R]                      | [`r`](./r/)                   |
@@ -390,6 +391,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [pip]: https://pypi.org/project/pip
 [phoenix]: https://phoenixframework.org
 [php]: https://php.net/
+[python]: https://www.python.org/
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
 [pulumi]: https://pulumi.com/
