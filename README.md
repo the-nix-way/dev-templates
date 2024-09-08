@@ -35,6 +35,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Dhall]                  | [`dhall`](./dhall/)           |
 | [Elixir]                 | [`elixir`](./elixir/)         |
 | [Elm]                    | [`elm`](./elm/)               |
+| [Fortran]                | [`fortran`](./fortran/)       |
 | [Gleam]                  | [`gleam`](./gleam/)           |
 | [Go]                     | [`go`](./go/)                 |
 | [Hashicorp] tools        | [`hashi`](./hashi/)           |
@@ -102,6 +103,10 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Elm] 0.19.1
 - [elm2nix]
+
+### [`Fortran`](./fortran/)
+- [Fortran]
+- [fortran-fpm]
 
 ### [`gleam`](./gleam/)
 
