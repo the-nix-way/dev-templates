@@ -27,43 +27,47 @@ Once your preferred template has been initialized, you can use the provided shel
 
 ## Available templates
 
-| Language/framework/tool  | Template                      |
-| :----------------------- | :---------------------------- |
-| [Bun]                    | [`bun`](./bun/)               |
-| [C]/[C++]                | [`c-cpp`](./c-cpp/)           |
-| [Clojure]                | [`clojure`](./clojure/)       |
-| [C#][csharp]             | [`csharp`](./csharp/)         |
-| [Cue]                    | [`cue`](./cue/)               |
-| [Dhall]                  | [`dhall`](./dhall/)           |
-| [Elixir]                 | [`elixir`](./elixir/)         |
-| [Elm]                    | [`elm`](./elm/)               |
-| Empty (change at will)   | [`empty`](./empty)            |
-| [Gleam]                  | [`gleam`](./gleam/)           |
-| [Go]                     | [`go`](./go/)                 |
-| [Hashicorp] tools        | [`hashi`](./hashi/)           |
-| [Haxe]                   | [`haxe`](./haxe/)             |
-| [Java]                   | [`java`](./java/)             |
-| [Kotlin]                 | [`kotlin`](./kotlin/)         |
-| [LaTeX]                  | [`latex`](./latex/)           |
-| [Nickel]                 | [`nickel`](./nickel/)         |
-| [Nim]                    | [`nim`](./nim/)               |
-| [Nix]                    | [`nix`](./nix/)               |
-| [Node.js][node]          | [`node`](./node/)             |
-| [OCaml]                  | [`ocaml`](./ocaml/)           |
-| [Open Policy Agent][opa] | [`opa`](./opa)                |
-| [PHP]                    | [`php`](./php/)               |
-| [Protobuf]               | [`protobuf`](./protobuf/)     |
-| [Python]                 | [`python`](./python/)         |
-| [Pulumi]                 | [`pulumi`](./pulumi/)         |
-| [Purescript]             | [`purescript`](./purescript/) |
-| [R]                      | [`r`](./r/)                   |
-| [Ruby]                   | [`ruby`](./ruby/)             |
-| [Rust]                   | [`rust`](./rust/)             |
-| [Scala]                  | [`scala`](./scala/)           |
-| [Shell]                  | [`shell`](./shell/)           |
-| [Swift]                  | [`swift`](./swift)            |
-| [Vlang]                  | [`vlang`](./vlang/)           |
-| [Zig]                    | [`zig`](./zig/)               |
+| Language/framework/tool          | Template                              |
+| :------------------------------- | :------------------------------------ |
+| [Bun]                            | [`bun`](./bun/)                       |
+| [C]/[C++]                        | [`c-cpp`](./c-cpp/)                   |
+| [Clojure]                        | [`clojure`](./clojure/)               |
+| [C#][csharp]                     | [`csharp`](./csharp/)                 |
+| [Cue]                            | [`cue`](./cue/)                       |
+| [Dhall]                          | [`dhall`](./dhall/)                   |
+| [Elixir]                         | [`elixir`](./elixir/)                 |
+| [Elm]                            | [`elm`](./elm/)                       |
+| Empty (change at will)           | [`empty`](./empty)                    |
+| [Gleam]                          | [`gleam`](./gleam/)                   |
+| [Go]                             | [`go`](./go/)                         |
+| [Hashicorp] tools                | [`hashi`](./hashi/)                   |
+| [Haskell]                        | [`haskell`](./haskell/)               |
+| [Haxe]                           | [`haxe`](./haxe/)                     |
+| [Java]                           | [`java`](./java/)                     |
+| [Jupyter]                        | [`jupyter`](./jupyter/)               |
+| [Kotlin]                         | [`kotlin`](./kotlin/)                 |
+| [LaTeX]                          | [`latex`](./latex/)                   |
+| [Nickel]                         | [`nickel`](./nickel/)                 |
+| [Nim]                            | [`nim`](./nim/)                       |
+| [Nix]                            | [`nix`](./nix/)                       |
+| [Node.js][node]                  | [`node`](./node/)                     |
+| [OCaml]                          | [`ocaml`](./ocaml/)                   |
+| [Open Policy Agent][opa]         | [`opa`](./opa)                        |
+| [PHP]                            | [`php`](./php/)                       |
+| [PlatformIO]                     | [`platformio`](./platformio/)         |
+| [Protobuf]                       | [`protobuf`](./protobuf/)             |
+| [Pulumi]                         | [`pulumi`](./pulumi/)                 |
+| [Purescript]                     | [`purescript`](./purescript/)         |
+| [Python]                         | [`python`](./python/)                 |
+| [R]                              | [`r`](./r/)                           |
+| [Ruby]                           | [`ruby`](./ruby/)                     |
+| [Rust]                           | [`rust`](./rust/)                     |
+| [Rust from toolchain file][rust] | [`rust-toolchain`](./rust-toolchain/) |
+| [Scala]                          | [`scala`](./scala/)                   |
+| [Shell]                          | [`shell`](./shell/)                   |
+| [Swift]                          | [`swift`](./swift)                    |
+| [Vlang]                          | [`vlang`](./vlang/)                   |
+| [Zig]                            | [`zig`](./zig/)                       |
 
 ## Template contents
 
@@ -163,12 +167,16 @@ A dev template that's fully customizable.
 
 - [Haxe] 4.2.5
 
-### [`java`](./java)
+### [`java`](./java/)
 
 - [Java] 20.0.1+9
 - [Maven] 3.9.2
 - [Gradle] 9.0.1
 - [jdtls] 1.31.0
+
+### [`jupyter`](./jupyter/)
+
+- [Jupyter core] [jupyter] 5.7.2
 
 ### [`kotlin`](./kotlin/)
 
@@ -224,6 +232,10 @@ A dev template that's fully customizable.
 
 - [PHP] 8.2.8
 - [Composer] 2.5.8
+
+### [`platformio`](./platformio/)
+
+- [PlatformIO] 6.1.11
 
 ### [`protobuf`](./protobuf/)
 
@@ -300,25 +312,25 @@ A dev template that's fully customizable.
 
 All of the templates have only the root [flake](./flake.nix) as a flake input. That root flake provides a common revision of [Nixpkgs] and [`flake-utils`][flake-utils] to all the templates.
 
-[boot]: https://www.boot-clj.com
+[boot]: https://boot-clj.com
 [buf]: https://github.com/bufbuild/buf
-[bun]: https://bun.sh/
-[C]: https://www.open-std.org/jtc1/sc22/wg14
+[bun]: https://bun.sh
+[C]: https://open-std.org/jtc1/sc22/wg14
 [C++]: https://isocpp.org
-[cabal]: https://www.haskell.org/cabal
-[cachix]: https://www.cachix.org
+[cabal]: https://haskell.org/cabal
+[cachix]: https://cachix.org
 [cargo]: https://doc.rust-lang.org/cargo
 [cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
-[clang-tools]: https://clang.llvm.org/
+[clang-tools]: https://clang.llvm.org
 [clippy]: https://github.com/rust-lang/rust-clippy
 [clojure]: https://clojure.org
-[cmake]: https://cmake.org/
+[cmake]: https://cmake.org
 [codespell]: https://github.com/codespell-project/codespell
-[composer]: https://getcomposer.org/
-[conan]: https://conan.io/
-[conftest]: https://www.conftest.dev
-[cppcheck]: http://cppcheck.sourceforge.net/
+[composer]: https://getcomposer.org
+[conan]: https://conan.io
+[conftest]: https://conftest.dev
+[cppcheck]: http://cppcheck.sourceforge.net
 [csharp]: https://dotnet.microsoft.com/en-us/languages/csharp
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
@@ -333,15 +345,15 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [dhall-to-nix]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-nix
 [dhall-toml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-toml
 [dhall-yaml]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml
-[dotnet]: https://dotnet.microsoft.com/en-us/
-[doxygen]: https://www.doxygen.nl/
+[dotnet]: https://dotnet.microsoft.com/en-us
+[doxygen]: https://doxygen.nl
 [dune]: https://dune.build
 [elixir]: https://elixir-lang.org
 [elm]: https://elm-lang.org
 [elm2nix]: https://github.com/cachix/elm2nix
 [flake-utils]: https://github.com/numtide/flake-utils
-[gdb]: https://www.gnu.org/software/gdb/
-[gigalixir]: https://www.gigalixir.com
+[gdb]: https://gnu.org/software/gdb
+[gigalixir]: https://gigalixir.com
 [gleam]: https://gleam.run
 [go]: https://go.dev
 [godoc]: https://pkg.go.dev/golang.org/x/tools/cmd/godoc
@@ -351,21 +363,22 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [gtest]: https://github.com/google/googletest
 [hashicorp]: https://hashicorp.com
 [haskell]: https://haskell.org
-[haxe]: https://haxe.org/
+[haxe]: https://haxe.org
 [iex]: https://hexdocs.pm/iex/IEx.html
 [java]: https://java.com
 [jdtls]: https://projects.eclipse.org/projects/eclipse.jdt.ls
 [jq]: https://jqlang.github.io/jq
-[knitr]: https://yihui.org/knitr/
+[jupyter]: https://jupyter.org
+[knitr]: https://yihui.org/knitr
 [kotlin]: https://kotlinlang.org
-[latex]: https://www.latex-project.org/
+[latex]: https://latex-project.org
 [lcov]: https://ltp.sourceforge.net/coverage/lcov.php
 [leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant
 [lorri]: https://github.com/target/lorri
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
-[mono]: https://www.mono-project.com/
+[mono]: https://mono-project.com
 [msbuild]: https://github.com/dotnet/msbuild
 [nickel]: https://nickel-lang.org
 [nim]: https://nim-lang.org
@@ -386,42 +399,43 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [odoc]: https://github.com/ocaml/odoc
 [omnisharp-roslyn]: https://github.com/OmniSharp/omnisharp-roslyn
 [opa]: https://openpolicyagent.org
-[pandoc]: https://pandoc.org/
+[pandoc]: https://pandoc.org
 [packer]: https://packer.io
 [pip]: https://pypi.org/project/pip
 [phoenix]: https://phoenixframework.org
-[php]: https://php.net/
-[python]: https://www.python.org/
+[php]: https://php.net
+[platformio]: https://platformio.org
+[python]: https://python.org
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
-[pulumi]: https://pulumi.com/
+[pulumi]: https://pulumi.com
 [purescript]: https://github.com/purescript/purescript
 [purescript-language-server]: https://github.com/nwolverson/purescript-language-server
 [purs-tidy]: https://github.com/natefaubion/purescript-tidy
 [python]: https://python.org
-[r]: https://www.r-project.org/
+[r]: https://r-project.org
 [release]: https://github.com/NixOS/nixpkgs/releases/tag/22.11
-[rmarkdown]: https://rmarkdown.rstudio.com/
+[rmarkdown]: https://rmarkdown.rstudio.com
 [ruby]: https://ruby-lang.org
 [rust]: https://rust-lang.org
 [rust-analyzer]: https://rust-analyzer.github.io
 [scala]: https://scala-lang.org
-[shellcheck]: https://www.shellcheck.net/
+[shellcheck]: https://shellcheck.net
 [statix]: https://github.com/nerdypepper/statix
-[sbt]: https://www.scala-sbt.org
+[sbt]: https://scala-sbt.org
 [sourcekit-lsp]: https://github.com/swiftlang/sourcekit-lsp
 [spago]: https://github.com/purescript/spago
-[swift]: https://www.swift.org
-[tectonic]: https://tectonic-typesetting.github.io/
+[swift]: https://swift.org
+[tectonic]: https://tectonic-typesetting.github.io
 [terraform]: https://terraform.io
 [terragrunt]: https://terragrunt.gruntwork.io
 [texlab]: https://github.com/latex-lsp/texlab
-[texlive]: https://www.tug.org/texlive/
+[texlive]: https://tug.org/texlive
 [tflint]: https://github.com/terraform-linters/tflint
-[vault]: https://www.vaultproject.io
-[vcpkg]: https://vcpkg.io/
+[vault]: https://vaultproject.io
+[vcpkg]: https://vcpkg.io
 [vcpkg-tool]: https://github.com/microsoft/vcpkg-tool
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
-[vlang]: https://vlang.io/
+[vlang]: https://vlang.io
 [zig]: https://ziglang.org
