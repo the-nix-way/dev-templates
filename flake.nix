@@ -289,9 +289,9 @@
         };
 
         # Aliases
-        rt = rust-toolchain;
         c = c-cpp;
         cpp = c-cpp;
+        rt = rust-toolchain;
       };
     };
 }

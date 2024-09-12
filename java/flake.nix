@@ -22,7 +22,15 @@
 
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ jdk maven gradle gcc ncurses patchelf zlib ];
+          packages = with pkgs; [
+            gcc
+            gradle
+            jdk
+            maven
+            ncurses
+            patchelf
+            zlib
+          ];
         };
       });
     };
