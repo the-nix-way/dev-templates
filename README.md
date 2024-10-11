@@ -189,6 +189,10 @@ A dev template that's fully customizable.
 - [tectonic]
 - [texlab]
 
+### [`lean4`](./lean4/)
+
+- [Lean] 4.9.0
+
 ### [`nickel`](./nickel/)
 
 - [Nickel] 0.2.0
@@ -372,6 +376,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [knitr]: https://yihui.org/knitr
 [kotlin]: https://kotlinlang.org
 [latex]: https://latex-project.org
+[lean]: https://lean-lang.org
 [lcov]: https://ltp.sourceforge.net/coverage/lcov.php
 [leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant

@@ -183,6 +183,11 @@
           description = "LaTeX development environment";
         };
 
+        lean4 = {
+          path = ./lean4;
+          description = "Lean 4 development environment";
+        };
+
         nickel = {
           path = ./nickel;
           description = "Nickel development environment";
