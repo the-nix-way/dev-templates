@@ -1,3 +1,5 @@
+name: Run checks
+
 on:
   pull_request:
   push:

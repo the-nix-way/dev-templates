@@ -75,7 +75,7 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`bun`](./bun/)
 
-- [bun] 1.1.8
+- [bun] 1.1.29
 
 ### [`c-cpp`](./c-cpp/)
 
