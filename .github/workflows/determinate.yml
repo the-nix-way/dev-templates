@@ -22,4 +22,3 @@ jobs:
       contents: read
     with:
       visibility: public
-      include-output-paths: true
