@@ -326,6 +326,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cargo]: https://doc.rust-lang.org/cargo
 [cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
+[cargo-edit]: https://crates.io/crates/cargo-edit
 [clang-tools]: https://clang.llvm.org
 [clippy]: https://github.com/rust-lang/rust-clippy
 [clojure]: https://clojure.org
