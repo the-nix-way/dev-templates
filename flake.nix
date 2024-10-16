@@ -50,7 +50,7 @@
             dvt = final.writeShellApplication {
               name = "dvt";
               text = ''
-                if [ -z $1 ]; then
+                if [ -z "''${1}" ]; then
                   echo "no template specified"
                   exit 1
                 fi
