@@ -176,7 +176,7 @@ A dev template that's fully customizable.
 
 ### [`jupyter`](./jupyter/)
 
-- [Jupyter core] [jupyter] 5.7.2
+- [Jupyter core][jupyter] 5.7.2
 
 ### [`kotlin`](./kotlin/)
 
