@@ -64,7 +64,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Rust]                           | [`rust`](./rust/)                     |
 | [Rust from toolchain file][rust] | [`rust-toolchain`](./rust-toolchain/) |
 | [Scala]                          | [`scala`](./scala/)                   |
-| [Shell]                          | [`shell`](./shell/)                   |
+| [Shell](#shell)                  | [`shell`](./shell/)                   |
 | [Swift]                          | [`swift`](./swift)                    |
 | [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
