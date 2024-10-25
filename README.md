@@ -65,6 +65,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Rust from toolchain file][rust] | [`rust-toolchain`](./rust-toolchain/) |
 | [Scala]                          | [`scala`](./scala/)                   |
 | [Shell]                          | [`shell`](./shell/)                   |
+| [Swi-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
 | [Swift]                          | [`swift`](./swift)                    |
 | [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
@@ -295,6 +296,10 @@ A dev template that's fully customizable.
 
 - [shellcheck] 0.9.0
 
+### [`swi-prolog`](./swi-prolog/)
+
+- [swi-prolog]
+
 ### [`swift`](./swift/)
 
 - [Swift] 5.8
@@ -425,6 +430,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [sbt]: https://scala-sbt.org
 [sourcekit-lsp]: https://github.com/swiftlang/sourcekit-lsp
 [spago]: https://github.com/purescript/spago
+[swi-prolog]: https://www.swi-prolog.org
 [swift]: https://swift.org
 [tectonic]: https://tectonic-typesetting.github.io
 [terraform]: https://terraform.io
