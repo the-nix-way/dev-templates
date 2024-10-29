@@ -1,5 +1,6 @@
 {
-  description = "Ready-made templates for easily creating flake-driven environments";
+  description =
+    "Ready-made templates for easily creating flake-driven environments";
 
   inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.*";
 
@@ -8,7 +9,8 @@
       overlays = [
         (final: prev:
           let
-            getSystem = "SYSTEM=$(nix eval --impure --raw --expr 'builtins.currentSystem')";
+            getSystem =
+              "SYSTEM=$(nix eval --impure --raw --expr 'builtins.currentSystem')";
             forEachDir = exec: ''
               for dir in */; do
                 (
@@ -18,8 +20,7 @@
                 )
               done
             '';
-          in
-          {
+          in {
             format = final.writeShellApplication {
               name = "format";
               runtimeInputs = with final; [ nixpkgs-fmt ];
@@ -74,12 +75,12 @@
             };
           })
       ];
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit overlays system; };
-      });
-    in
-    {
+      supportedSystems =
+        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f:
+        nixpkgs.lib.genAttrs supportedSystems
+        (system: f { pkgs = import nixpkgs { inherit overlays system; }; });
+    in {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ build check format update nixpkgs-fmt ];
@@ -265,7 +266,8 @@
 
         rust-toolchain = {
           path = ./rust-toolchain;
-          description = "Rust development environment with Rust version defined by a rust-toolchain.toml file";
+          description =
+            "Rust development environment with Rust version defined by a rust-toolchain.toml file";
         };
 
         scala = {
@@ -291,6 +293,11 @@
         zig = {
           path = ./zig;
           description = "Zig development environment";
+        };
+
+        bevy = {
+          path = ./bevy;
+          description = "Bevy development environment";
         };
 
         # Aliases

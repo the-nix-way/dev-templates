@@ -1,0 +1,5 @@
+# This is needed for setup with ra-multiplex, since
+# Usually restarting the LSP takes a long time
+
+[env]
+PLEASE_WORK = "thank you"
