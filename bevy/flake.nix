@@ -1,69 +1,63 @@
 {
   inputs = {
-    # Option to nixify the game
-    naersk.url = "github:nix-community/naersk/master";
-
-    # Useful utils
-    utils.url = "github:numtide/flake-utils";
-
-    # Nixpkgs itself
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-
-    # A rust overlay in case the user wants to switch to the unstable branch
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
+    naersk.url = "github:nix-community/naersk";
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs, utils, naersk, fenix }:
-    utils.lib.eachDefaultSystem (system:
+  outputs = { self, flake-utils, naersk, nixpkgs, rust-overlay }:
+    flake-utils.lib.eachDefaultSystem (system:
       let
-        # Overrding the overlays
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [ fenix.overlays.default ];
+        overlays = [ (import rust-overlay) ];
+        pkgs = (import nixpkgs) { inherit system overlays; };
+        naersk' = pkgs.callPackage naersk { };
+        buildInputs = with pkgs; [
+          vulkan-loader
+          xorg.libXcursor
+          xorg.libXi
+          xorg.libXrandr
+          alsa-lib
+          udev
+          libxkbcommon
+          pkg-config
+        ];
+        nativeBuildInputs = with pkgs;
+          [
+            (rust-bin.selectLatestNightlyWith (toolchain:
+              toolchain.default.override {
+                extensions = [ "rust-src" "clippy" ];
+              }))
+          ];
+        all_deps = with pkgs;
+          [ cargo-flamegraph cargo-expand nixpkgs-fmt cmake ] ++ buildInputs
+          ++ nativeBuildInputs;
+      in rec {
+        # For `nix build` & `nix run`:
+        defaultPackage = packages.bevy_template;
+        packages = {
+          bevy_template = naersk'.buildPackage {
+            src = ./.;
+            nativeBuildInputs = nativeBuildInputs;
+            buildInputs = buildInputs;
+            postInstall = ''
+              cp -r assets $out/bin/
+            '';
+            # Disables dynamic linking when building with Nix
+            cargoBuildOptions = x: x ++ [ "--no-default-features" ];
+          };
         };
 
-        # Setting up the rust toolchain
-        toolchain = (pkgs.fenix.complete.withComponents [
-          "cargo"
-          "clippy"
-          "rust-src"
-          "rustc"
-          "rustfmt"
-        ]);
-
-        # Utility definition for our particular toolchain
-        naersk-lib = pkgs.callPackage naersk {
-          cargo = toolchain;
-          rustc = toolchain;
-        };
-      in {
-        # This is the part that provides the game as a pacakge
-        defaultPackage = naersk-lib.buildPackage { src = ./.; };
+        # For `nix develop`:
         devShell = pkgs.mkShell {
-          # Make bevy see the shared libraries
+          nativeBuildInputs = all_deps;
           shellHook = ''
+            export CARGO_MANIFEST_DIR=$(pwd)
             export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${
-              with pkgs;
-              lib.makeLibraryPath [
-                alsa-lib
-                udev
-                pkg-config
-                vulkan-loader
-                xorg.libX11
-                xorg.libXcursor
-                xorg.libXi
-                xorg.libxcb
-                xorg.libXrandr # To use the x11 feature
-                libxkbcommon
-                wayland # To use the wayland feature
-              ]
-            }"'';
-          nativeBuildInputs = [ toolchain ];
-          buildInputs = with pkgs; [ rust-analyzer-nightly ];
-          RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
+              pkgs.lib.makeLibraryPath all_deps
+            }"
+          '';
         };
       });
 }
+
