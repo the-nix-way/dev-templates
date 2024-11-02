@@ -13,7 +13,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ zig ];
+          packages = with pkgs; [ zig zls lldb ];
         };
       });
     };
