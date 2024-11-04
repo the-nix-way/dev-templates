@@ -76,7 +76,7 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`bun`](./bun/)
 
-- [bun] 1.1.8
+- [bun] 1.1.29
 
 ### [`c-cpp`](./c-cpp/)
 
@@ -177,7 +177,7 @@ A dev template that's fully customizable.
 
 ### [`jupyter`](./jupyter/)
 
-- [Jupyter core] [jupyter] 5.7.2
+- [Jupyter core][jupyter] 5.7.2
 
 ### [`kotlin`](./kotlin/)
 
@@ -189,6 +189,10 @@ A dev template that's fully customizable.
 - [texlive]
 - [tectonic]
 - [texlab]
+
+### [`lean4`](./lean4/)
+
+- [Lean] 4.9.0
 
 ### [`nickel`](./nickel/)
 
@@ -312,6 +316,8 @@ A dev template that's fully customizable.
 ### [`zig`](./zig/)
 
 - [Zig] 0.10.1
+- [LLDB] 16.0.6
+- [ZLS] 0.13.0
 
 ## Code organization
 
@@ -327,6 +333,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [cargo]: https://doc.rust-lang.org/cargo
 [cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
+[cargo-edit]: https://crates.io/crates/cargo-edit
 [clang-tools]: https://clang.llvm.org
 [clippy]: https://github.com/rust-lang/rust-clippy
 [clojure]: https://clojure.org
@@ -377,9 +384,11 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [knitr]: https://yihui.org/knitr
 [kotlin]: https://kotlinlang.org
 [latex]: https://latex-project.org
+[lean]: https://lean-lang.org
 [lcov]: https://ltp.sourceforge.net/coverage/lcov.php
 [leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant
+[lldb]: https://lldb.llvm.org
 [lorri]: https://github.com/target/lorri
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
@@ -445,3 +454,4 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [yarn]: https://yarnpkg.com
 [vlang]: https://vlang.io
 [zig]: https://ziglang.org
+[zls]: https://github.com/zigtools/zls

@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Zig development environment";
+  description = "A Nix-flake-based Lean 4 development environment";
 
   inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
 
@@ -13,7 +13,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ zig zls lldb ];
+          packages = with pkgs; [ lean4 ];
         };
       });
     };

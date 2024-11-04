@@ -1,0 +1,24 @@
+name: Determinate CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - v?[0-9]+.[0-9]+.[0-9]+*
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  DeterminateCI:
+    uses: DeterminateSystems/ci/.github/workflows/workflow.yml@main
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      visibility: public

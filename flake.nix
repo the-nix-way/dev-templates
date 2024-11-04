@@ -50,7 +50,7 @@
             dvt = final.writeShellApplication {
               name = "dvt";
               text = ''
-                if [ -z $1 ]; then
+                if [ -z "''${1}" ]; then
                   echo "no template specified"
                   exit 1
                 fi
@@ -181,6 +181,11 @@
         latex = {
           path = ./latex;
           description = "LaTeX development environment";
+        };
+
+        lean4 = {
+          path = ./lean4;
+          description = "Lean 4 development environment";
         };
 
         nickel = {
