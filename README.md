@@ -65,7 +65,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Rust from toolchain file][rust] | [`rust-toolchain`](./rust-toolchain/) |
 | [Scala]                          | [`scala`](./scala/)                   |
 | [Shell]                          | [`shell`](./shell/)                   |
-| [Swi-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
+| [SWI-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
 | [Swift]                          | [`swift`](./swift)                    |
 | [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
@@ -302,7 +302,7 @@ A dev template that's fully customizable.
 
 ### [`swi-prolog`](./swi-prolog/)
 
-- [swi-prolog]
+- [swipl][swi-prolog] 9.2.7
 
 ### [`swift`](./swift/)
 
