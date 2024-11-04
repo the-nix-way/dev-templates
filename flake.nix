@@ -278,6 +278,11 @@
           description = "Shell script development environment";
         };
 
+        swi-prolog = {
+          path = ./swi-prolog;
+          description = "Swi-prolog development environment";
+        };
+
         swift = {
           path = ./swift;
           description = "Swift development environment";
