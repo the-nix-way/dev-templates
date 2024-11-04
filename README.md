@@ -311,6 +311,8 @@ A dev template that's fully customizable.
 ### [`zig`](./zig/)
 
 - [Zig] 0.10.1
+- [LLDB] 16.0.6
+- [ZLS] 0.13.0
 
 ## Code organization
 
@@ -381,6 +383,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [lcov]: https://ltp.sourceforge.net/coverage/lcov.php
 [leiningen]: https://leiningen.org
 [levant]: https://github.com/hashicorp/levant
+[lldb]: https://lldb.llvm.org
 [lorri]: https://github.com/target/lorri
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
@@ -445,3 +448,4 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [yarn]: https://yarnpkg.com
 [vlang]: https://vlang.io
 [zig]: https://ziglang.org
+[zls]: https://github.com/zigtools/zls
