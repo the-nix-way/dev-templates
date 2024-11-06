@@ -18,6 +18,7 @@
           jdk = prev."jdk${toString javaVersion}";
           maven = prev.maven.override { jdk_headless = jdk; };
           gradle = prev.gradle.override { java = jdk; };
+          lombok = prev.lombok.override { inherit jdk; };
         };
 
       devShells = forEachSupportedSystem ({ pkgs }: {
@@ -31,6 +32,15 @@
             patchelf
             zlib
           ];
+
+          shellHook =
+            let
+              loadLombok = "-javaagent:${pkgs.lombok}/share/java/lombok.jar";
+              prev = "\${JAVA_TOOL_OPTIONS:+ $JAVA_TOOL_OPTIONS}";
+            in
+            ''
+              export JAVA_TOOL_OPTIONS="${loadLombok}${prev}"
+            '';
         };
       });
     };
