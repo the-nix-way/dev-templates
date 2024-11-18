@@ -27,7 +27,11 @@
           format = pkgs.writeShellApplication {
             name = "format";
             runtimeInputs = with pkgs; [ nixpkgs-fmt ];
-            text = "nixpkgs-fmt '**/*.nix'";
+            text = ''
+              shopt -s globstar
+
+              nixpkgs-fmt -- **/*.nix
+            '';
           };
 
           # only run this locally, as Actions will run out of disk space
