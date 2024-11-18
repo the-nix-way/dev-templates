@@ -49,6 +49,7 @@
 
             dvt = final.writeShellApplication {
               name = "dvt";
+              bashOptions = [ "errexit" "pipefail" ];
               text = ''
                 if [ -z "''${1}" ]; then
                   echo "no template specified"
