@@ -19,4 +19,4 @@ jobs:
         run: nix develop --command check
       - name: Check formatting
         run: |
-          git ls-files '*.nix' | xargs nix develop --command nixpkgs-fmt --check
+          nix develop --command nixpkgs-fmt --check $(git ls-files '*.nix')
