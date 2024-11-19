@@ -5,7 +5,7 @@
 
   outputs = { self, nixpkgs }:
     let
-      javaVersion = 22; # Change this value to update the whole stack
+      javaVersion = 23; # Change this value to update the whole stack
 
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
@@ -13,11 +13,14 @@
       });
     in
     {
-      overlays.default = final: prev: rec {
-        jdk = prev."jdk${toString javaVersion}";
-        sbt = prev.sbt.override { jre = jdk; };
-        scala = prev.scala_3.override { jre = jdk; };
-      };
+      overlays.default = final: prev:
+        let
+          jdk = prev."jdk${toString javaVersion}";
+        in
+        {
+          sbt = prev.sbt.override { jre = jdk; };
+          scala = prev.scala_3.override { jre = jdk; };
+        };
 
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
