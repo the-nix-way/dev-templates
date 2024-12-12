@@ -43,6 +43,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Hashicorp] tools                | [`hashi`](./hashi/)                   |
 | [Haskell]                        | [`haskell`](./haskell/)               |
 | [Haxe]                           | [`haxe`](./haxe/)                     |
+| [Idris2]                           | [`idris2`](./idris2/)                     |
 | [Java]                           | [`java`](./java/)                     |
 | [Jupyter]                        | [`jupyter`](./jupyter/)               |
 | [Kotlin]                         | [`kotlin`](./kotlin/)                 |
@@ -167,6 +168,12 @@ A dev template that's fully customizable.
 ### [`haxe`](./haxe/)
 
 - [Haxe] 4.2.5
+
+### [`idris2`](./java/)
+
+- [Idris2] 0.7.0
+- [idris2-lsp] 
+- [pack] 
 
 ### [`java`](./java/)
 
