@@ -173,6 +173,11 @@
           description = "Haskell development environment";
         };
 
+        idris2 = {
+          path = ./idris2;
+          description = "Idris2 development environment";
+        };
+
         java = {
           path = ./java;
           description = "Java development environment";
