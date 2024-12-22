@@ -12,10 +12,13 @@
     in
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [ ocaml ocamlformat ] ++
-            (with pkgs.ocamlPackages; [ dune_3 odoc ]);
-        };
+        default =
+          let
+            ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_14;
+          in
+          pkgs.mkShell {
+            packages = with ocamlPackages; [ ocaml ocamlformat ocaml-lsp dune_3 odoc ];
+          };
       });
     };
 }
