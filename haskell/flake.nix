@@ -12,9 +12,15 @@
     in
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [ cabal-install ghc haskell-language-server ];
-        };
+        default =
+          let
+            hls = pkgs.haskell-language-server.override {
+              supportedGhcVersions = [ "96" "98" ];
+            };
+          in
+          pkgs.mkShell {
+            packages = with pkgs; [ stack cabal-install hls hlint ];
+          };
       });
     };
 }
