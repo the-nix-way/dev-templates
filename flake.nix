@@ -123,6 +123,11 @@
           description = "Clojure development environment";
         };
 
+        coq = {
+          path = ./coq;
+          description = "Coq development environment";
+        };
+
         csharp = {
           path = ./csharp;
           description = "C# development environment";

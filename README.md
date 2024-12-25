@@ -33,6 +33,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [C]/[C++]                        | [`c-cpp`](./c-cpp/)                   |
 | [Clojure]                        | [`clojure`](./clojure/)               |
 | [C#][csharp]                     | [`csharp`](./csharp/)                 |
+| [Coq]                            | [`coq`](./coq/)                       |
 | [Cue]                            | [`cue`](./cue/)                       |
 | [Dhall]                          | [`dhall`](./dhall/)                   |
 | [Elixir]                         | [`elixir`](./elixir/)                 |
@@ -104,6 +105,10 @@ The sections below list what each template includes. In all cases, you're free t
 - [omnisharp-roslyn]
 - [Mono] 6.12.0.182
 - [msbuild] 16.10.1
+
+### [`coq`](./cue/)
+
+- [Coq] 8.15.2
 
 ### [`cue`](./cue/)
 
@@ -342,6 +347,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [composer]: https://getcomposer.org
 [conan]: https://conan.io
 [conftest]: https://conftest.dev
+[Coq]: https://coq.inria.fr
 [cppcheck]: http://cppcheck.sourceforge.net
 [csharp]: https://dotnet.microsoft.com/en-us/languages/csharp
 [cue]: https://cuelang.org
