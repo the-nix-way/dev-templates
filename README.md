@@ -68,6 +68,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Shell]                          | [`shell`](./shell/)                   |
 | [SWI-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
 | [Swift]                          | [`swift`](./swift)                    |
+| [Typst]                          | [`typst`](./typst)                    |
 | [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
 
@@ -314,6 +315,11 @@ A dev template that's fully customizable.
 - [Swift] 5.8
 - [sourcekit-lsp]
 
+### [`typst`](./typst)
+
+- [typst] 0.12.0
+- [tinymist] 0.12.12
+
 ### [`vlang`](./vlang/)
 
 - [Vlang] 0.4.4
@@ -453,6 +459,8 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [texlab]: https://github.com/latex-lsp/texlab
 [texlive]: https://tug.org/texlive
 [tflint]: https://github.com/terraform-linters/tflint
+[tinymist]: https://github.com/Myriad-Dreamin/tinymist
+[typst]: https://typst.app
 [vault]: https://vaultproject.io
 [vcpkg]: https://vcpkg.io
 [vcpkg-tool]: https://github.com/microsoft/vcpkg-tool
