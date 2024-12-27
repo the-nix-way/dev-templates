@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Nim development environment";
+  description = "A Nix-flake-based Fortran development environment";
 
   inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
 
