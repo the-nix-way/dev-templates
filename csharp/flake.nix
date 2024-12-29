@@ -14,12 +14,10 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            #dotnet-sdk_6
-            dotnet-sdk_7
             #dotnet-sdk_8
+            dotnet-sdk_9
             omnisharp-roslyn
             mono
-            msbuild
           ];
         };
       });

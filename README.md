@@ -102,10 +102,9 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`csharp`](./csharp/)
 
-- [dotnet] sdk 7 (7.0.305)
+- [dotnet] sdk 9 (9.0.101)
 - [omnisharp-roslyn]
 - [Mono] 6.12.0.182
-- [msbuild] 16.10.1
 
 ### [`coq`](./cue/)
 
