@@ -303,6 +303,11 @@
           description = "Swift development environment";
         };
 
+        typst = {
+          path = ./typst;
+          description = "Typst development environment";
+        };
+
         vlang = {
           path = ./vlang;
           description = "Vlang developent environment";
