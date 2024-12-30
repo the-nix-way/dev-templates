@@ -31,7 +31,7 @@
             nodejs
 
             # .NET SDK
-            dotnet-sdk_6
+            dotnet-sdk_9
 
             # Java SDK
             jdk
