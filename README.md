@@ -52,6 +52,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Nix]                            | [`nix`](./nix/)                       |
 | [Node.js][node]                  | [`node`](./node/)                     |
 | [OCaml]                          | [`ocaml`](./ocaml/)                   |
+| [Odin]                           | [`odin`](./odin/)                     |
 | [Open Policy Agent][opa]         | [`opa`](./opa)                        |
 | [PHP]                            | [`php`](./php/)                       |
 | [PlatformIO]                     | [`platformio`](./platformio/)         |
@@ -227,6 +228,10 @@ A dev template that's fully customizable.
 - [Dune] 3.9.1
 - [odoc] 2.2.0
 - [ocamlformat] 0.25.1
+
+### [`odin`](./odin/)
+
+- [Odin] 4.14.1
 
 ### [`opa`](./opa/)
 
@@ -411,6 +416,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [ocaml]: https://ocaml.org
 [ocamlformat]: https://github.com/ocaml-ppx/ocamlformat
 [odoc]: https://github.com/ocaml/odoc
+[odin]: https://github.com/odin-lang/Odin
 [omnisharp-roslyn]: https://github.com/OmniSharp/omnisharp-roslyn
 [opa]: https://openpolicyagent.org
 [pandoc]: https://pandoc.org
