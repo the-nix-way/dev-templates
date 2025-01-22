@@ -59,6 +59,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Pulumi]                         | [`pulumi`](./pulumi/)                 |
 | [Purescript]                     | [`purescript`](./purescript/)         |
 | [Python]                         | [`python`](./python/)                 |
+| [PyTorch]                        | [`pytorch`](./python-pytorch/)
 | [R]                              | [`r`](./r/)                           |
 | [Ruby]                           | [`ruby`](./ruby/)                     |
 | [Rust]                           | [`rust`](./rust/)                     |
@@ -269,6 +270,12 @@ A dev template that's fully customizable.
 - [Python] 3.11.4
 - [pip] 23.0.1
 
+### [`pytorch`](./python-pytorch/)
+
+- [Python] 3.12.8
+- [PyTorch] 2.5.1
+- [NumPy] 2.2.2
+
 ### [`r`](./r/)
 
 - [R] 4.3.1
@@ -408,6 +415,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [nomad-autoscaler]: https://github.com/hashicorp/nomad-autoscaler
 [nomad-pack]: https://github.com/hashicorp/nomad-pack
 [npm]: https://npmjs.org
+[numpy]: https://numpy.org/
 [ocaml]: https://ocaml.org
 [ocamlformat]: https://github.com/ocaml-ppx/ocamlformat
 [odoc]: https://github.com/ocaml/odoc
@@ -427,6 +435,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [purescript-language-server]: https://github.com/nwolverson/purescript-language-server
 [purs-tidy]: https://github.com/natefaubion/purescript-tidy
 [python]: https://python.org
+[pytorch]: https://pytorch.org/
 [r]: https://r-project.org
 [release]: https://github.com/NixOS/nixpkgs/releases/tag/22.11
 [rmarkdown]: https://rmarkdown.rstudio.com
