@@ -1,7 +1,7 @@
 {
   description = "Ready-made templates for easily creating flake-driven environments";
 
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.*";
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
   outputs = { self, nixpkgs }:
     let
@@ -95,7 +95,7 @@
                 --experimental-features 'nix-command flakes' \
                 flake init \
                 --template \
-                "github:the-nix-way/dev-templates#''${TEMPLATE}"
+                "github:definfo/dev-templates#''${TEMPLATE}"
             '';
           };
         }
