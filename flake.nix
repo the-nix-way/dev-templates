@@ -303,6 +303,11 @@
           description = "Swift development environment";
         };
 
+        tauri = {
+          path = ./tauri;
+          description = "Tauri development environment";
+        };
+
         typst = {
           path = ./typst;
           description = "Typst development environment";

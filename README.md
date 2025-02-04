@@ -319,6 +319,14 @@ A dev template that's fully customizable.
 - [typst] 0.12.0
 - [tinymist] 0.12.12
 
+## [`tauri`](./tauri)
+
+- Include [`rust`] and [`node`] dependencies.
+- [gtk3]
+- [libsoup]
+- [webkitgtk]
+- [cairo]
+
 ### [`vlang`](./vlang/)
 
 - [Vlang] 0.4.4
@@ -452,6 +460,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [spago]: https://github.com/purescript/spago
 [swi-prolog]: https://www.swi-prolog.org
 [swift]: https://swift.org
+[tauri]: https://v1.tauri.app
 [tectonic]: https://tectonic-typesetting.github.io
 [terraform]: https://terraform.io
 [terragrunt]: https://terragrunt.gruntwork.io
