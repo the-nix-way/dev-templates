@@ -68,6 +68,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Shell]                          | [`shell`](./shell/)                   |
 | [SWI-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
 | [Swift]                          | [`swift`](./swift)                    |
+| [Tauri]                          | [`tauri`](./tauri)                    |
 | [Typst]                          | [`typst`](./typst)                    |
 | [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
@@ -319,7 +320,7 @@ A dev template that's fully customizable.
 - [typst] 0.12.0
 - [tinymist] 0.12.12
 
-## [`tauri`](./tauri)
+### [`tauri`](./tauri)
 
 - Include [`rust`] and [`node`] dependencies.
 - [gtk3]
