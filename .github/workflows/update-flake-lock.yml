@@ -1,4 +1,5 @@
-name: update-flake-lock
+name: Update flake lock
+
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
@@ -13,11 +14,11 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
       - name: Pre-update flake.lock
-        run: nix develop --command format
+        run: nix develop --command update
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-title: "Update flake.lock" # Title of PR to be created
           pr-labels: |                  # Labels to be set on the PR
-            dependencies
-            automated
+            auto merge
+            auto update
