@@ -54,11 +54,22 @@
             yarn
             # yarn-berry
 
+          ] ++ lib.optionals stdenv.hostPlatform.isLinux [
             gtk3
+            glib-networking
             libsoup_2_4
             webkitgtk_4_0
             cairo
-          ];
+          ]
+          ++ lib.optionals stdenv.hostPlatform.isDarwin (
+            with darwin.apple_sdk.frameworks;
+            [
+              AppKit
+              CoreServices
+              Security
+              WebKit
+            ]
+          );
         };
       });
     };
