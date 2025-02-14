@@ -271,8 +271,9 @@ A dev template that's fully customizable.
 
 ### [`python`](./python/)
 
-- [Python] 3.11.4
-- [pip] 23.0.1
+- [Python] 3.11.11
+- [pip] 24.0
+- [uv] 0.4.30
 
 ### [`r`](./r/)
 
@@ -458,6 +459,7 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [vcpkg-tool]: https://github.com/microsoft/vcpkg-tool
 [vulnix]: https://github.com/flyingcircusio/vulnix
 [yarn]: https://yarnpkg.com
+[uv]: https://github.com/astral-sh/uv
 [vlang]: https://vlang.io
 [zig]: https://ziglang.org
 [zls]: https://github.com/zigtools/zls
