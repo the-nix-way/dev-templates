@@ -14,7 +14,7 @@ jobs:
         with:
           fail-mode: true
       - uses: "DeterminateSystems/nix-installer-action@main"
-      - uses: "DeterminateSystems/magic-nix-cache-action@main"
+      - uses: "DeterminateSystems/flakehub-cache-action@main"
       - name: Flake check
         run: nix develop --command check
       - name: Check formatting

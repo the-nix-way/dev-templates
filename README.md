@@ -32,7 +32,6 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Bun]                            | [`bun`](./bun/)                       |
 | [C]/[C++]                        | [`c-cpp`](./c-cpp/)                   |
 | [Clojure]                        | [`clojure`](./clojure/)               |
-| [C#][csharp]                     | [`csharp`](./csharp/)                 |
 | [Cue]                            | [`cue`](./cue/)                       |
 | [Dhall]                          | [`dhall`](./dhall/)                   |
 | [Elixir]                         | [`elixir`](./elixir/)                 |
@@ -98,13 +97,6 @@ The sections below list what each template includes. In all cases, you're free t
 - [Clojure] 1.11.1.1347
 - [Boot] 2.8.3
 - [Leiningen] 2.10.0
-
-### [`csharp`](./csharp/)
-
-- [dotnet] sdk 7 (7.0.305)
-- [omnisharp-roslyn]
-- [Mono] 6.12.0.182
-- [msbuild] 16.10.1
 
 ### [`cue`](./cue/)
 
@@ -348,7 +340,6 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [conan]: https://conan.io
 [conftest]: https://conftest.dev
 [cppcheck]: http://cppcheck.sourceforge.net
-[csharp]: https://dotnet.microsoft.com/en-us/languages/csharp
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
 [dhall]: https://dhall-lang.org
