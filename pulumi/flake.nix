@@ -30,9 +30,6 @@
             # Node.js SDK
             nodejs
 
-            # .NET SDK
-            dotnet-sdk_6
-
             # Java SDK
             jdk
             maven
