@@ -7,16 +7,30 @@ on:
 
 jobs:
   check:
-    runs-on: "ubuntu-22.04"
+    runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v4"
-      - uses: "DeterminateSystems/flake-checker-action@main"
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/flake-checker-action@v9
         with:
           fail-mode: true
-      - uses: "DeterminateSystems/nix-installer-action@main"
-      - uses: "DeterminateSystems/flakehub-cache-action@main"
+      - uses: nixbuild/nix-quick-install-action@v30
+        with:
+          nix_conf: |
+            keep-env-derivations = true
+            keep-outputs = true
+            - name: Restore and save Nix store
+      - uses: nix-community/cache-nix-action@v6
+        with:
+          primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix', '**/flake.lock') }}
+          restore-prefixes-first-match: nix-${{ runner.os }}-
+          gc-max-store-size-linux: 1G
+          purge: true
+          purge-prefixes: nix-${{ runner.os }}-
+          purge-created: 0
+          purge-last-accessed: 0
+          purge-primary-key: never
       - name: Flake check
         run: nix develop --command check
       - name: Check formatting
         run: |
-          nix develop --command nixpkgs-fmt --check $(git ls-files '*.nix')
+          nix develop --command nixfmt --check $(git ls-files '*.nix')

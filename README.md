@@ -2,20 +2,22 @@
 
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
+---
+
+## NOTICE for recent changes
+
+Several language toolchains were removed due to low popularity.
+
+Some other toolchains are migrating to better implementation from other projects.
+
+Sorry for any inconvenience :(
+
+---
+
 To initialize (where `${ENV}` is listed in the table below):
 
 ```shell
-nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#${ENV}"
-```
-
-Here's an example (for the [`rust`](./rust) template):
-
-```shell
-# Initialize in the current project
-nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#rust"
-
-# Create a new project
-nix flake new --template "https://flakehub.com/f/the-nix-way/dev-templates/*#rust" ${NEW_PROJECT_DIRECTORY}
+nix flake init --template github:definfo/dev-templates#${ENV}
 ```
 
 ## How to use the templates
@@ -25,30 +27,37 @@ Once your preferred template has been initialized, you can use the provided shel
 1. If you have [`nix-direnv`][nix-direnv] installed, you can initialize the environment by running `direnv allow`.
 2. If you don't have `nix-direnv` installed, you can run `nix develop` to open up the Nix-defined shell.
 
-## Available templates
+## Available templates/projects
 
-| Language/framework/tool          | Template                              |
-| :------------------------------- | :------------------------------------ |
-| [C]/[C++]                        | [`c-cpp`](./c-cpp/)                   |
-| [Coq]                            | [`coq`](./coq/)                       |
-| [Go]                             | [`go`](./go/)                         |
-| [Haskell]                        | [`haskell`](./haskell/)               |
-| [Java]                           | [`java`](./java/)                     |
-| [Jupyter]                        | [`jupyter`](./jupyter/)               |
-| [Kotlin]                         | [`kotlin`](./kotlin/)                 |
-| [LaTeX]                          | [`latex`](./latex/)                   |
-| [Nix]                            | [`nix`](./nix/)                       |
-| [Node.js][node]                  | [`node`](./node/)                     |
-| [OCaml]                          | [`ocaml`](./ocaml/)                   |
-| [Python]                         | [`python`](./python/)                 |
-| [Rust]                           | [`rust`](./rust/)                     |
-| [Rust from toolchain file][rust] | [`rust-toolchain`](./rust-toolchain/) |
-| [Scala]                          | [`scala`](./scala/)                   |
-| [Shell]                          | [`shell`](./shell/)                   |
-| [Swift]                          | [`swift`](./swift)                    |
-| [Tauri]                          | [`tauri`](./tauri)                    |
-| [Typst]                          | [`typst`](./typst)                    |
-| [Zig]                            | [`zig`](./zig/)                       |
+| Language/framework/tool | Template/Project                                                  |
+| :---------------------- | :---------------------------------------------------------------- |
+| [C]/[C++]               | [`c-cpp`](./c-cpp/) Also refer to (https://wiki.nixos.org/wiki/C) |
+| [Coq]                   | [`coq`](./coq/)                                                   |
+| [Go]                    | [`gomod2nix`](https://github.com/nix-community/gomod2nix)         |
+| [Haskell]               | [`haskell-flake`](https://github.com/srid/haskell-flake)          |
+| [Haskell]               | [`cabal2nix`](https://github.com/NixOS/cabal2nix)                 |
+| [Java]                  | [`java`](./java/)                                                 |
+| [Jupyter]               | [`uv2nix TODO`](https://pyproject-nix.github.io/uv2nix/)          |
+| [Kotlin]                | [`kotlin`](./kotlin/)                                             |
+| [LaTeX]                 | [`latex`](./latex/)                                               |
+| [Nix]                   | [`nix`](./nix/)                                                   |
+| [Node.js][node]         | [`node`](./node/)                                                 |
+| [Node.js][node]         | [`node2nix`](https://github.com/svanderburg/node2nix)             |
+| [OCaml]                 | [`ocaml`](./ocaml/)                                               |
+| [OCaml]                 | [`opam-nix`](https://github.com/tweag/opam-nix)                   |
+| [Python]                | [`uv2nix`](https://pyproject-nix.github.io/uv2nix/)               |
+| [Rust]                  | [`naersk`](https://github.com/nix-community/naersk)               |
+| [Rust]                  | [`crate2nix`](https://nix-community.github.io/crate2nix/)         |
+| [Rust toolchains][rust] | [`fenix`](https://github.com/nix-community/fenix)                 |
+| [Scala]                 | [`scala-seed`](https://github.com/DevInsideYou/scala-seed)        |
+| [Scala]                 | [`scala`](./scala/)                                               |
+| [Shell]                 | [`shell`](./shell/)                                               |
+| [Tauri]                 | [`tauri`](./tauri)                                                |
+| [Typst]                 | [`typst`](./typst)                                                |
+| [Typst]                 | [`press`](https://github.com/RossSmyth/press)                     |
+| [Typst]                 | [`typix`](https://github.com/loqusion/typix)                      |
+| [Zig]                   | [`zig2nix`](https://github.com/Cloudef/zig2nix)                   |
+| [Zig]                   | [`zon2nix`](https://github.com/nix-community/zon2nix)             |
 
 ## Template contents
 
@@ -72,27 +81,12 @@ The sections below list what each template includes. In all cases, you're free t
 
 - [Coq] 8.15.2
 
-### [`go`](./go/)
-
-- [Go] 1.20.5
-- Standard Go tools ([goimports], [godoc], and others)
-- [golangci-lint]
-
-### [`haskell`](./haskell/)
-
-- [GHC][haskell] 9.2.8
-- [cabal] 3.10.1.0
-
 ### [`java`](./java/)
 
 - [Java] 20.0.1+9
 - [Maven] 3.9.2
 - [Gradle] 9.0.1
 - [jdtls] 1.31.0
-
-### [`jupyter`](./jupyter/)
-
-- [Jupyter core][jupyter] 5.7.2
 
 ### [`kotlin`](./kotlin/)
 
@@ -130,23 +124,6 @@ The sections below list what each template includes. In all cases, you're free t
 - [odoc] 2.2.0
 - [ocamlformat] 0.25.1
 
-### [`python`](./python/)
-
-- [Python] 3.11.4
-- [pip] 23.0.1
-
-### [`rust`](./rust/)
-
-- [Rust], including [cargo], [Clippy], and the other standard tools. The Rust version is determined as follows, in order:
-
-  - From the `rust-toolchain.toml` file if present
-  - From the `rust-toolchain` file if present
-  - Version 1.78.0 if neither is present
-
-- [rust-analyzer] 2024-04-29
-- [cargo-edit] 0.12.2
-- [cargo-deny] 0.14.23
-
 ### [`scala`](./scala/)
 
 - [Scala] 2.13.11 ([Java] 19.0.1)
@@ -155,11 +132,6 @@ The sections below list what each template includes. In all cases, you're free t
 ### [`shell`](./shell/)
 
 - [shellcheck] 0.9.0
-
-### [`swift`](./swift/)
-
-- [Swift] 5.8
-- [sourcekit-lsp]
 
 ### [`typst`](./typst)
 
@@ -173,12 +145,6 @@ The sections below list what each template includes. In all cases, you're free t
 - [libsoup]
 - [webkitgtk]
 - [cairo]
-
-### [`zig`](./zig/)
-
-- [Zig] 0.10.1
-- [LLDB] 16.0.6
-- [ZLS] 0.13.0
 
 ## Code organization
 
