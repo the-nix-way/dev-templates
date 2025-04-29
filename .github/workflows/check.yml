@@ -18,8 +18,8 @@ jobs:
           nix_conf: |
             keep-env-derivations = true
             keep-outputs = true
-            - name: Restore and save Nix store
-      - uses: nix-community/cache-nix-action@v6
+      - name: Restore and save Nix store
+        uses: nix-community/cache-nix-action@v6
         with:
           primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix', '**/flake.lock') }}
           restore-prefixes-first-match: nix-${{ runner.os }}-
