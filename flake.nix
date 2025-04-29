@@ -1,7 +1,7 @@
 {
   description = "Ready-made templates for easily creating flake-driven environments";
 
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.*";
 
   outputs = { self, nixpkgs }:
     let
@@ -95,7 +95,7 @@
                 --experimental-features 'nix-command flakes' \
                 flake init \
                 --template \
-                "github:definfo/dev-templates#''${TEMPLATE}"
+                "github:the-nix-way/dev-templates#''${TEMPLATE}"
             '';
           };
         }
@@ -121,11 +121,6 @@
         clojure = {
           path = ./clojure;
           description = "Clojure development environment";
-        };
-
-        coq = {
-          path = ./coq;
-          description = "Coq development environment";
         };
 
         csharp = {
@@ -301,16 +296,6 @@
         swift = {
           path = ./swift;
           description = "Swift development environment";
-        };
-
-        tauri = {
-          path = ./tauri;
-          description = "Tauri development environment";
-        };
-
-        typst = {
-          path = ./typst;
-          description = "Typst development environment";
         };
 
         vlang = {
