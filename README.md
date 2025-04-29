@@ -29,57 +29,30 @@ Once your preferred template has been initialized, you can use the provided shel
 
 | Language/framework/tool          | Template                              |
 | :------------------------------- | :------------------------------------ |
-| [Bun]                            | [`bun`](./bun/)                       |
 | [C]/[C++]                        | [`c-cpp`](./c-cpp/)                   |
-| [Clojure]                        | [`clojure`](./clojure/)               |
-| [C#][csharp]                     | [`csharp`](./csharp/)                 |
 | [Coq]                            | [`coq`](./coq/)                       |
-| [Cue]                            | [`cue`](./cue/)                       |
-| [Dhall]                          | [`dhall`](./dhall/)                   |
-| [Elixir]                         | [`elixir`](./elixir/)                 |
-| [Elm]                            | [`elm`](./elm/)                       |
-| Empty (change at will)           | [`empty`](./empty)                    |
-| [Gleam]                          | [`gleam`](./gleam/)                   |
 | [Go]                             | [`go`](./go/)                         |
-| [Hashicorp] tools                | [`hashi`](./hashi/)                   |
 | [Haskell]                        | [`haskell`](./haskell/)               |
-| [Haxe]                           | [`haxe`](./haxe/)                     |
 | [Java]                           | [`java`](./java/)                     |
 | [Jupyter]                        | [`jupyter`](./jupyter/)               |
 | [Kotlin]                         | [`kotlin`](./kotlin/)                 |
 | [LaTeX]                          | [`latex`](./latex/)                   |
-| [Nickel]                         | [`nickel`](./nickel/)                 |
-| [Nim]                            | [`nim`](./nim/)                       |
 | [Nix]                            | [`nix`](./nix/)                       |
 | [Node.js][node]                  | [`node`](./node/)                     |
 | [OCaml]                          | [`ocaml`](./ocaml/)                   |
-| [Open Policy Agent][opa]         | [`opa`](./opa)                        |
-| [PHP]                            | [`php`](./php/)                       |
-| [PlatformIO]                     | [`platformio`](./platformio/)         |
-| [Protobuf]                       | [`protobuf`](./protobuf/)             |
-| [Pulumi]                         | [`pulumi`](./pulumi/)                 |
-| [Purescript]                     | [`purescript`](./purescript/)         |
 | [Python]                         | [`python`](./python/)                 |
-| [R]                              | [`r`](./r/)                           |
-| [Ruby]                           | [`ruby`](./ruby/)                     |
 | [Rust]                           | [`rust`](./rust/)                     |
 | [Rust from toolchain file][rust] | [`rust-toolchain`](./rust-toolchain/) |
 | [Scala]                          | [`scala`](./scala/)                   |
 | [Shell]                          | [`shell`](./shell/)                   |
-| [SWI-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
 | [Swift]                          | [`swift`](./swift)                    |
 | [Tauri]                          | [`tauri`](./tauri)                    |
 | [Typst]                          | [`typst`](./typst)                    |
-| [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
 
 ## Template contents
 
 The sections below list what each template includes. In all cases, you're free to add and remove packages as you see fit; the templates are just boilerplate.
-
-### [`bun`](./bun/)
-
-- [bun] 1.1.29
 
 ### [`c-cpp`](./c-cpp/)
 
@@ -95,56 +68,9 @@ The sections below list what each template includes. In all cases, you're free t
 - [vcpkg]
 - [vcpkg-tool]
 
-### [`clojure`](./clojure/)
-
-- [Clojure] 1.11.1.1347
-- [Boot] 2.8.3
-- [Leiningen] 2.10.0
-
-### [`csharp`](./csharp/)
-
-- [dotnet] sdk 9 (9.0.101)
-- [omnisharp-roslyn]
-- [Mono] 6.12.0.182
-
 ### [`coq`](./cue/)
 
 - [Coq] 8.15.2
-
-### [`cue`](./cue/)
-
-- [Cue] 0.5.0
-
-### [`dhall`](./dhall)
-
-- [Dhall] 1.41.2
-- [dhall-bash]
-- [dhall-docs]
-- [dhall-json]
-- [dhall-lsp-server]
-- [dhall-nix]
-- [dhall-nixpkgs]
-- [dhall-openapi]
-- [dhall-toml]
-- [dhall-yaml]
-
-### [`elixir`](./elixir/)
-
-- [Elixir] 1.14.5, including [mix] and [IEx]
-- [gigalixir] (Linux only)
-
-### [`elm`](./elm/)
-
-- [Elm] 0.19.1
-- [elm2nix]
-
-### [Empty](./empty/)
-
-A dev template that's fully customizable.
-
-### [`gleam`](./gleam/)
-
-- [Gleam] 0.30.0
 
 ### [`go`](./go/)
 
@@ -152,27 +78,10 @@ A dev template that's fully customizable.
 - Standard Go tools ([goimports], [godoc], and others)
 - [golangci-lint]
 
-### [`hashi`](./hashi/)
-
-- [Packer] 1.8.6
-- [Terraform] 1.5.2
-- [Nomad] 1.4.6
-- [Vault] 1.13.3
-- [nomad-autoscaler] 0.3.6-dev
-- [nomad-pack] 0.0.1-techpreview.3
-- [levant] 0.3.2-dev
-- [damon]
-- [Terragrunt] 0.45.13
-- [tflint] 0.46.1
-
 ### [`haskell`](./haskell/)
 
 - [GHC][haskell] 9.2.8
 - [cabal] 3.10.1.0
-
-### [`haxe`](./haxe/)
-
-- [Haxe] 4.2.5
 
 ### [`java`](./java/)
 
@@ -195,19 +104,6 @@ A dev template that's fully customizable.
 - [texlive]
 - [tectonic]
 - [texlab]
-
-### [`lean4`](./lean4/)
-
-- [Lean] 4.9.0
-
-### [`nickel`](./nickel/)
-
-- [Nickel] 0.2.0
-
-### [`nim`](./nim)
-
-- [Nim] 1.6.14
-- [nimble] 0.14.2
 
 ### [`nix`](./nix/)
 
@@ -234,56 +130,10 @@ A dev template that's fully customizable.
 - [odoc] 2.2.0
 - [ocamlformat] 0.25.1
 
-### [`opa`](./opa/)
-
-- [Open Policy Agent][opa] 0.54.0
-- [Conftest] 0.44.0
-
-### [`php`](./php/)
-
-- [PHP] 8.2.8
-- [Composer] 2.5.8
-
-### [`platformio`](./platformio/)
-
-- [PlatformIO] 6.1.11
-
-### [`protobuf`](./protobuf/)
-
-- The [Buf CLI][buf] 1.23.1
-- [protoc][protobuf] 3.21.12
-
-### [`pulumi`](./pulumi/)
-
-- [Pulumi] 3.72.1
-- [Python] 3.11.4
-- [Go] 1.20.5
-- [Node.js][node] 18.16.1
-- [dotnet] sdk 6
-- [Java] 19.0.1 and [Maven] 3.9.2
-- [jq] 1.6
-
-### [`purescript`](./purescript/)
-
-- [Purescript] (purs) 0.15.9
-- [Spago] 0.21.0
-- [purescript-language-server] 0.17.1
-- [purs-tidy] 0.10.0
-
 ### [`python`](./python/)
 
 - [Python] 3.11.4
 - [pip] 23.0.1
-
-### [`r`](./r/)
-
-- [R] 4.3.1
-- [rmarkdown] 2.22
-- [knitr] 1.43 ([pandoc] and [texlive])
-
-### [`ruby`](./ruby/)
-
-- [Ruby] 3.2.2, plus the standard Ruby tools (`bundle`, `gem`, etc.)
 
 ### [`rust`](./rust/)
 
@@ -306,10 +156,6 @@ A dev template that's fully customizable.
 
 - [shellcheck] 0.9.0
 
-### [`swi-prolog`](./swi-prolog/)
-
-- [swipl][swi-prolog] 9.2.7
-
 ### [`swift`](./swift/)
 
 - [Swift] 5.8
@@ -327,10 +173,6 @@ A dev template that's fully customizable.
 - [libsoup]
 - [webkitgtk]
 - [cairo]
-
-### [`vlang`](./vlang/)
-
-- [Vlang] 0.4.4
 
 ### [`zig`](./zig/)
 
