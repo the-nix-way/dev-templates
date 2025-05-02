@@ -1,0 +1,7 @@
+pull_request_rules:
+  - name: Automatic merge
+    description: Merge when PR passes all branch protection and has label automerge
+    conditions:
+      - label = auto merge
+    actions:
+      merge:
