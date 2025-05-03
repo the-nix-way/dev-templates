@@ -2,10 +2,10 @@
   description = "An empty flake template that you can adapt to your own environment";
 
   # Flake inputs
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
 
   # Flake outputs
-  outputs = { self, nixpkgs }:
+  outputs = inputs:
     let
       # The systems supported for this flake
       supportedSystems = [
@@ -16,8 +16,8 @@
       ];
 
       # Helper to provide system-specific attributes
-      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
+      forEachSupportedSystem = f: inputs.nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import inputs.nixpkgs { inherit system; };
       });
     in
     {

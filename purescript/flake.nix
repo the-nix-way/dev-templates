@@ -1,35 +1,27 @@
 {
   description = "A Nix-flake-based Purescript development environment";
 
-  inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
-    easy-purescript-nix = {
-      url = "github:justinwoo/easy-purescript-nix";
-      flake = false;
-    };
-  };
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
 
-  outputs = { self, nixpkgs, easy-purescript-nix }:
+  outputs = inputs:
     let
-      supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-darwin" ]; # "aarch64-linux" not supported
-      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: inputs.nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import inputs.nixpkgs { inherit system; };
       });
     in
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
-        default =
-          let
-            easy-ps = import easy-purescript-nix { inherit pkgs; };
-          in
-          pkgs.mkShell {
-            packages = (with pkgs; [ nodejs ]) ++ (with easy-ps; [
-              purs
-              spago
-              purescript-language-server
-              purs-tidy
-            ]);
-          };
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            nodejs_latest
+            purescript
+            spago
+          ] ++ (with nodePackages_latest; [
+            purescript-language-server
+            purs-tidy
+          ]);
+        };
       });
     };
 }

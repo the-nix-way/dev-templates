@@ -76,35 +76,35 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`bun`](./bun/)
 
-- [bun] 1.1.29
+- [bun]
 
 ### [`c-cpp`](./c-cpp/)
 
-- [clang-tools] 17.0.6
-- [cmake] 3.28.3
-- [codespell] 2.2.6
-- [conan] 2.0.17
-- [cppcheck] 2.13.4
-- [doxygen] 1.10.0
-- [gdb] 14.1
-- [gtest] 1.12.1
-- [lcov] 1.0
+- [clang-tools]
+- [cmake]
+- [codespell]
+- [conan]
+- [cppcheck]
+- [doxygen]
+- [gdb]
+- [gtest]
+- [lcov]
 - [vcpkg]
 - [vcpkg-tool]
 
 ### [`clojure`](./clojure/)
 
-- [Clojure] 1.11.1.1347
-- [Boot] 2.8.3
-- [Leiningen] 2.10.0
+- [Clojure]
+- [Boot]
+- [Leiningen]
 
 ### [`cue`](./cue/)
 
-- [Cue] 0.5.0
+- [Cue]
 
 ### [`dhall`](./dhall)
 
-- [Dhall] 1.41.2
+- [Dhall]
 - [dhall-bash]
 - [dhall-docs]
 - [dhall-json]
@@ -117,12 +117,12 @@ The sections below list what each template includes. In all cases, you're free t
 
 ### [`elixir`](./elixir/)
 
-- [Elixir] 1.14.5, including [mix] and [IEx]
+- [Elixir], including [mix] and [IEx]
 - [gigalixir] (Linux only)
 
 ### [`elm`](./elm/)
 
-- [Elm] 0.19.1
+- [Elm]
 - [elm2nix]
 
 ### [Empty](./empty/)
@@ -131,51 +131,51 @@ A dev template that's fully customizable.
 
 ### [`gleam`](./gleam/)
 
-- [Gleam] 0.30.0
+- [Gleam]
 
 ### [`go`](./go/)
 
-- [Go] 1.20.5
+- [Go]
 - Standard Go tools ([goimports], [godoc], and others)
 - [golangci-lint]
 
 ### [`hashi`](./hashi/)
 
-- [Packer] 1.8.6
-- [Terraform] 1.5.2
-- [Nomad] 1.4.6
-- [Vault] 1.13.3
-- [nomad-autoscaler] 0.3.6-dev
-- [nomad-pack] 0.0.1-techpreview.3
-- [levant] 0.3.2-dev
+- [Packer]
+- [Terraform]
+- [Nomad]
+- [Vault]
+- [nomad-autoscaler]
+- [nomad-pack]
+- [levant]
 - [damon]
-- [Terragrunt] 0.45.13
-- [tflint] 0.46.1
+- [Terragrunt]
+- [tflint]
 
 ### [`haskell`](./haskell/)
 
-- [GHC][haskell] 9.2.8
-- [cabal] 3.10.1.0
+- [GHC][haskell]
+- [cabal]
 
 ### [`haxe`](./haxe/)
 
-- [Haxe] 4.2.5
+- [Haxe]
 
 ### [`java`](./java/)
 
-- [Java] 20.0.1+9
-- [Maven] 3.9.2
-- [Gradle] 9.0.1
-- [jdtls] 1.31.0
+- [Java]
+- [Maven]
+- [Gradle]
+- [jdtls]
 
 ### [`jupyter`](./jupyter/)
 
-- [Jupyter core][jupyter] 5.7.2
+- [Jupyter core][jupyter]
 
 ### [`kotlin`](./kotlin/)
 
-- [Kotlin] 1.9.0
-- [Gradle] 8.0.1
+- [Kotlin]
+- [Gradle]
 
 ### [`latex`](./latex/)
 
@@ -185,96 +185,96 @@ A dev template that's fully customizable.
 
 ### [`lean4`](./lean4/)
 
-- [Lean] 4.9.0
+- [Lean]
 
 ### [`nickel`](./nickel/)
 
-- [Nickel] 0.2.0
+- [Nickel]
 
 ### [`nim`](./nim)
 
-- [Nim] 1.6.14
-- [nimble] 0.14.2
+- [Nim]
+- [nimble]
 
 ### [`nix`](./nix/)
 
-- [Cachix] 1.6
-- [dhall-to-nix] 1.1.25
-- [lorri] 1.6.0
-- [niv] 0.2.22
-- [nixfmt] 0.5.0
-- [statix] 0.5.6
+- [Cachix]
+- [dhall-to-nix]
+- [lorri]
+- [niv]
+- [nixfmt]
+- [statix]
 - [vulnix]
 
 ### [`node`](./node/)
 
-- [Node.js][node] 18.16.1
-- [npm] 9.5.1
-- [pnpm] 8.6.6
-- [Yarn] 1.22.19
-- [node2nix] 1.11.1
+- [Node.js][node]
+- [npm]
+- [pnpm]
+- [Yarn]
+- [node2nix]
 
 ### [`ocaml`](./ocaml/)
 
-- [OCaml] 4.14.1
-- [Dune] 3.9.1
-- [odoc] 2.2.0
-- [ocamlformat] 0.25.1
+- [OCaml]
+- [Dune]
+- [odoc]
+- [ocamlformat]
 
 ### [`odin`](./odin/)
 
-- [Odin] 4.14.1
+- [Odin]
 
 ### [`opa`](./opa/)
 
-- [Open Policy Agent][opa] 0.54.0
-- [Conftest] 0.44.0
+- [Open Policy Agent][opa]
+- [Conftest]
 
 ### [`php`](./php/)
 
-- [PHP] 8.2.8
-- [Composer] 2.5.8
+- [PHP]
+- [Composer]
 
 ### [`platformio`](./platformio/)
 
-- [PlatformIO] 6.1.11
+- [PlatformIO]
 
 ### [`protobuf`](./protobuf/)
 
-- The [Buf CLI][buf] 1.23.1
-- [protoc][protobuf] 3.21.12
+- The [Buf CLI][buf]
+- [protoc][protobuf]
 
 ### [`pulumi`](./pulumi/)
 
-- [Pulumi] 3.72.1
-- [Python] 3.11.4
-- [Go] 1.20.5
-- [Node.js][node] 18.16.1
-- [dotnet] sdk 6
-- [Java] 19.0.1 and [Maven] 3.9.2
-- [jq] 1.6
+- [Pulumi]
+- [Python]
+- [Go]
+- [Node.js][node]
+- [dotnet]
+- [Java] and [Maven]
+- [jq]
 
 ### [`purescript`](./purescript/)
 
-- [Purescript] (purs) 0.15.9
-- [Spago] 0.21.0
-- [purescript-language-server] 0.17.1
-- [purs-tidy] 0.10.0
+- [Purescript] (purs)
+- [Spago]
+- [purescript-language-server]
+- [purs-tidy]
 
 ### [`python`](./python/)
 
-- [Python] 3.11.4
-- [pip] 23.0.1
+- [Python]
+- [pip]
 
 ### [`r`](./r/)
 
-- [R] 4.3.1
-- [rmarkdown] 2.22
-- [knitr] 1.43 ([pandoc] and [texlive])
+- [R]
+- [rmarkdown]
+- [knitr] ([pandoc] and [texlive])
 
 ### [`ruby`](./ruby/)
 
-- [Ruby] 3.2.2, plus the standard Ruby tools (`bundle`, `gem`, etc.)
+- [Ruby], plus the standard Ruby tools (`bundle`, `gem`, etc.)
 
 ### [`rust`](./rust/)
 
@@ -284,37 +284,37 @@ A dev template that's fully customizable.
   - From the `rust-toolchain` file if present
   - Version 1.78.0 if neither is present
 
-- [rust-analyzer] 2024-04-29
-- [cargo-edit] 0.12.2
-- [cargo-deny] 0.14.23
+- [rust-analyzer]
+- [cargo-edit]
+- [cargo-deny]
 
 ### [`scala`](./scala/)
 
-- [Scala] 2.13.11 ([Java] 19.0.1)
-- [sbt] 1.9.2
+- [Scala] (plus [Java])
+- [sbt]
 
 ### [`shell`](./shell/)
 
-- [shellcheck] 0.9.0
+- [shellcheck]
 
 ### [`swi-prolog`](./swi-prolog/)
 
-- [swipl][swi-prolog] 9.2.7
+- [swipl][swi-prolog]
 
 ### [`swift`](./swift/)
 
-- [Swift] 5.8
+- [Swift]
 - [sourcekit-lsp]
 
 ### [`vlang`](./vlang/)
 
-- [Vlang] 0.4.4
+- [Vlang]
 
 ### [`zig`](./zig/)
 
-- [Zig] 0.10.1
-- [LLDB] 16.0.6
-- [ZLS] 0.13.0
+- [Zig]
+- [LLDB]
+- [ZLS]
 
 ## Code organization
 
