@@ -316,10 +316,6 @@ A dev template that's fully customizable.
 - [LLDB]
 - [ZLS]
 
-## Code organization
-
-All of the templates have only the root [flake](./flake.nix) as a flake input. That root flake provides a common revision of [Nixpkgs] and [`flake-utils`][flake-utils] to all the templates.
-
 [boot]: https://boot-clj.com
 [buf]: https://github.com/bufbuild/buf
 [bun]: https://bun.sh
@@ -359,7 +355,6 @@ All of the templates have only the root [flake](./flake.nix) as a flake input. T
 [elixir]: https://elixir-lang.org
 [elm]: https://elm-lang.org
 [elm2nix]: https://github.com/cachix/elm2nix
-[flake-utils]: https://github.com/numtide/flake-utils
 [gdb]: https://gnu.org/software/gdb
 [gigalixir]: https://gigalixir.com
 [gleam]: https://gleam.run
