@@ -1,9 +1,17 @@
-name: Run checks
+name: Run checks and Determinate CI
 
 on:
   pull_request:
+  workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
+    tags:
+      - v?[0-9]+.[0-9]+.[0-9]+*
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   check:
@@ -25,3 +33,12 @@ jobs:
           nix develop --command nixpkgs-fmt --check $(git ls-files '*.nix')
       - name: Flake check
         run: nix develop --command check
+
+  determinate-ci:
+    needs: check
+    uses: DeterminateSystems/ci/.github/workflows/workflow.yml@main
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      visibility: public
