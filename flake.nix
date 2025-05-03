@@ -218,6 +218,11 @@
           description = "OCaml development environment";
         };
 
+        odin = {
+          path = ./odin;
+          description = "Odin development environment";
+        };
+
         opa = {
           path = ./opa;
           description = "Open Policy Agent development environment";
