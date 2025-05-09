@@ -24,7 +24,7 @@
        * present. For safety, removal should
        * be a manual step, even if trivial.
        */
-      version = "3.14";
+      version = "3.13";
     in
     {
       devShells = forEachSupportedSystem ({ pkgs }:
@@ -39,7 +39,7 @@
           python = pkgs."python${concatMajorMinor version}";
         in
         {
-          default = pkgs.mkShellNoCC {
+          default = pkgs.mkShell {
             venvDir = ".venv";
 
             postShellHook = ''
@@ -58,9 +58,9 @@
               venvVersionWarn
             '';
 
-            packages = [
-              python.pkgs.venvShellHook
-              python.pkgs.pip
+            packages = with python.pkgs; [
+              venvShellHook
+              pip
 
               /* Add whatever else you'd like here. */
               # pkgs.basedpyright
