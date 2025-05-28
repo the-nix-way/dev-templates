@@ -1,0 +1,10 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+
+[*.md]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2

@@ -127,11 +127,6 @@
             description = "C/C++ development environment";
           };
 
-          go = {
-            path = ./go;
-            description = "Go (Golang) development environment";
-          };
-
           java = {
             path = ./java;
             description = "Java development environment";
@@ -145,6 +140,11 @@
           latex = {
             path = ./latex;
             description = "LaTeX development environment";
+          };
+
+          markdown = {
+            path = ./markdown;
+            description = "Markdown development environment";
           };
 
           nix = {
@@ -162,6 +162,11 @@
             description = "OCaml development environment";
           };
 
+          rust = {
+            path = ./rust;
+            description = "Rust development environment";
+          };
+
           scala = {
             path = ./scala;
             description = "Scala development environment";
@@ -175,6 +180,11 @@
           # Aliases
           c = c-cpp;
           cpp = c-cpp;
+          cxx = c-cpp;
+          md = markdown;
+          js = node;
+          nodejs = node;
+          tex = latex;
         };
       };
 }

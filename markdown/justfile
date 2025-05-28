@@ -1,0 +1,2 @@
+export file engine="typst":
+    pandoc {{ file }}.md -o {{ file }}.pdf --pdf-engine {{ engine }}

@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake-based Shell development environment";
+  description = "A Nix-flake-based Markdown development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -43,9 +43,19 @@
               deadnix.enable = true;
               nixfmt.enable = true;
               statix.enable = true;
-              shellcheck.enable = true;
-              shfmt.enable = true;
               just.enable = true;
+              prettier = {
+                enable = true;
+                # Use Prettier 2.x for CJK pangu formatting
+                package = pkgs.nodePackages.prettier.override {
+                  version = "2.8.8";
+                  src = pkgs.fetchurl {
+                    url = "https://registry.npmjs.org/prettier/-/prettier-2.8.8.tgz";
+                    sha512 = "tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==";
+                  };
+                };
+                settings.editorconfig = true;
+              };
             };
           };
 
@@ -63,7 +73,14 @@
               ${config.pre-commit.installationScript}
               echo 1>&2 "Welcome to the development shell!"
             '';
-            packages = config.pre-commit.settings.enabledPackages;
+            packages =
+              with pkgs;
+              [
+                pandoc
+                typst
+                config.treefmt.build.wrapper
+              ]
+              ++ config.pre-commit.settings.enabledPackages;
           };
         };
     };
