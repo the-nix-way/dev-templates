@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
+    fenix = {
+      url = "https://flakehub.com/f/nix-community/fenix/0.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -16,7 +16,6 @@
         pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = [
-            inputs.rust-overlay.overlays.default
             inputs.self.overlays.default
           ];
         };
@@ -24,7 +23,11 @@
     in
     {
       overlays.default = final: prev: {
-        rustToolchain = final.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
+        rustToolchain = inputs.fenix.packages.${prev.stdenv.hostPlatform.system}.fromToolchainFile
+          {
+            file = ./rust-toolchain.toml;
+            sha256 = "sha256-X/4ZBHO3iW0fOenQ3foEvscgAPJYl2abspaBThDOukI=";
+          };
       };
 
       devShells = forEachSupportedSystem ({ pkgs }: {
