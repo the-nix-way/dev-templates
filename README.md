@@ -67,6 +67,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | Shell                            | [`shell`](./shell/)                   |
 | [SWI-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
 | [Swift]                          | [`swift`](./swift)                    |
+| [Tauri]                          | [`Tauri`](./tauri)                    |
 | [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
 
@@ -305,6 +306,10 @@ A dev template that's fully customizable.
 
 - [Swift]
 - [sourcekit-lsp]
+
+### [`tauri`](./tauri/)
+
+<I have left this empty as I really doubt that my flake is any good and will need a lot of playing with to get it up to standard>
 
 ### [`vlang`](./vlang/)
 
