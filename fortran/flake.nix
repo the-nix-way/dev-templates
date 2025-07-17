@@ -16,9 +16,5 @@
           packages = with pkgs; [ fortran-fpm ];
         };
       });
-      shellHook = ''
-        echo fortran helper
-        alias fortran-fpm='fpm'
-      '';
     };
 }
