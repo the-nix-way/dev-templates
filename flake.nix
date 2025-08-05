@@ -295,11 +295,6 @@
             description = "Rust development environment";
           };
 
-          rust-toolchain = {
-            path = ./rust-toolchain;
-            description = "Rust development environment with Rust version defined by a rust-toolchain.toml file";
-          };
-
           scala = {
             path = ./scala;
             description = "Scala development environment";
@@ -338,7 +333,6 @@
           # Aliases
           c = c-cpp;
           cpp = c-cpp;
-          rt = rust-toolchain;
         };
       };
 }
