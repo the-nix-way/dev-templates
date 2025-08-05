@@ -28,9 +28,14 @@
         { pkgs }:
         {
           default = pkgs.mkShell {
-            packages = with pkgs; [
-              typst
-            ];
+            packages =
+              with pkgs;
+              [
+                typst
+              ]
+              ++ (with typstPackages; [
+                # Typst packages
+              ]);
           };
         }
       );
