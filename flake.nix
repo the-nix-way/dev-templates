@@ -38,11 +38,9 @@
         {
           format = pkgs.writeShellApplication {
             name = "format";
-            runtimeInputs = with pkgs; [ nixpkgs-fmt ];
+            runtimeInputs = with pkgs; [ nixfmt-rfc-style ];
             text = ''
-              shopt -s globstar
-
-              nixpkgs-fmt -- **/*.nix
+              git ls-files '**/*.nix' | xargs nix fmt
             '';
           };
 
@@ -90,10 +88,12 @@
                 format
                 update
               ]
-              ++ [ pkgs.nixpkgs-fmt ];
+              ++ [ pkgs.nixfmt-rfc-style ];
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs }: pkgs.nixfmt-rfc-style);
 
       packages = forEachSupportedSystem (
         { pkgs }:
