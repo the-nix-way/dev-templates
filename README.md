@@ -67,6 +67,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | Shell                            | [`shell`](./shell/)                   |
 | [SWI-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
 | [Swift]                          | [`swift`](./swift)                    |
+| [Typst]                          | [`typst`](./typst/)                   |
 | [Vlang]                          | [`vlang`](./vlang/)                   |
 | [Zig]                            | [`zig`](./zig/)                       |
 
@@ -306,6 +307,10 @@ A dev template that's fully customizable.
 - [Swift]
 - [sourcekit-lsp]
 
+### [`typst`](./typst/)
+
+- [Typst]
+
 ### [`vlang`](./vlang/)
 
 - [Vlang]
@@ -439,6 +444,7 @@ A dev template that's fully customizable.
 [texlab]: https://github.com/latex-lsp/texlab
 [texlive]: https://tug.org/texlive
 [tflint]: https://github.com/terraform-linters/tflint
+[typst]: https://typst.app
 [vault]: https://vaultproject.io
 [vcpkg]: https://vcpkg.io
 [vcpkg-tool]: https://github.com/microsoft/vcpkg-tool
