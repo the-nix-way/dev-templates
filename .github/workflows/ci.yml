@@ -29,8 +29,6 @@ jobs:
       - name: Check formatting
         run: |
           git ls-files '**/*.nix' | xargs nix develop --command nixfmt --check
-
-          nix develop --command nixpkgs-fmt --check $(git ls-files '*.nix')
       - name: Flake check
         run: nix develop --command check
       - name: Build all
