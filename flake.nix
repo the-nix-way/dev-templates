@@ -4,7 +4,7 @@
   inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
 
   outputs =
-    inputs:
+    { self, ... }@inputs:
     let
       supportedSystems = [
         "x86_64-linux"
@@ -17,12 +17,13 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
 
       scriptDrvs = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, ... }:
         let
           getSystem = "SYSTEM=$(nix eval --impure --raw --expr 'builtins.currentSystem')";
           forEachDir = exec: ''
@@ -77,7 +78,7 @@
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default = pkgs.mkShell {
             packages =
@@ -88,15 +89,15 @@
                 format
                 update
               ]
-              ++ [ pkgs.nixfmt-rfc-style ];
+              ++ [ self.formatter.${system} ];
           };
         }
       );
 
-      formatter = forEachSupportedSystem ({ pkgs }: pkgs.nixfmt-rfc-style);
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
 
       packages = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, ... }:
         rec {
           default = dvt;
           dvt = pkgs.writeShellApplication {
