@@ -65,14 +65,6 @@
               nix flake check --all-systems --no-build
             '';
           };
-
-          update = pkgs.writeShellApplication {
-            name = "update";
-            text = forEachDir ''
-              echo "updating ''${dir}"
-              nix flake update
-            '';
-          };
         }
       );
     in
@@ -87,7 +79,6 @@
                 build
                 check
                 format
-                update
               ]
               ++ [ self.formatter.${system} ];
           };

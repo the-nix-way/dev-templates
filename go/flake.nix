@@ -6,7 +6,7 @@
   outputs =
     inputs:
     let
-      goVersion = 23; # Change this to update the whole stack
+      goVersion = 24; # Change this to update the whole stack
 
       supportedSystems = [
         "x86_64-linux"
