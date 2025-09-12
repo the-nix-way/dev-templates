@@ -1,3 +1,5 @@
 .direnv/
 target
 result
+flake.lock
+
