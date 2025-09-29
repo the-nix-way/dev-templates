@@ -30,7 +30,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | Language/framework/tool          | Template                              |
 | :------------------------------- | :------------------------------------ |
 | [Bun]                            | [`bun`](./bun/)                       |
-| [C]/[C++]                        | [`c-cpp`](./c-cpp/)                   |
+| [C] / [C++]                      | [`c-cpp`](./c-cpp/)                   |
 | [Clojure]                        | [`clojure`](./clojure/)               |
 | [Cue]                            | [`cue`](./cue/)                       |
 | [Dhall]                          | [`dhall`](./dhall/)                   |
