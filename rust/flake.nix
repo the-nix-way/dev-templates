@@ -10,7 +10,8 @@
   };
 
   outputs =
-    inputs:
+    { self, ... }@inputs:
+
     let
       supportedSystems = [
         "x86_64-linux"
