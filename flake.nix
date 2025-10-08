@@ -68,7 +68,9 @@
                   (script "format" [ nixfmt ] ''
                     git ls-files '*.nix' | xargs nix fmt
                   '')
-
+                  (script "check-formatting" [ nixfmt ] ''
+                    git ls-files '*.nix' | xargs nixfmt --check
+                  '')
                 ]
                 ++ [ self.formatter.${system} ];
             };
