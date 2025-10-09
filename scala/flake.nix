@@ -41,7 +41,7 @@
       devShells = forEachSupportedSystem (
         { pkgs }:
         {
-          default = pkgs.mkShell {
+          default = pkgs.mkShellNoCC {
             packages = with pkgs; [
               scala
               sbt

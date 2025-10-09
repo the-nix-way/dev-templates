@@ -34,7 +34,7 @@
       devShells = forEachSupportedSystem (
         { pkgs }:
         {
-          default = pkgs.mkShell {
+          default = pkgs.mkShellNoCC {
             packages = with pkgs; [
               node2nix
               nodejs

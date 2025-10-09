@@ -49,7 +49,7 @@
                   ];
                 };
             in
-            pkgs.mkShell {
+            pkgs.mkShellNoCC {
               packages =
                 with pkgs;
                 [

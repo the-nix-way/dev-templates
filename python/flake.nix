@@ -53,7 +53,7 @@
           python = pkgs."python${concatMajorMinor version}";
         in
         {
-          default = pkgs.mkShell {
+          default = pkgs.mkShellNoCC {
             venvDir = ".venv";
 
             postShellHook = ''

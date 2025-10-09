@@ -31,7 +31,7 @@
       devShells = forEachSupportedSystem (
         { pkgs }:
         {
-          default = pkgs.mkShell {
+          default = pkgs.mkShellNoCC {
             # The Nix packages provided in the environment
             # Add any you need here
             packages = with pkgs; [ ];

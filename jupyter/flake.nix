@@ -26,7 +26,7 @@
       devShells = forEachSupportedSystem (
         { pkgs }:
         {
-          default = pkgs.mkShell {
+          default = pkgs.mkShellNoCC {
             venvDir = ".venv";
             packages =
               with pkgs;
