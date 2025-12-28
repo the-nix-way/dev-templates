@@ -42,7 +42,7 @@
                 vcpkg
                 vcpkg-tool
               ]
-              ++ pkgs.lib.optionals (system != "aarch64-darwin") [ gdb ];
+              ++ pkgs.lib.optionals (stdenv.hostPlatform.system != "aarch64-darwin") [ gdb ];
 
             shellHook = ''
               export PLATFORMIO_CORE_DIR=$PWD/.platformio
