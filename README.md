@@ -258,7 +258,6 @@ A dev template that's fully customizable.
 
 - [Purescript] (purs)
 - [Spago]
-- [purescript-language-server]
 - [purs-tidy]
 
 ### [`python`](./python/)
@@ -420,7 +419,6 @@ A dev template that's fully customizable.
 [protobuf]: https://developers.google.com/protocol-buffers
 [pulumi]: https://pulumi.com
 [purescript]: https://github.com/purescript/purescript
-[purescript-language-server]: https://github.com/nwolverson/purescript-language-server
 [purs-tidy]: https://github.com/natefaubion/purescript-tidy
 [python]: https://python.org
 [r]: https://r-project.org

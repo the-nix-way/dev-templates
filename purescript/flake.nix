@@ -35,7 +35,6 @@
                 spago
               ]
               ++ (with nodePackages_latest; [
-                purescript-language-server
                 purs-tidy
               ]);
           };
