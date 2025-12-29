@@ -35,7 +35,6 @@
                 spago
               ]
               ++ (with nodePackages_latest; [
-                purs-tidy
               ]);
           };
         }
