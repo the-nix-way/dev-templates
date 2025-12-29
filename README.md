@@ -27,48 +27,48 @@ Once your preferred template has been initialized, you can use the provided shel
 
 ## Available templates
 
-| Language/framework/tool          | Template                              |
-| :------------------------------- | :------------------------------------ |
-| [Bun]                            | [`bun`](./bun/)                       |
-| [C] / [C++]                      | [`c-cpp`](./c-cpp/)                   |
-| [Clojure]                        | [`clojure`](./clojure/)               |
-| [Cue]                            | [`cue`](./cue/)                       |
-| [Dhall]                          | [`dhall`](./dhall/)                   |
-| [Elixir]                         | [`elixir`](./elixir/)                 |
-| [Elm]                            | [`elm`](./elm/)                       |
-| Empty (change at will)           | [`empty`](./empty)                    |
-| [Gleam]                          | [`gleam`](./gleam/)                   |
-| [Go]                             | [`go`](./go/)                         |
-| [Hashicorp] tools                | [`hashi`](./hashi/)                   |
-| [Haskell]                        | [`haskell`](./haskell/)               |
-| [Haxe]                           | [`haxe`](./haxe/)                     |
-| [Java]                           | [`java`](./java/)                     |
-| [Jupyter]                        | [`jupyter`](./jupyter/)               |
-| [Kotlin]                         | [`kotlin`](./kotlin/)                 |
-| [LaTeX]                          | [`latex`](./latex/)                   |
-| [Nickel]                         | [`nickel`](./nickel/)                 |
-| [Nim]                            | [`nim`](./nim/)                       |
-| [Nix]                            | [`nix`](./nix/)                       |
-| [Node.js][node]                  | [`node`](./node/)                     |
-| [OCaml]                          | [`ocaml`](./ocaml/)                   |
-| [Odin]                           | [`odin`](./odin/)                     |
-| [Open Policy Agent][opa]         | [`opa`](./opa)                        |
-| [PHP]                            | [`php`](./php/)                       |
-| [PlatformIO]                     | [`platformio`](./platformio/)         |
-| [Protobuf]                       | [`protobuf`](./protobuf/)             |
-| [Pulumi]                         | [`pulumi`](./pulumi/)                 |
-| [Purescript]                     | [`purescript`](./purescript/)         |
-| [Python]                         | [`python`](./python/)                 |
-| [R]                              | [`r`](./r/)                           |
-| [Ruby]                           | [`ruby`](./ruby/)                     |
-| [Rust]                           | [`rust`](./rust/)                     |
-| [Scala]                          | [`scala`](./scala/)                   |
-| Shell                            | [`shell`](./shell/)                   |
-| [SWI-prolog]                     | [`swi-prolog`](./swi-prolog/)         |
-| [Swift]                          | [`swift`](./swift)                    |
-| [Typst]                          | [`typst`](./typst/)                   |
-| [Vlang]                          | [`vlang`](./vlang/)                   |
-| [Zig]                            | [`zig`](./zig/)                       |
+| Language/framework/tool  | Template                      |
+| :----------------------- | :---------------------------- |
+| [Bun]                    | [`bun`](./bun/)               |
+| [C] / [C++]              | [`c-cpp`](./c-cpp/)           |
+| [Clojure]                | [`clojure`](./clojure/)       |
+| [Cue]                    | [`cue`](./cue/)               |
+| [Dhall]                  | [`dhall`](./dhall/)           |
+| [Elixir]                 | [`elixir`](./elixir/)         |
+| [Elm]                    | [`elm`](./elm/)               |
+| Empty (change at will)   | [`empty`](./empty)            |
+| [Gleam]                  | [`gleam`](./gleam/)           |
+| [Go]                     | [`go`](./go/)                 |
+| [Hashicorp] tools        | [`hashi`](./hashi/)           |
+| [Haskell]                | [`haskell`](./haskell/)       |
+| [Haxe]                   | [`haxe`](./haxe/)             |
+| [Java]                   | [`java`](./java/)             |
+| [Jupyter]                | [`jupyter`](./jupyter/)       |
+| [Kotlin]                 | [`kotlin`](./kotlin/)         |
+| [LaTeX]                  | [`latex`](./latex/)           |
+| [Nickel]                 | [`nickel`](./nickel/)         |
+| [Nim]                    | [`nim`](./nim/)               |
+| [Nix]                    | [`nix`](./nix/)               |
+| [Node.js][node]          | [`node`](./node/)             |
+| [OCaml]                  | [`ocaml`](./ocaml/)           |
+| [Odin]                   | [`odin`](./odin/)             |
+| [Open Policy Agent][opa] | [`opa`](./opa)                |
+| [PHP]                    | [`php`](./php/)               |
+| [PlatformIO]             | [`platformio`](./platformio/) |
+| [Protobuf]               | [`protobuf`](./protobuf/)     |
+| [Pulumi]                 | [`pulumi`](./pulumi/)         |
+| [Purescript]             | [`purescript`](./purescript/) |
+| [Python]                 | [`python`](./python/)         |
+| [R]                      | [`r`](./r/)                   |
+| [Ruby]                   | [`ruby`](./ruby/)             |
+| [Rust]                   | [`rust`](./rust/)             |
+| [Scala]                  | [`scala`](./scala/)           |
+| Shell                    | [`shell`](./shell/)           |
+| [SWI-prolog]             | [`swi-prolog`](./swi-prolog/) |
+| [Swift]                  | [`swift`](./swift)            |
+| [Typst]                  | [`typst`](./typst/)           |
+| [Vlang]                  | [`vlang`](./vlang/)           |
+| [Zig]                    | [`zig`](./zig/)               |
 
 ## Template contents
 
@@ -258,8 +258,6 @@ A dev template that's fully customizable.
 
 - [Purescript] (purs)
 - [Spago]
-- [purescript-language-server]
-- [purs-tidy]
 
 ### [`python`](./python/)
 
@@ -279,7 +277,6 @@ A dev template that's fully customizable.
 ### [`rust`](./rust/)
 
 - [Rust], including [cargo], [Clippy], and the other standard tools. The Rust version is determined as follows, in order:
-
   - From the `rust-toolchain.toml` file if present
   - From the `rust-toolchain` file if present
   - Version 1.78.0 if neither is present
@@ -328,7 +325,6 @@ A dev template that's fully customizable.
 [cabal]: https://haskell.org/cabal
 [cachix]: https://cachix.org
 [cargo]: https://doc.rust-lang.org/cargo
-[cargo-audit]: https://crates.io/crates/cargo-audit
 [cargo-deny]: https://crates.io/crates/cargo-deny
 [cargo-edit]: https://crates.io/crates/cargo-edit
 [clang-tools]: https://clang.llvm.org
@@ -387,15 +383,12 @@ A dev template that's fully customizable.
 [lorri]: https://github.com/target/lorri
 [maven]: https://maven.apache.org
 [mix]: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
-[mono]: https://mono-project.com
-[msbuild]: https://github.com/dotnet/msbuild
 [nickel]: https://nickel-lang.org
 [nim]: https://nim-lang.org
 [nimble]: https://github.com/nim-lang/nimble
 [niv]: https://github.com/nmattia/niv
 [nix]: https://nixos.org
 [nixfmt]: https://github.com/serokell/nixfmt
-[nixpkgs]: https://github.com/NixOS/nixpkgs
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [node]: https://nodejs.org
 [node2nix]: https://github.com/svanderburg/node2nix
@@ -407,12 +400,10 @@ A dev template that's fully customizable.
 [ocamlformat]: https://github.com/ocaml-ppx/ocamlformat
 [odoc]: https://github.com/ocaml/odoc
 [odin]: https://github.com/odin-lang/Odin
-[omnisharp-roslyn]: https://github.com/OmniSharp/omnisharp-roslyn
 [opa]: https://openpolicyagent.org
 [pandoc]: https://pandoc.org
 [packer]: https://packer.io
 [pip]: https://pypi.org/project/pip
-[phoenix]: https://phoenixframework.org
 [php]: https://php.net
 [platformio]: https://platformio.org
 [python]: https://python.org
@@ -420,11 +411,7 @@ A dev template that's fully customizable.
 [protobuf]: https://developers.google.com/protocol-buffers
 [pulumi]: https://pulumi.com
 [purescript]: https://github.com/purescript/purescript
-[purescript-language-server]: https://github.com/nwolverson/purescript-language-server
-[purs-tidy]: https://github.com/natefaubion/purescript-tidy
-[python]: https://python.org
 [r]: https://r-project.org
-[release]: https://github.com/NixOS/nixpkgs/releases/tag/22.11
 [rmarkdown]: https://rmarkdown.rstudio.com
 [ruby]: https://ruby-lang.org
 [rust]: https://rust-lang.org
