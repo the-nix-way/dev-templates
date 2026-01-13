@@ -33,6 +33,8 @@
               with pkgs;
               [
                 typst
+                typstyle
+                tinymist
               ]
               ++ (with typstPackages; [
                 # Typst packages
