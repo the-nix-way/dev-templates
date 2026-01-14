@@ -33,6 +33,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [C] / [C++]              | [`c-cpp`](./c-cpp/)           |
 | [Clojure]                | [`clojure`](./clojure/)       |
 | [Cue]                    | [`cue`](./cue/)               |
+| [Deno]                   | [`deno`](./deno)              |
 | [Dhall]                  | [`dhall`](./dhall/)           |
 | [Elixir]                 | [`elixir`](./elixir/)         |
 | [Elm]                    | [`elm`](./elm/)               |
@@ -338,6 +339,7 @@ A dev template that's fully customizable.
 [cppcheck]: http://cppcheck.sourceforge.net
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
+[deno]: https://deno.com
 [dhall]: https://dhall-lang.org
 [dhall-bash]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash
 [dhall-docs]: https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-docs
