@@ -32,6 +32,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Bun]                    | [`bun`](./bun/)               |
 | [C] / [C++]              | [`c-cpp`](./c-cpp/)           |
 | [Clojure]                | [`clojure`](./clojure/)       |
+| [C#][csharp]             | [`csharp`](./csharp/)         |
 | [Cue]                    | [`cue`](./cue/)               |
 | [Deno]                   | [`deno`](./deno)              |
 | [Dhall]                  | [`dhall`](./dhall/)           |
@@ -98,6 +99,13 @@ The sections below list what each template includes. In all cases, you're free t
 - [Clojure]
 - [Boot]
 - [Leiningen]
+
+### [`csharp`](./csharp/)
+
+- [dotnet]
+- [omnisharp-roslyn]
+- [Mono]
+- [msbuild]
 
 ### [`cue`](./cue/)
 
@@ -337,6 +345,7 @@ A dev template that's fully customizable.
 [conan]: https://conan.io
 [conftest]: https://conftest.dev
 [cppcheck]: http://cppcheck.sourceforge.net
+[csharp]: https://dotnet.microsoft.com/en-us/languages/csharp
 [cue]: https://cuelang.org
 [damon]: https://github.com/hashicorp/damon
 [deno]: https://deno.com
