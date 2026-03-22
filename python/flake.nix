@@ -18,6 +18,7 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
@@ -40,7 +41,7 @@
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         let
           concatMajorMinor =
             v:
@@ -72,23 +73,27 @@
               venvVersionWarn
             '';
 
-            packages = with python.pkgs; [
-              venvShellHook
-              pip
+            packages =
+              (with python.pkgs; [
+                venvShellHook
+                pip
 
-              # Add whatever else you'd like here.
-              # pkgs.basedpyright
+                # Add whatever else you'd like here.
+                # pkgs.basedpyright
 
-              # pkgs.black
-              # or
-              # python.pkgs.black
+                # pkgs.black
+                # or
+                # python.pkgs.black
 
-              # pkgs.ruff
-              # or
-              # python.pkgs.ruff
-            ];
+                # pkgs.ruff
+                # or
+                # python.pkgs.ruff
+              ])
+              ++ [ self.formatter.${system} ];
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }

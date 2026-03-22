@@ -18,13 +18,14 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default =
             let
@@ -44,9 +45,16 @@
               ];
             in
             pkgs.mkShellNoCC {
-              packages = (with pkgs; [ dhall ]) ++ dhallTools;
+              packages =
+                (with pkgs; [
+                  dhall
+                  self.formatter.${system}
+                ])
+                ++ dhallTools;
             };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }

@@ -18,13 +18,14 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default = pkgs.mkShellNoCC {
             packages =
@@ -33,11 +34,14 @@
                 nodejs_latest
                 purescript
                 spago
+                self.formatter.${system}
               ]
               ++ (with nodePackages_latest; [
               ]);
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }

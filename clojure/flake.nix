@@ -20,6 +20,7 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs {
               inherit system;
               overlays = [ inputs.self.overlays.default ];
@@ -40,16 +41,19 @@
         };
 
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default = pkgs.mkShellNoCC {
             packages = with pkgs; [
               boot
               clojure
               leiningen
+              self.formatter.${system}
             ];
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }

@@ -18,13 +18,14 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default = pkgs.mkShellNoCC {
             venvDir = ".venv";
@@ -33,6 +34,7 @@
               [
                 poetry
                 python311
+                self.formatter.${system}
               ]
               ++ (with python311Packages; [
                 ipykernel
@@ -42,5 +44,7 @@
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }

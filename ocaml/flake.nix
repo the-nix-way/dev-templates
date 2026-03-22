@@ -18,13 +18,14 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default = pkgs.mkShellNoCC {
             packages =
@@ -32,6 +33,7 @@
               [
                 ocaml
                 ocamlformat
+                self.formatter.${system}
               ]
               ++ (with pkgs.ocamlPackages; [
                 dune_3
@@ -40,5 +42,7 @@
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }

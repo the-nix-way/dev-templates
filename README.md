@@ -281,7 +281,6 @@ A dev template that's fully customizable.
   - From the `rust-toolchain.toml` file if present
   - From the `rust-toolchain` file if present
   - Version 1.78.0 if neither is present
-
 - [rust-analyzer]
 - [cargo-edit]
 - [cargo-deny]

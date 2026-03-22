@@ -64,6 +64,7 @@
                   (script "check" [ nixfmt ] (forEachDir ''
                     echo "checking ''${dir}"
                     nix flake check --all-systems --no-build
+                    which nixfmt
                   ''))
                   (script "format" [ nixfmt ] ''
                     git ls-files '*.nix' | xargs nix fmt

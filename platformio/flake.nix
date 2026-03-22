@@ -18,13 +18,14 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default = pkgs.mkShellNoCC {
             packages =
@@ -41,6 +42,7 @@
                 platformio
                 vcpkg
                 vcpkg-tool
+                self.formatter.${system}
               ]
               ++ pkgs.lib.optionals (stdenv.hostPlatform.system != "aarch64-darwin") [ gdb ];
 
@@ -50,5 +52,7 @@
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }

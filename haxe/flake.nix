@@ -18,13 +18,14 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
+            inherit system;
             pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
     in
     {
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, system }:
         {
           default = pkgs.mkShellNoCC {
             # WARN: As of 2025-12-28:
@@ -37,9 +38,14 @@
             #       to build. This can be changed in the
             #       future or by the user, such as through
             #       an override.
-            packages = with pkgs; [ haxe_4_0 ];
+            packages = with pkgs; [
+              haxe_4_0
+              self.formatter.${system}
+            ];
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }
