@@ -9,7 +9,6 @@
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
-        "x86_64-darwin"
         "aarch64-darwin"
       ];
       forEachSupportedSystem =
@@ -50,30 +49,29 @@
                 };
             in
             pkgs.mkShellNoCC {
-              packages =
-                with pkgs;
-                [
-                  (script "build" [ ] ''
-                    ${getSystem}
+              packages = with pkgs; [
+                (script "build" [ ] ''
+                  ${getSystem}
 
-                    ${forEachDir ''
-                      echo "building ''${dir}"
-                      nix build ".#devShells.''${SYSTEM}.default"
-                    ''}
-                  '')
-                  (script "check" [ nixfmt ] (forEachDir ''
-                    echo "checking ''${dir}"
-                    nix flake check --all-systems --no-build
-                    which nixfmt
-                  ''))
-                  (script "format" [ nixfmt ] ''
-                    git ls-files '*.nix' | xargs nix fmt
-                  '')
-                  (script "check-formatting" [ nixfmt ] ''
-                    git ls-files '*.nix' | xargs nixfmt --check
-                  '')
-                ]
-                ++ [ self.formatter.${system} ];
+                  ${forEachDir ''
+                    echo "building ''${dir}"
+                    nix build ".#devShells.''${SYSTEM}.default"
+                  ''}
+                '')
+                (script "check" [ nixfmt ] (forEachDir ''
+                  echo "checking ''${dir}"
+                  nix flake check --all-systems --no-build
+                  nix develop --command which nixfmt
+                ''))
+                (script "format" [ nixfmt ] ''
+                  git ls-files '*.nix' | xargs nix fmt
+                '')
+                (script "check-formatting" [ nixfmt ] ''
+                  git ls-files '*.nix' | xargs nixfmt --check
+                '')
+
+                self.formatter.${system}
+              ];
             };
         }
       );
