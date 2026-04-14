@@ -36,9 +36,8 @@
         {
           default = pkgs.mkShellNoCC {
             packages = with pkgs; [
-              node2nix
               nodejs
-              nodePackages.pnpm
+              pnpm
               yarn
               self.formatter.${system}
             ];
