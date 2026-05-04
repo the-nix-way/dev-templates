@@ -1,7 +1,7 @@
 {
   description = "A Nix-flake-based Zig development environment";
 
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0"; # stable Nixpkgs
+  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1"; # unstable Nixpkgs
 
   outputs =
     { self, ... }@inputs:

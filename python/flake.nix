@@ -7,14 +7,17 @@
     { self, ... }@inputs:
 
     let
+      inherit (inputs.nixpkgs) lib;
+
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
         "aarch64-darwin"
       ];
+
       forEachSupportedSystem =
         f:
-        inputs.nixpkgs.lib.genAttrs supportedSystems (
+        lib.genAttrs supportedSystems (
           system:
           f {
             inherit system;
@@ -44,10 +47,10 @@
         let
           concatMajorMinor =
             v:
-            pkgs.lib.pipe v [
-              pkgs.lib.versions.splitVersion
-              (pkgs.lib.sublist 0 2)
-              pkgs.lib.concatStrings
+            lib.pipe v [
+              lib.versions.splitVersion
+              (lib.sublist 0 2)
+              lib.concatStrings
             ];
 
           python = pkgs."python${concatMajorMinor version}";
