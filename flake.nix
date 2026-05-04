@@ -79,9 +79,9 @@
       formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
 
       packages = forEachSupportedSystem (
-        { pkgs, ... }:
-        rec {
-          default = dvt;
+        { pkgs, system }:
+        {
+          default = self.packages.${system}.dvt;
           dvt = pkgs.writeShellApplication {
             name = "dvt";
             bashOptions = [
@@ -110,8 +110,8 @@
     //
 
       {
-        templates = rec {
-          default = empty;
+        templates = {
+          default = self.templates.empty;
 
           bun = {
             path = ./bun;
@@ -319,8 +319,8 @@
           };
 
           # Aliases
-          c = c-cpp;
-          cpp = c-cpp;
+          c = self.templates.c-cpp;
+          cpp = self.templates.c-cpp;
         };
       };
 }
