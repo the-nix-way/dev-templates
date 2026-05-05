@@ -248,6 +248,11 @@
             description = "PlatformIO development environment";
           };
 
+          powershell = {
+            path = ./powershell;
+            description = "PowerShell development environment";
+          };
+
           protobuf = {
             path = ./protobuf;
             description = "Protobuf development environment";

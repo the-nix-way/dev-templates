@@ -66,6 +66,7 @@ Once your preferred template has been initialized, you can use the provided shel
 | [Open Policy Agent][opa] | [`opa`](./opa)                |
 | [PHP]                    | [`php`](./php/)               |
 | [PlatformIO]             | [`platformio`](./platformio/) |
+| [PowerShell]             | [`powershell`](./powershell/) |
 | [Protobuf]               | [`protobuf`](./protobuf/)     |
 | [Pulumi]                 | [`pulumi`](./pulumi/)         |
 | [Purescript]             | [`purescript`](./purescript/) |
@@ -257,6 +258,11 @@ A dev template that's fully customizable.
 
 - [PlatformIO]
 
+### [`powershell`](./powershell/)
+
+- [Powershell]
+- [Powershell Editor Services][powershell-editor-services]
+
 ### [`protobuf`](./protobuf/)
 
 - The [Buf CLI][buf]
@@ -425,6 +431,8 @@ A dev template that's fully customizable.
 [pip]: https://pypi.org/project/pip
 [php]: https://php.net
 [platformio]: https://platformio.org
+[powershell]: https://github.com/PowerShell/PowerShell
+[powershell-editor-services]: https://github.com/PowerShell/PowerShellEditorServices
 [python]: https://python.org
 [pnpm]: https://pnpm.io
 [protobuf]: https://developers.google.com/protocol-buffers
