@@ -7,7 +7,7 @@
     { self, ... }@inputs:
 
     let
-      goVersion = 25; # Change this to update the whole stack
+      goVersion = 27; # Change this to update the whole stack
 
       supportedSystems = [
         "x86_64-linux"
