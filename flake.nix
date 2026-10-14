@@ -141,6 +141,11 @@
             description = "Cue development environment";
           };
 
+          deno = {
+            path = ./deno;
+            description = "Deno development environment";
+          };
+
           dhall = {
             path = ./dhall;
             description = "Dhall development environment";
@@ -179,6 +184,11 @@
           haskell = {
             path = ./haskell;
             description = "Haskell development environment";
+          };
+
+          haxe = {
+            path = ./haxe;
+            description = "Haxe development environment";
           };
 
           java = {
