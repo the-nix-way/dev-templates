@@ -7,8 +7,6 @@
     { self, ... }@inputs:
 
     let
-      inherit (inputs.nixpkgs) lib;
-
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -17,7 +15,7 @@
 
       forEachSupportedSystem =
         f:
-        lib.genAttrs supportedSystems (
+        inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
             pkgs = import inputs.nixpkgs { inherit system; };
@@ -34,9 +32,12 @@
               omnisharp-roslyn
               mono
               msbuild
+              self.formatter.${system}
             ];
           };
         }
       );
+
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt-tree);
     };
 }
