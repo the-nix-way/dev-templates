@@ -110,6 +110,6 @@
         }
       );
 
-      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt-tree);
     };
 }

@@ -12,15 +12,14 @@
         "aarch64-linux"
         "aarch64-darwin"
       ];
+
       forEachSupportedSystem =
         f:
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
             inherit system;
-            pkgs = import inputs.nixpkgs {
-              inherit system;
-            };
+            pkgs = import inputs.nixpkgs { inherit system; };
           }
         );
     in
@@ -39,6 +38,6 @@
         }
       );
 
-      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt-tree);
     };
 }
