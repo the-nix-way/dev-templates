@@ -5,17 +5,17 @@
 
   outputs =
     { self, ... }@inputs:
-    let
-      inherit (inputs.nixpkgs) lib;
 
+    let
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
         "aarch64-darwin"
       ];
+
       forEachSupportedSystem =
         f:
-        lib.genAttrs supportedSystems (
+        inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
             inherit system;
@@ -51,7 +51,7 @@
                 };
             in
             pkgs.mkShellNoCC {
-              packages = with pkgs; [
+              packages = [
                 (script "build" [ ] ''
                   ${getSystem}
 
@@ -60,25 +60,24 @@
                     nix build ".#devShells.''${SYSTEM}.default"
                   ''}
                 '')
-                (script "check" [ nixfmt ] (forEachDir ''
+                (script "check" [ ] (forEachDir ''
                   echo "checking ''${dir}"
                   nix flake check --all-systems --no-build
-                  nix develop --command which nixfmt
+                  nix develop --command which treefmt
                 ''))
-                (script "format" [ nixfmt ] ''
+                (script "format" [ ] ''
                   git ls-files '*.nix' | xargs nix fmt
                 '')
-                (script "check-formatting" [ nixfmt ] ''
-                  git ls-files '*.nix' | xargs nixfmt --check
+                (script "check-formatting" [ ] ''
+                  git ls-files '*.nix' | xargs nix fmt -- --ci
                 '')
-
                 self.formatter.${system}
               ];
             };
         }
       );
 
-      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt);
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt-tree);
 
       packages = forEachSupportedSystem (
         { pkgs, system }:
