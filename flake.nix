@@ -1,7 +1,7 @@
 {
   description = "Ready-made templates for easily creating flake-driven environments";
 
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
+  inputs.nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1";
 
   outputs =
     { self, ... }@inputs:
