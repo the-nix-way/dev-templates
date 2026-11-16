@@ -29,7 +29,7 @@
         {
           default = pkgs.mkShellNoCC {
             packages = with pkgs; [
-              texlive.combined.scheme-full
+              texliveFull
               texlab
               tectonic
               self.formatter.${system}

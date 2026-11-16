@@ -30,7 +30,7 @@
           default = pkgs.mkShellNoCC {
             packages = with pkgs; [
               gleam
-              erlang
+              beamPackages.erlang
               self.formatter.${system}
             ];
           };

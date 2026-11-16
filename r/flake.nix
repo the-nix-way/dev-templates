@@ -40,7 +40,7 @@
             packages = with pkgs; [
               rEnv
               pandoc
-              texlive.combined.scheme-full
+              texliveFull
               self.formatter.${system}
             ];
           };

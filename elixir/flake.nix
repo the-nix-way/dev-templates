@@ -35,24 +35,15 @@
           # documentation
           # https://nixos.org/manual/nixpkgs/stable/#sec-beam
 
-          # ==== ERLANG ====
+          # ==== ERLANG / BEAM packages ====
 
-          # use whatever version is currently defined in nixpkgs
-          # erlang = pkgs.beam.interpreters.erlang;
+          # use whatever OTP version is currently the default in nixpkgs
+          # pkgs-beam = final.beamPackages;
 
-          # use latest version of Erlang 28
-          erlang = final.beam.interpreters.erlang_28;
-
-          # specify exact version of Erlang OTP
-          # erlang = pkgs.beam.interpreters.erlang.override {
-          #   version = "26.2.2";
-          #   sha256 = "sha256-7S+mC4pDcbXyhW2r5y8+VcX9JQXq5iEUJZiFmgVMPZ0=";
-          # }
-
-          # ==== BEAM packages ====
-
-          # all BEAM packages will be compile with your preferred erlang version
-          pkgs-beam = final.beam.packagesWith erlang;
+          # use latest version of Erlang/OTP 28; all BEAM packages are compiled with it
+          # (use e.g. `final.beam27Packages` for a different OTP version, and
+          # `.overrideScope` to change any of its members)
+          pkgs-beam = final.beam28Packages;
         in
         {
           # ==== Elixir ====
@@ -90,7 +81,7 @@
               ]
               ++
                 # Linux only
-                pkgs.lib.optionals pkgs.stdenv.isLinux (
+                pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux (
                   with pkgs;
                   [
                     gigalixir
@@ -100,7 +91,7 @@
                 )
               ++
                 # macOS only
-                pkgs.lib.optionals pkgs.stdenv.isDarwin (
+                pkgs.lib.optionals pkgs.stdenv.hostPlatform.isDarwin (
                   with pkgs;
                   [
                     terminal-notifier
